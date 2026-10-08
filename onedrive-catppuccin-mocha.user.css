@@ -1,0 +1,318 @@
+/* ==UserStyle==
+@name         OneDrive Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for OneDrive. Consumer app on onedrive.live.com, and OneDrive for Business on *-my.sharepoint.com (including eduvosonline-my.sharepoint.com). Peach primary, mauve links, sky folder names. Login is left alone.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css
+==/UserStyle== */
+
+/*
+  OneDrive for Business lives on {tenant}-my.sharepoint.com, not the
+  team-site host. eduvosonline-my.sharepoint.com is that host.
+  Consumer OneDrive is onedrive.live.com. Both paint through Fluent v9
+  tokens, Fabric semantic colors, and a few od3 variables. File-type
+  icons and photo thumbnails are left alone. login.microsoftonline.com
+  is not matched. Set OneDrive to Dark so illustrations match.
+*/
+
+@-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), domain("onedrive.cloud.microsoft"), regexp("https?://[a-z0-9-]+-my\\.sharepoint\\.com/.*") {
+  :root,
+  html,
+  body,
+  [class*="fui-FluentProvider"],
+  [data-theme="fluent-light"],
+  [data-theme="fluent-dark"] {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --pageBackgroundGradientColorStop1: #1e1e2e !important;
+    --pageBackgroundGradientColorStop2: #1e1e2e !important;
+    --pageBackgroundGradientColorStop3: #181825 !important;
+    --buttonHoverBackgroundAlpha: rgba(49, 50, 68, 0.85) !important;
+
+    --od3-row-divider: #313244 !important;
+    --od3-row-inset-background: rgba(250, 179, 135, 0.16) !important;
+    --od3-nav-background: #11111b !important;
+    --od3-canvas-background: #1e1e2e !important;
+
+    /* SharePoint / Fabric theme slots used by the business host. */
+    --themePrimary: #fab387 !important;
+    --themeDarker: #e8a06e !important;
+    --themeDark: #fab387 !important;
+    --themeDarkAlt: #f5e0dc !important;
+    --themeSecondary: #cba6f7 !important;
+    --themeTertiary: #45475a !important;
+    --themeLight: #313244 !important;
+    --themeLighter: #313244 !important;
+    --themeLighterAlt: #181825 !important;
+    --primaryColor: #fab387 !important;
+    --primaryBackground: #fab387 !important;
+    --bodyBackground: #1e1e2e !important;
+    --bodyText: #cdd6f4 !important;
+    --bodySubtext: #a6adc8 !important;
+    --neutralDark: #cdd6f4 !important;
+    --neutralPrimary: #cdd6f4 !important;
+    --neutralSecondary: #a6adc8 !important;
+    --neutralTertiary: #9399b2 !important;
+    --neutralTertiaryAlt: #585b70 !important;
+    --neutralQuaternary: #45475a !important;
+    --neutralQuaternaryAlt: #313244 !important;
+    --neutralLight: #313244 !important;
+    --neutralLighter: #181825 !important;
+    --neutralLighterAlt: #11111b !important;
+    --white: #1e1e2e !important;
+    --black: #cdd6f4 !important;
+    --link: #cba6f7 !important;
+    --linkHovered: #b4befe !important;
+
+    --ms-palette-themePrimary: #fab387 !important;
+    --ms-palette-neutralPrimary: #cdd6f4 !important;
+    --ms-palette-neutralSecondary: #a6adc8 !important;
+    --ms-palette-neutralLighter: #181825 !important;
+    --ms-palette-white: #1e1e2e !important;
+    --ms-semanticColors-bodyBackground: #1e1e2e !important;
+    --ms-semanticColors-bodyText: #cdd6f4 !important;
+    --ms-semanticColors-bodySubtext: #a6adc8 !important;
+    --ms-semanticColors-link: #cba6f7 !important;
+    --ms-semanticColors-linkHovered: #b4befe !important;
+    --ms-semanticColors-primaryButtonBackground: #fab387 !important;
+    --ms-semanticColors-primaryButtonBackgroundHovered: #f5e0dc !important;
+    --ms-semanticColors-primaryButtonBackgroundPressed: #f2cdcd !important;
+    --ms-semanticColors-primaryButtonText: #11111b !important;
+    --ms-semanticColors-buttonBackground: #313244 !important;
+    --ms-semanticColors-buttonText: #cdd6f4 !important;
+    --ms-semanticColors-listBackground: #1e1e2e !important;
+    --ms-semanticColors-listItemBackgroundHovered: #313244 !important;
+    --ms-semanticColors-listItemBackgroundChecked: #313244 !important;
+    --ms-semanticColors-menuBackground: #181825 !important;
+    --ms-semanticColors-menuItemBackgroundHovered: #313244 !important;
+    --ms-semanticColors-inputBackground: #11111b !important;
+    --ms-semanticColors-inputBorder: #45475a !important;
+    --ms-semanticColors-inputText: #cdd6f4 !important;
+    --ms-semanticColors-disabledBackground: #181825 !important;
+    --ms-semanticColors-disabledText: #6c7086 !important;
+
+    --colorNeutralBackground1: #1e1e2e !important;
+    --colorNeutralBackground1Hover: #313244 !important;
+    --colorNeutralBackground1Pressed: #45475a !important;
+    --colorNeutralBackground1Selected: #313244 !important;
+    --colorNeutralBackground2: #181825 !important;
+    --colorNeutralBackground2Hover: #313244 !important;
+    --colorNeutralBackground2Pressed: #11111b !important;
+    --colorNeutralBackground2Selected: #313244 !important;
+    --colorNeutralBackground3: #1e1e2e !important;
+    --colorNeutralBackground3Hover: #313244 !important;
+    --colorNeutralBackground3Pressed: #181825 !important;
+    --colorNeutralBackground3Selected: #313244 !important;
+    --colorNeutralBackground4: #181825 !important;
+    --colorNeutralBackground4Hover: #1e1e2e !important;
+    --colorNeutralBackground4Pressed: #11111b !important;
+    --colorNeutralBackground4Selected: #313244 !important;
+    --colorNeutralBackground5: #11111b !important;
+    --colorNeutralBackground5Hover: #181825 !important;
+    --colorNeutralBackground5Pressed: #11111b !important;
+    --colorNeutralBackground5Selected: #1e1e2e !important;
+    --colorNeutralBackground6: #313244 !important;
+    --colorNeutralBackgroundInverted: #cdd6f4 !important;
+    --colorNeutralBackgroundStatic: #313244 !important;
+    --colorNeutralBackgroundDisabled: #181825 !important;
+    --colorSubtleBackground: transparent !important;
+    --colorSubtleBackgroundHover: #313244 !important;
+    --colorSubtleBackgroundPressed: #45475a !important;
+    --colorSubtleBackgroundSelected: #313244 !important;
+    --colorTransparentBackground: transparent !important;
+    --colorTransparentBackgroundHover: #313244 !important;
+    --colorTransparentBackgroundPressed: #45475a !important;
+    --colorTransparentBackgroundSelected: #313244 !important;
+
+    --colorNeutralForeground1: #cdd6f4 !important;
+    --colorNeutralForeground1Hover: #cdd6f4 !important;
+    --colorNeutralForeground1Pressed: #bac2de !important;
+    --colorNeutralForeground1Selected: #cdd6f4 !important;
+    --colorNeutralForeground2: #a6adc8 !important;
+    --colorNeutralForeground2Hover: #cdd6f4 !important;
+    --colorNeutralForeground2Pressed: #bac2de !important;
+    --colorNeutralForeground2Selected: #cdd6f4 !important;
+    --colorNeutralForeground2Link: #cba6f7 !important;
+    --colorNeutralForeground2LinkHover: #b4befe !important;
+    --colorNeutralForeground2LinkPressed: #cba6f7 !important;
+    --colorNeutralForeground3: #9399b2 !important;
+    --colorNeutralForeground4: #7f849c !important;
+    --colorNeutralForegroundDisabled: #6c7086 !important;
+    --colorNeutralForegroundOnBrand: #11111b !important;
+    --colorNeutralForegroundInverted: #1e1e2e !important;
+
+    --colorNeutralStroke1: #45475a !important;
+    --colorNeutralStroke1Hover: #585b70 !important;
+    --colorNeutralStroke2: #313244 !important;
+    --colorNeutralStrokeAccessible: #585b70 !important;
+    --colorNeutralStrokeAccessibleSelected: #fab387 !important;
+    --colorStrokeFocus1: #fab387 !important;
+    --colorStrokeFocus2: #11111b !important;
+
+    --colorBrandBackground: #fab387 !important;
+    --colorBrandBackgroundHover: #f5e0dc !important;
+    --colorBrandBackgroundPressed: #f2cdcd !important;
+    --colorBrandBackgroundSelected: #45475a !important;
+    --colorBrandBackground2: #313244 !important;
+    --colorBrandForeground1: #fab387 !important;
+    --colorBrandForeground2: #f5e0dc !important;
+    --colorBrandForegroundLink: #cba6f7 !important;
+    --colorBrandForegroundLinkHover: #b4befe !important;
+    --colorBrandForegroundLinkPressed: #cba6f7 !important;
+    --colorBrandForegroundLinkSelected: #b4befe !important;
+    --colorBrandStroke1: #fab387 !important;
+    --colorCompoundBrandBackground: #fab387 !important;
+    --colorCompoundBrandBackgroundHover: #f5e0dc !important;
+    --colorCompoundBrandBackgroundPressed: #f2cdcd !important;
+    --colorCompoundBrandForeground1: #fab387 !important;
+    --colorCompoundBrandStroke: #fab387 !important;
+
+    --colorStatusDangerForeground1: #f38ba8 !important;
+    --colorStatusSuccessForeground1: #a6e3a1 !important;
+    --colorStatusWarningForeground1: #f9e2af !important;
+    --colorPaletteRedForeground1: #f38ba8 !important;
+    --colorPaletteGreenForeground1: #a6e3a1 !important;
+    --colorPaletteYellowForeground1: #f9e2af !important;
+
+    --shadow2: 0 0 2px rgba(17, 17, 27, 0.45) !important;
+    --shadow4: 0 2px 4px rgba(17, 17, 27, 0.45) !important;
+    --shadow8: 0 4px 8px rgba(17, 17, 27, 0.5) !important;
+    --shadow16: 0 8px 16px rgba(17, 17, 27, 0.55) !important;
+  }
+
+  html,
+  body,
+  #appRoot,
+  #app,
+  .od-BasePage,
+  .od-Files-list,
+  [class*="core_"] {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  ::selection {
+    background: #45475a !important;
+    color: #cdd6f4 !important;
+  }
+
+  #O365_NavHeader,
+  .o365cs-base,
+  .o365sx-navbar,
+  #SuiteNavWrapper,
+  [class*="navPane_"],
+  .ms-Nav,
+  [class*="leftNav"],
+  [data-automationid="LeftNav"] {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+  }
+
+  #O365_NavHeader .o365sx-activeButton,
+  .ms-Nav-link.is-selected,
+  [aria-current="page"] {
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #fab387 !important;
+  }
+
+  .ms-DetailsHeader,
+  .ms-DetailsList,
+  .ms-List,
+  [role="grid"],
+  [role="row"] {
+    background-color: transparent;
+    color: #cdd6f4;
+  }
+
+  [role="row"]:hover,
+  .ms-DetailsRow:hover,
+  .ms-DetailsRow.is-selected {
+    background: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  .ms-Button--primary,
+  button[class*="primary"] {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  .ms-Button--primary:hover,
+  button[class*="primary"]:hover {
+    background: #f5e0dc !important;
+    background-color: #f5e0dc !important;
+    color: #11111b !important;
+  }
+
+  .ms-Button--default,
+  .ms-Button--command,
+  .ms-Button--commandBar {
+    color: #cdd6f4 !important;
+  }
+
+  .ms-Callout,
+  .ms-Dialog-main,
+  .ms-Panel,
+  .od-Panel,
+  [role="dialog"],
+  [role="menu"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .ms-SearchBox,
+  .ms-suiteux-search-box input,
+  input[type="search"],
+  input[type="text"],
+  textarea {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+    caret-color: #fab387;
+  }
+
+  /* Sky for folder names. File rows stay text so icons still read. */
+  [class*="folderName"],
+  [data-automationid="FieldRenderer-name"] a[href*="folder"],
+  a[aria-label*="folder" i],
+  a[aria-label*="Folder"] {
+    color: #89dceb !important;
+  }
+
+  a[href]:not([class*="fui-Button"]):not(.ms-Button):not([role="button"]) {
+    color: #cba6f7;
+  }
+
+  a[href]:not([class*="fui-Button"]):not(.ms-Button):not([role="button"]):hover {
+    color: #b4befe !important;
+  }
+
+  pre,
+  code {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+}

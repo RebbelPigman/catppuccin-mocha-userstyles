@@ -1,6 +1,6 @@
 # Catppuccin Mocha userstyles
 
-Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, and Teams. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
+Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, Teams, and OneDrive. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
 
 Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@version` in the raw file is higher than the installed copy.
 
@@ -12,6 +12,7 @@ Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@v
 [![Install YouTube Music](https://img.shields.io/badge/Install-YouTube_Music-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-music-catppuccin-mocha.user.css)
 [![Install Google](https://img.shields.io/badge/Install-Google-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/google-catppuccin-mocha.user.css)
 [![Install Teams](https://img.shields.io/badge/Install-Teams-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css)
+[![Install OneDrive](https://img.shields.io/badge/Install-OneDrive-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css)
 
 | Style | Version | Raw |
 | --- | --- | --- |
@@ -21,7 +22,10 @@ Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@v
 | YouTube Music Catppuccin Mocha | 1.0.0 | [youtube-music-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-music-catppuccin-mocha.user.css) |
 | Google Catppuccin Mocha | 1.0.0 | [google-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/google-catppuccin-mocha.user.css) |
 | Teams Catppuccin Mocha | 1.0.0 | [teams-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css) |
+| OneDrive Catppuccin Mocha | 1.0.0 | [onedrive-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css) |
 
 YouTube imports the Catppuccin library from `userstyles.catppuccin.com` at apply time. YouTube Music is self-contained and only matches `music.youtube.com`. Google is one file: a shared Material token layer for `*.google.com` (login at `accounts.google.com` excluded), plus product blocks for Drive and Gemini. Gmail, Docs, Calendar, Keep, Photos, Meet, and Chat are next.
 
 Teams matches `teams.cloud.microsoft` and `teams.microsoft.com`. It overrides Fluent v9 tokens (peach primary, mauve links and mentions, sky chat and channel names) and includes a small classic-shell block. Sign-in at `login.microsoftonline.com` is not themed. Set Teams to Dark, and enable Stylus CSP patching if the shell stays blue.
+
+OneDrive matches `onedrive.live.com`, `photos.onedrive.com`, and every `{tenant}-my.sharepoint.com` host (OneDrive for Business, including `eduvosonline-my.sharepoint.com`). Team sites on `{tenant}.sharepoint.com` are not matched. File-type icons and photo thumbnails are left alone. Set OneDrive to Dark, and enable Stylus CSP patching if the shell stays blue.
