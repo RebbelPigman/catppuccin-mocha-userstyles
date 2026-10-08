@@ -1,0 +1,405 @@
+/* ==UserStyle==
+@name         Google Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for *.google.com. Shared Material tokens, plus Drive and Gemini blocks. Excludes accounts.google.com. Peach primary, mauve links, sky secondary names.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/google-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/google-catppuccin-mocha.user.css
+==/UserStyle== */
+
+/*
+  Shared painting matches every google.com host except accounts.google.com.
+  Product blocks below only add what the shared tokens miss.
+  Future blocks: mail, docs, calendar, keep, photos, meet, chat.
+  domain("google.com") is not used: it cannot exclude accounts, and it
+  would also miss nothing we want — the regexp covers nested hosts
+  such as console.cloud.google.com.
+*/
+
+@-moz-document regexp("https?://(?!accounts\\.google\\.com)(?:[a-z0-9-]+\\.)*google\\.com/.*") {
+  :root,
+  html,
+  body {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-red: #f38ba8;
+    --ctp-green: #a6e3a1;
+
+    --gm3-sys-color-background: #1e1e2e !important;
+    --gm3-sys-color-background-rgb: 30, 30, 46 !important;
+    --gm3-sys-color-on-background: #cdd6f4 !important;
+    --gm3-sys-color-on-background-rgb: 205, 214, 244 !important;
+    --gm3-sys-color-surface: #1e1e2e !important;
+    --gm3-sys-color-surface-rgb: 30, 30, 46 !important;
+    --gm3-sys-color-surface-bright: #313244 !important;
+    --gm3-sys-color-surface-bright-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-surface-dim: #181825 !important;
+    --gm3-sys-color-surface-dim-rgb: 24, 24, 37 !important;
+    --gm3-sys-color-surface-variant: #313244 !important;
+    --gm3-sys-color-surface-variant-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-surface-container-lowest: #11111b !important;
+    --gm3-sys-color-surface-container-lowest-rgb: 17, 17, 27 !important;
+    --gm3-sys-color-surface-container-low: #181825 !important;
+    --gm3-sys-color-surface-container-low-rgb: 24, 24, 37 !important;
+    --gm3-sys-color-surface-container: #313244 !important;
+    --gm3-sys-color-surface-container-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-surface-container-high: #45475a !important;
+    --gm3-sys-color-surface-container-high-rgb: 69, 71, 90 !important;
+    --gm3-sys-color-surface-container-highest: #585b70 !important;
+    --gm3-sys-color-surface-container-highest-rgb: 88, 91, 112 !important;
+    --gm3-sys-color-on-surface: #cdd6f4 !important;
+    --gm3-sys-color-on-surface-rgb: 205, 214, 244 !important;
+    --gm3-sys-color-on-surface-variant: #a6adc8 !important;
+    --gm3-sys-color-on-surface-variant-rgb: 166, 173, 200 !important;
+    --gm3-sys-color-outline: #585b70 !important;
+    --gm3-sys-color-outline-rgb: 88, 91, 112 !important;
+    --gm3-sys-color-outline-variant: #45475a !important;
+    --gm3-sys-color-outline-variant-rgb: 69, 71, 90 !important;
+    --gm3-sys-color-primary: #fab387 !important;
+    --gm3-sys-color-primary-rgb: 250, 179, 135 !important;
+    --gm3-sys-color-on-primary: #11111b !important;
+    --gm3-sys-color-on-primary-rgb: 17, 17, 27 !important;
+    --gm3-sys-color-primary-container: #45475a !important;
+    --gm3-sys-color-primary-container-rgb: 69, 71, 90 !important;
+    --gm3-sys-color-on-primary-container: #fab387 !important;
+    --gm3-sys-color-on-primary-container-rgb: 250, 179, 135 !important;
+    --gm3-sys-color-secondary: #cba6f7 !important;
+    --gm3-sys-color-secondary-rgb: 203, 166, 247 !important;
+    --gm3-sys-color-on-secondary: #11111b !important;
+    --gm3-sys-color-secondary-container: #313244 !important;
+    --gm3-sys-color-secondary-container-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-on-secondary-container: #cba6f7 !important;
+    --gm3-sys-color-on-secondary-container-rgb: 203, 166, 247 !important;
+    --gm3-sys-color-error: #f38ba8 !important;
+    --gm3-sys-color-error-rgb: 243, 139, 168 !important;
+    --gm3-sys-color-on-error: #11111b !important;
+    --gm3-sys-color-inverse-surface: #cdd6f4 !important;
+    --gm3-sys-color-inverse-on-surface: #1e1e2e !important;
+    --gm3-sys-color-inverse-primary: #fab387 !important;
+    --gm3-sys-color-scrim: #11111b !important;
+
+    --mat-sys-background: #1e1e2e !important;
+    --mat-sys-on-background: #cdd6f4 !important;
+    --mat-sys-surface: #1e1e2e !important;
+    --mat-sys-surface-bright: #313244 !important;
+    --mat-sys-surface-dim: #181825 !important;
+    --mat-sys-surface-variant: #313244 !important;
+    --mat-sys-surface-container-lowest: #11111b !important;
+    --mat-sys-surface-container-low: #181825 !important;
+    --mat-sys-surface-container: #313244 !important;
+    --mat-sys-surface-container-high: #45475a !important;
+    --mat-sys-surface-container-highest: #585b70 !important;
+    --mat-sys-on-surface: #cdd6f4 !important;
+    --mat-sys-on-surface-variant: #a6adc8 !important;
+    --mat-sys-outline: #585b70 !important;
+    --mat-sys-outline-variant: #45475a !important;
+    --mat-sys-primary: #fab387 !important;
+    --mat-sys-on-primary: #11111b !important;
+    --mat-sys-primary-container: #45475a !important;
+    --mat-sys-on-primary-container: #fab387 !important;
+    --mat-sys-secondary: #cba6f7 !important;
+    --mat-sys-on-secondary: #11111b !important;
+    --mat-sys-secondary-container: #313244 !important;
+    --mat-sys-on-secondary-container: #cba6f7 !important;
+    --mat-sys-error: #f38ba8 !important;
+    --mat-app-background-color: #1e1e2e !important;
+    --mat-app-text-color: #cdd6f4 !important;
+    --mat-divider-color: #313244 !important;
+
+    --dt-background: #1e1e2e !important;
+    --dt-on-background: #cdd6f4 !important;
+    --dt-surface: #1e1e2e !important;
+    --dt-on-surface: #cdd6f4 !important;
+    --dt-on-surface-variant: #a6adc8 !important;
+    --dt-on-surface-secondary: #a6adc8 !important;
+    --dt-surface-variant: #313244 !important;
+    --dt-surface-bright: #313244 !important;
+    --dt-surface-dim: #181825 !important;
+    --dt-surface-container-lowest: #11111b !important;
+    --dt-surface-container-low: #181825 !important;
+    --dt-surface-container: #313244 !important;
+    --dt-surface-container-high: #45475a !important;
+    --dt-surface-container-highest: #585b70 !important;
+    --dt-primary: #fab387 !important;
+    --dt-on-primary: #11111b !important;
+    --dt-primary-container: #45475a !important;
+    --dt-on-primary-container: #fab387 !important;
+    --dt-secondary: #cba6f7 !important;
+    --dt-secondary-container: #313244 !important;
+    --dt-on-secondary-container: #cba6f7 !important;
+    --dt-outline: #585b70 !important;
+    --dt-outline-variant: #45475a !important;
+    --dt-error: #f38ba8 !important;
+
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html,
+  body,
+  #yDmH0d,
+  c-wiz {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  #gb,
+  #gb .gb_Z,
+  .gb_Ld,
+  .gb_cd,
+  header[role="banner"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  #gb a,
+  #gb button,
+  .gb_A,
+  .gb_B {
+    color: #cdd6f4 !important;
+  }
+
+  a {
+    color: #cba6f7;
+  }
+
+  a:hover {
+    color: #f5c2e7;
+  }
+
+  ::selection {
+    background: #cba6f7;
+    color: #11111b;
+  }
+
+  input,
+  textarea {
+    color: #cdd6f4;
+    caret-color: #fab387;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #6c7086;
+  }
+}
+
+/* Drive. Tokens come from the shared block; this only paints Drive chrome. */
+@-moz-document url-prefix("https://drive.google.com/") {
+  body,
+  #drive-active-item-info,
+  .a-s-tb-pa {
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .a-s-tb-sc-Ja,
+  .a-s-tb-sc,
+  [role="navigation"] {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  [role="navigation"] [aria-current="page"],
+  [role="navigation"] [aria-selected="true"] {
+    background: #313244 !important;
+    color: #cba6f7 !important;
+  }
+
+  input[aria-label*="Search"],
+  div[role="search"] {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  div[role="row"]:hover,
+  div[role="option"]:hover,
+  div[role="gridcell"]:hover {
+    background: #313244 !important;
+  }
+
+  div[role="row"][aria-selected="true"],
+  div[role="option"][aria-selected="true"] {
+    background: #313244 !important;
+  }
+
+  div[role="row"][aria-selected="true"] [data-tooltip],
+  div[role="option"][aria-selected="true"] {
+    color: #fab387 !important;
+  }
+
+  div[role="gridcell"] a,
+  div[role="row"] a[aria-label] {
+    color: #cdd6f4 !important;
+  }
+
+  div[data-tooltip*="@"],
+  [data-id] span[aria-label*="@"] {
+    color: #89dceb !important;
+  }
+
+  [role="progressbar"] > div,
+  .a-s-Ba-Ak-j {
+    background: #fab387 !important;
+  }
+
+  div[role="dialog"],
+  div[role="menu"],
+  div[role="listbox"] {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border: 1px solid #313244 !important;
+  }
+
+  div[role="menuitem"]:hover,
+  div[role="option"]:hover {
+    background: #313244 !important;
+  }
+}
+
+/* Gemini. Own token set (--gem-sys-color--, --bard-color-synthetic--). */
+@-moz-document url-prefix("https://gemini.google.com/") {
+  :root,
+  html,
+  body,
+  .theme-host,
+  :where(.theme-host) {
+    color-scheme: dark;
+    --bard-color-synthetic--chat-window-surface: #1e1e2e !important;
+    --gem-sys-color--surface: #1e1e2e !important;
+    --gem-sys-color--surface-surface: #1e1e2e !important;
+    --gem-sys-color--surface-bright: #313244 !important;
+    --gem-sys-color--surface-dim: #181825 !important;
+    --gem-sys-color--surface-container-lowest: #11111b !important;
+    --gem-sys-color--surface-container-low: #181825 !important;
+    --gem-sys-color--surface-container: #181825 !important;
+    --gem-sys-color--surface-container-high: #313244 !important;
+    --gem-sys-color--surface-container-highest: #45475a !important;
+    --gem-sys-color--on-surface: #cdd6f4 !important;
+    --gem-sys-color--on-surface-variant: #a6adc8 !important;
+    --gem-sys-color--outline: #585b70 !important;
+    --gem-sys-color--outline-variant: #45475a !important;
+    --gem-sys-color--primary: #fab387 !important;
+    --gem-sys-color--on-primary: #11111b !important;
+    --gem-sys-color--primary-container: #45475a !important;
+    --gem-sys-color--on-primary-container: #fab387 !important;
+    --gem-sys-color--secondary: #cba6f7 !important;
+    --gem-sys-color--secondary-container: #313244 !important;
+    --gem-sys-color--on-secondary-container: #cba6f7 !important;
+    --gem-sys-color--secondary-emphasis-1: #cba6f7 !important;
+    --gem-sys-color--error: #f38ba8 !important;
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  chat-app,
+  chat-app main,
+  main.chat-app,
+  .chat-app {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  bard-sidenav,
+  [data-test-id="bard-sidenav-container"],
+  side-navigation-content,
+  mat-sidenav {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  bard-sidenav a,
+  bard-sidenav button,
+  side-navigation-content a {
+    color: #cdd6f4 !important;
+  }
+
+  bard-sidenav [aria-selected="true"],
+  bard-sidenav [aria-current="page"],
+  .selected-chat,
+  [class*="selected"][class*="conversation"] {
+    background: #313244 !important;
+    color: #cba6f7 !important;
+  }
+
+  user-query,
+  [class*="user-query"] {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-radius: 12px !important;
+  }
+
+  model-response,
+  [class*="model-response"],
+  response-container,
+  message-content {
+    background: transparent !important;
+    color: #cdd6f4 !important;
+  }
+
+  model-response a,
+  message-content a {
+    color: #cba6f7 !important;
+  }
+
+  input-area,
+  [class*="input-area"],
+  rich-textarea,
+  .ql-editor,
+  [role="textbox"] {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  button[aria-label*="Send"],
+  button[data-test-id*="send"],
+  [class*="send-button"] {
+    background: #fab387 !important;
+    color: #11111b !important;
+  }
+
+  button[aria-label*="Send"] *,
+  button[data-test-id*="send"] * {
+    color: #11111b !important;
+    fill: #11111b !important;
+  }
+
+  div[role="dialog"],
+  div[role="menu"],
+  mat-menu,
+  .mat-mdc-menu-panel {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border: 1px solid #313244 !important;
+  }
+}
+
+/*
+  Future product blocks go here, same shape as Drive and Gemini.
+  mail.google.com, docs.google.com, calendar.google.com, keep.google.com,
+  photos.google.com, meet.google.com, chat.google.com.
+*/

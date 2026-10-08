@@ -1,6 +1,6 @@
 # Catppuccin Mocha userstyles
 
-Stylus userstyles for Kick, Rumble, YouTube, and YouTube Music. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
+Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, and Google. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
 
 Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@version` in the raw file is higher than the installed copy.
 
@@ -10,6 +10,7 @@ Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@v
 [![Install Rumble](https://img.shields.io/badge/Install-Rumble-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css)
 [![Install YouTube](https://img.shields.io/badge/Install-YouTube-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-catppuccin-mocha.user.css)
 [![Install YouTube Music](https://img.shields.io/badge/Install-YouTube_Music-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-music-catppuccin-mocha.user.css)
+[![Install Google](https://img.shields.io/badge/Install-Google-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/google-catppuccin-mocha.user.css)
 
 | Style | Version | Raw |
 | --- | --- | --- |
@@ -17,5 +18,6 @@ Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@v
 | Rumble Catppuccin Mocha | 1.0.1 | [rumble-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css) |
 | YouTube Catppuccin Mocha | 1.1.3 | [youtube-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-catppuccin-mocha.user.css) |
 | YouTube Music Catppuccin Mocha | 1.0.0 | [youtube-music-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-music-catppuccin-mocha.user.css) |
+| Google Catppuccin Mocha | 1.0.0 | [google-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/google-catppuccin-mocha.user.css) |
 
-YouTube imports the Catppuccin library from `userstyles.catppuccin.com` at apply time. YouTube Music is self-contained and only matches `music.youtube.com`.
+YouTube imports the Catppuccin library from `userstyles.catppuccin.com` at apply time. YouTube Music is self-contained and only matches `music.youtube.com`. Google is one file: a shared Material token layer for `*.google.com` (login at `accounts.google.com` excluded), plus product blocks for Drive and Gemini. Gmail, Docs, Calendar, Keep, Photos, Meet, and Chat are next.
