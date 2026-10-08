@@ -1,0 +1,345 @@
+/* ==UserStyle==
+@name         Teams Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for teams.cloud.microsoft (new Teams) and teams.microsoft.com. Fluent v9 tokens, peach primary, mauve links and mentions, sky chat and channel names. Login is left alone.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css
+==/UserStyle== */
+
+/*
+  New Teams (teams.cloud.microsoft/v2, also served on teams.microsoft.com)
+  paints through Fluent UI v9 tokens on fui-FluentProvider. Those win
+  over :root unless the override is !important.
+
+  Set Teams itself to Dark so illustrations and a few hardcoded assets
+  match. If the shell stays Microsoft blue, enable Stylus > Advanced >
+  Patch CSP. login.microsoftonline.com is not matched.
+*/
+
+@-moz-document domain("teams.cloud.microsoft"), domain("teams.microsoft.com") {
+  :root,
+  html,
+  body,
+  [class*="fui-FluentProvider"] {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-overlay: #9399b2;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-red: #f38ba8;
+    --ctp-green: #a6e3a1;
+    --ctp-yellow: #f9e2af;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-lavender: #b4befe;
+
+    /* Canvas is base, rails are mantle, deepest chrome is crust. */
+    --colorNeutralBackground1: #1e1e2e !important;
+    --colorNeutralBackground1Hover: #313244 !important;
+    --colorNeutralBackground1Pressed: #45475a !important;
+    --colorNeutralBackground1Selected: #313244 !important;
+    --colorNeutralBackground2: #181825 !important;
+    --colorNeutralBackground2Hover: #313244 !important;
+    --colorNeutralBackground2Pressed: #11111b !important;
+    --colorNeutralBackground2Selected: #313244 !important;
+    --colorNeutralBackground3: #1e1e2e !important;
+    --colorNeutralBackground3Hover: #313244 !important;
+    --colorNeutralBackground3Pressed: #181825 !important;
+    --colorNeutralBackground3Selected: #313244 !important;
+    --colorNeutralBackground4: #181825 !important;
+    --colorNeutralBackground4Hover: #1e1e2e !important;
+    --colorNeutralBackground4Pressed: #11111b !important;
+    --colorNeutralBackground4Selected: #313244 !important;
+    --colorNeutralBackground5: #11111b !important;
+    --colorNeutralBackground5Hover: #181825 !important;
+    --colorNeutralBackground5Pressed: #11111b !important;
+    --colorNeutralBackground5Selected: #1e1e2e !important;
+    --colorNeutralBackground6: #313244 !important;
+    --colorNeutralBackgroundInverted: #cdd6f4 !important;
+    --colorNeutralBackgroundStatic: #313244 !important;
+    --colorNeutralBackgroundDisabled: #181825 !important;
+    --colorNeutralBackgroundAlpha: rgba(30, 30, 46, 0.5) !important;
+    --colorNeutralBackgroundAlpha2: rgba(24, 24, 37, 0.7) !important;
+
+    --colorSubtleBackground: transparent !important;
+    --colorSubtleBackgroundHover: #313244 !important;
+    --colorSubtleBackgroundPressed: #45475a !important;
+    --colorSubtleBackgroundSelected: #313244 !important;
+    --colorSubtleBackgroundLightAlphaHover: rgba(49, 50, 68, 0.8) !important;
+    --colorSubtleBackgroundLightAlphaPressed: rgba(69, 71, 90, 0.8) !important;
+    --colorSubtleBackgroundLightAlphaSelected: rgba(49, 50, 68, 0.8) !important;
+    --colorTransparentBackground: transparent !important;
+    --colorTransparentBackgroundHover: #313244 !important;
+    --colorTransparentBackgroundPressed: #45475a !important;
+    --colorTransparentBackgroundSelected: #313244 !important;
+
+    --colorNeutralForeground1: #cdd6f4 !important;
+    --colorNeutralForeground1Hover: #cdd6f4 !important;
+    --colorNeutralForeground1Pressed: #bac2de !important;
+    --colorNeutralForeground1Selected: #cdd6f4 !important;
+    --colorNeutralForeground1Static: #cdd6f4 !important;
+    --colorNeutralForeground2: #a6adc8 !important;
+    --colorNeutralForeground2Hover: #cdd6f4 !important;
+    --colorNeutralForeground2Pressed: #bac2de !important;
+    --colorNeutralForeground2Selected: #cdd6f4 !important;
+    --colorNeutralForeground2BrandHover: #fab387 !important;
+    --colorNeutralForeground2BrandPressed: #f5e0dc !important;
+    --colorNeutralForeground2BrandSelected: #cba6f7 !important;
+    --colorNeutralForeground2Link: #cba6f7 !important;
+    --colorNeutralForeground2LinkHover: #b4befe !important;
+    --colorNeutralForeground2LinkPressed: #cba6f7 !important;
+    --colorNeutralForeground3: #9399b2 !important;
+    --colorNeutralForeground3Hover: #a6adc8 !important;
+    --colorNeutralForeground3Pressed: #7f849c !important;
+    --colorNeutralForeground3BrandHover: #fab387 !important;
+    --colorNeutralForeground3BrandPressed: #f5e0dc !important;
+    --colorNeutralForeground3BrandSelected: #cba6f7 !important;
+    --colorNeutralForeground4: #7f849c !important;
+    --colorNeutralForegroundDisabled: #6c7086 !important;
+    --colorNeutralForegroundOnBrand: #11111b !important;
+    --colorNeutralForegroundInverted: #1e1e2e !important;
+    --colorNeutralForegroundInvertedHover: #11111b !important;
+    --colorNeutralForegroundInvertedPressed: #181825 !important;
+    --colorNeutralForegroundInvertedSelected: #11111b !important;
+    --colorNeutralForegroundInvertedLink: #8839ef !important;
+    --colorNeutralForegroundInvertedLinkHover: #7287fd !important;
+    --colorNeutralForegroundStaticInverted: #cdd6f4 !important;
+
+    --colorNeutralStrokeAccessible: #585b70 !important;
+    --colorNeutralStrokeAccessibleHover: #6c7086 !important;
+    --colorNeutralStrokeAccessiblePressed: #7f849c !important;
+    --colorNeutralStrokeAccessibleSelected: #fab387 !important;
+    --colorNeutralStroke1: #45475a !important;
+    --colorNeutralStroke1Hover: #585b70 !important;
+    --colorNeutralStroke1Pressed: #6c7086 !important;
+    --colorNeutralStroke1Selected: #585b70 !important;
+    --colorNeutralStroke2: #313244 !important;
+    --colorNeutralStroke3: #313244 !important;
+    --colorNeutralStrokeSubtle: #181825 !important;
+    --colorNeutralStrokeOnBrand: #11111b !important;
+    --colorNeutralStrokeOnBrand2: #1e1e2e !important;
+    --colorNeutralStrokeDisabled: #313244 !important;
+    --colorNeutralStrokeInverted: #1e1e2e !important;
+    --colorStrokeFocus1: #fab387 !important;
+    --colorStrokeFocus2: #11111b !important;
+    --colorTransparentStroke: transparent !important;
+
+    /* Peach primary. Links stay mauve. */
+    --colorBrandBackground: #fab387 !important;
+    --colorBrandBackgroundHover: #f5e0dc !important;
+    --colorBrandBackgroundPressed: #f2cdcd !important;
+    --colorBrandBackgroundSelected: #45475a !important;
+    --colorBrandBackgroundStatic: #fab387 !important;
+    --colorBrandBackground2: #313244 !important;
+    --colorBrandBackground2Hover: #45475a !important;
+    --colorBrandBackground2Pressed: #585b70 !important;
+    --colorBrandBackgroundInverted: #cdd6f4 !important;
+    --colorBrandBackgroundInvertedHover: #f5e0dc !important;
+    --colorBrandBackgroundInvertedPressed: #fab387 !important;
+    --colorBrandBackgroundInvertedSelected: #45475a !important;
+    --colorBrandForeground1: #fab387 !important;
+    --colorBrandForeground2: #f5e0dc !important;
+    --colorBrandForeground2Hover: #f5e0dc !important;
+    --colorBrandForeground2Pressed: #fab387 !important;
+    --colorBrandForegroundLink: #cba6f7 !important;
+    --colorBrandForegroundLinkHover: #b4befe !important;
+    --colorBrandForegroundLinkPressed: #cba6f7 !important;
+    --colorBrandForegroundLinkSelected: #b4befe !important;
+    --colorBrandForegroundInverted: #8839ef !important;
+    --colorBrandForegroundOnLight: #8839ef !important;
+    --colorBrandStroke1: #fab387 !important;
+    --colorBrandStroke2: #f5e0dc !important;
+    --colorBrandStroke2Hover: #f5e0dc !important;
+    --colorBrandStroke2Pressed: #fab387 !important;
+    --colorBrandStroke2Contrast: #fab387 !important;
+
+    --colorCompoundBrandBackground: #fab387 !important;
+    --colorCompoundBrandBackgroundHover: #f5e0dc !important;
+    --colorCompoundBrandBackgroundPressed: #f2cdcd !important;
+    --colorCompoundBrandForeground1: #fab387 !important;
+    --colorCompoundBrandForeground1Hover: #f5e0dc !important;
+    --colorCompoundBrandForeground1Pressed: #fab387 !important;
+    --colorCompoundBrandStroke: #fab387 !important;
+    --colorCompoundBrandStrokeHover: #f5e0dc !important;
+    --colorCompoundBrandStrokePressed: #f2cdcd !important;
+
+    --colorStatusDangerBackground1: #45273a !important;
+    --colorStatusDangerBackground3: #313244 !important;
+    --colorStatusDangerForeground1: #f38ba8 !important;
+    --colorStatusDangerForeground3: #f38ba8 !important;
+    --colorStatusDangerBorder1: #f38ba8 !important;
+    --colorStatusDangerBorderActive: #f38ba8 !important;
+    --colorStatusSuccessBackground1: #1e3a2f !important;
+    --colorStatusSuccessBackground3: #313244 !important;
+    --colorStatusSuccessForeground1: #a6e3a1 !important;
+    --colorStatusSuccessForeground3: #a6e3a1 !important;
+    --colorStatusSuccessBorder1: #a6e3a1 !important;
+    --colorStatusWarningBackground1: #3d3420 !important;
+    --colorStatusWarningBackground3: #313244 !important;
+    --colorStatusWarningForeground1: #f9e2af !important;
+    --colorStatusWarningForeground3: #f9e2af !important;
+    --colorStatusWarningBorder1: #f9e2af !important;
+
+    --colorPaletteRedForeground1: #f38ba8 !important;
+    --colorPaletteRedForeground3: #f38ba8 !important;
+    --colorPaletteRedBackground1: #45273a !important;
+    --colorPaletteRedBackground3: #313244 !important;
+    --colorPaletteRedBorder1: #f38ba8 !important;
+    --colorPaletteGreenForeground1: #a6e3a1 !important;
+    --colorPaletteGreenForeground3: #a6e3a1 !important;
+    --colorPaletteGreenBackground1: #1e3a2f !important;
+    --colorPaletteGreenBackground3: #313244 !important;
+    --colorPaletteYellowForeground1: #f9e2af !important;
+    --colorPaletteYellowForeground3: #f9e2af !important;
+    --colorPaletteYellowBackground1: #3d3420 !important;
+    --colorPaletteYellowBackground3: #313244 !important;
+    --colorPaletteBerryForeground1: #cba6f7 !important;
+    --colorPaletteLavenderForeground1: #b4befe !important;
+    --colorPaletteMarigoldForeground1: #fab387 !important;
+
+    --shadow2: 0 0 2px rgba(17, 17, 27, 0.45) !important;
+    --shadow4: 0 2px 4px rgba(17, 17, 27, 0.45) !important;
+    --shadow8: 0 4px 8px rgba(17, 17, 27, 0.5) !important;
+    --shadow16: 0 8px 16px rgba(17, 17, 27, 0.55) !important;
+    --shadow28: 0 14px 28px rgba(17, 17, 27, 0.6) !important;
+    --shadow64: 0 32px 64px rgba(17, 17, 27, 0.66) !important;
+  }
+
+  html,
+  body,
+  #root,
+  #app {
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  ::selection {
+    background: #45475a !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* App bar and left rail. data-tid is the stable hook in new Teams. */
+  [data-tid="app-bar"],
+  [data-tid="app-bar-wrapper"],
+  [data-tid*="left-rail"],
+  [data-tid="chat-list"],
+  [data-tid="team-channel-list"],
+  nav[aria-label*="App bar"],
+  nav[aria-label*="app bar"] {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+  }
+
+  [data-tid="app-bar"] button[aria-current="page"],
+  [data-tid="app-bar"] button[aria-pressed="true"],
+  [data-tid="app-bar"] a[aria-current="page"] {
+    color: #fab387 !important;
+  }
+
+  [data-tid*="chat-list-item"][aria-selected="true"],
+  [data-tid*="channel-list-item"][aria-selected="true"],
+  [data-tid*="list-item"][aria-selected="true"] {
+    background: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  /* Sky for chat and channel titles. Mauve for mentions and links. */
+  [data-tid*="chat-list-item-title"],
+  [data-tid*="channel-name"],
+  [data-tid*="team-name"],
+  [data-tid="chat-title"],
+  [data-tid*="display-name"] {
+    color: #89dceb !important;
+  }
+
+  [class*="mention"],
+  [data-tid*="mention"],
+  a[href]:not([class*="fui-Button"]):not([role="button"]):not([data-tid*="app-bar"]) {
+    color: #cba6f7 !important;
+  }
+
+  a[href]:not([class*="fui-Button"]):not([role="button"]):hover {
+    color: #b4befe !important;
+  }
+
+  pre,
+  code,
+  [class*="codeBlock"],
+  [class*="code-block"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  input,
+  textarea,
+  [role="textbox"],
+  [contenteditable="true"] {
+    caret-color: #fab387;
+  }
+
+  /* Classic Teams shell, still served on teams.microsoft.com for some tenants. */
+  .app-bar,
+  .app-header-bar,
+  .app-bar-items,
+  .left-rail-header {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+  }
+
+  .ts-left-rail,
+  .ts-left-rail-tree,
+  #message-pane-layout-a11y,
+  .app-messages-header {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .ts-middle,
+  .ts-middle-messages-body,
+  .ts-middle-messages-container,
+  .ui-chat,
+  .ts-tab-content {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .left-rail-selected,
+  .ts-header-search,
+  .child-popover,
+  div.popover {
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .app-bar ul button:hover,
+  .app-bar ul a:hover,
+  .ui-chat__message:hover,
+  .cle-item:hover {
+    background: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  .activity-badge,
+  .app-bar-app-header-bar-common .activity-badge {
+    background: #f38ba8 !important;
+    color: #11111b !important;
+  }
+}
