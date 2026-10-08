@@ -1,0 +1,419 @@
+/* ==UserStyle==
+@name         Rumble Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.1
+@description  Catppuccin Mocha for rumble.com. Base #1e1e2e, accents peach / mauve / sky.
+@author       Rebbel
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css
+==/UserStyle== */
+
+@-moz-document domain("rumble.com") {
+  :root {
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    color-scheme: dark;
+    scrollbar-color: var(--ctp-surface2) var(--ctp-mantle);
+  }
+
+  html,
+  body {
+    background: var(--ctp-base) !important;
+    color: var(--ctp-text) !important;
+    color-scheme: dark;
+  }
+
+  /* Catch-all for light surfaces Rumble paints inline or via utility classes */
+  body,
+  .content,
+  main,
+  #main,
+  .main,
+  .page,
+  .container,
+  .constrained,
+  .main-and-sidebar,
+  .video-page,
+  .channel-page {
+    background-color: var(--ctp-base) !important;
+    color: var(--ctp-text);
+  }
+
+  /* Header / nav */
+  header,
+  .header,
+  .header-main,
+  .site-header,
+  nav,
+  .main-menu,
+  #main-menu,
+  .hover-menu,
+  .menu,
+  .dropdown,
+  .dropdown-menu,
+  .user-menu {
+    background: var(--ctp-mantle) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface0) !important;
+    box-shadow: none !important;
+  }
+
+  .header a,
+  header a,
+  nav a,
+  .main-menu a,
+  #main-menu a,
+  .hover-menu a {
+    color: var(--ctp-subtext1) !important;
+  }
+
+  .header a:hover,
+  header a:hover,
+  nav a:hover,
+  .main-menu a:hover,
+  #main-menu a:hover,
+  .hover-menu a:hover,
+  .header a:focus-visible,
+  nav a[aria-current="page"],
+  .tab-active,
+  .active {
+    color: var(--ctp-peach) !important;
+  }
+
+  .main-menu-open,
+  .main-menu-close,
+  .header-search-icon,
+  header svg,
+  .header svg {
+    stroke: var(--ctp-text);
+  }
+
+  .header-search,
+  .header-search:focus-within {
+    background: var(--ctp-surface0) !important;
+    box-shadow: 0 0 0 1px var(--ctp-surface1) !important;
+    border-color: var(--ctp-surface1) !important;
+  }
+
+  .header-search-select,
+  .header-search-field,
+  input,
+  textarea,
+  select {
+    background: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface1) !important;
+  }
+
+  .header-search-field::placeholder,
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--ctp-overlay1) !important;
+  }
+
+  .header-search-select option,
+  select option {
+    background: var(--ctp-mantle);
+    color: var(--ctp-text);
+  }
+
+  /* Cards / lists */
+  .video-item,
+  .mediaList-item,
+  .mediaList-list,
+  .mediaList-list.related,
+  .thumbnail,
+  .videostream,
+  article,
+  .card,
+  aside,
+  .sidebar,
+  .related,
+  .comments,
+  .comment,
+  .module,
+  .tab,
+  .tabs,
+  .playlist,
+  .channel-item {
+    background: var(--ctp-base) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface0) !important;
+    box-shadow: none !important;
+  }
+
+  .video-item:hover,
+  .mediaList-item:hover,
+  .mediaList-link:hover,
+  .mediaList-link:focus-visible,
+  .thumbnail:hover,
+  article:hover {
+    background: var(--ctp-surface0) !important;
+    border-radius: 8px;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1,
+  .module-title,
+  .video-item--title,
+  .thumbnail__title,
+  .media-heading-info,
+  .mediaList-by-heading {
+    color: var(--ctp-text) !important;
+  }
+
+  .video-item:hover h3,
+  .mediaList-link:hover h3,
+  .thumbnail:hover .thumbnail__title,
+  a:hover h3 {
+    color: var(--ctp-mauve) !important;
+  }
+
+  .channel__name,
+  .media-heading-name,
+  .mediaList-by,
+  .streamed-on,
+  .mediaList-timestamp,
+  .mediaList-plays,
+  small,
+  .video-counters--icon,
+  .media-heading-num-followers {
+    color: var(--ctp-subtext0) !important;
+  }
+
+  .watching-now,
+  .livestream-begins,
+  .mediaList-liveCount,
+  .mediaList-live,
+  [class*="live"] {
+    color: var(--ctp-peach) !important;
+  }
+
+  .mediaList-live,
+  .live-badge,
+  .badge-live {
+    background: var(--ctp-peach) !important;
+    color: var(--ctp-crust) !important;
+  }
+
+  .mediaList-duration,
+  .duration,
+  .video-duration {
+    color: var(--ctp-text) !important;
+    background: color-mix(in srgb, var(--ctp-crust) 72%, transparent) !important;
+  }
+
+  /* Links: mauve default, sky on hover, peach for current */
+  a {
+    color: var(--ctp-mauve);
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--ctp-sky) !important;
+  }
+
+  .media-description,
+  .media-description p {
+    color: var(--ctp-subtext1) !important;
+    background: transparent !important;
+  }
+
+  .media-description a,
+  .comment a {
+    color: var(--ctp-sky) !important;
+  }
+
+  .media-description a:hover,
+  .comment a:hover {
+    color: var(--ctp-peach) !important;
+  }
+
+  /* Buttons */
+  button,
+  .round-button,
+  .btn,
+  .button {
+    color: var(--ctp-text);
+    border-color: var(--ctp-surface1);
+  }
+
+  .round-button,
+  .bg-white,
+  .bg-grey,
+  .video-category-tag,
+  button.rumbles-vote-up,
+  button.rumbles-vote-down,
+  .rumbles-vote-up,
+  .rumbles-vote-down,
+  #chat-dock-button {
+    background: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface1) !important;
+  }
+
+  .round-button:hover,
+  .round-button:focus-visible,
+  .video-category-tag:hover,
+  button.rumbles-vote-up:hover,
+  button.rumbles-vote-down:hover,
+  .bg-grey:hover {
+    background: var(--ctp-surface1) !important;
+    color: var(--ctp-peach) !important;
+  }
+
+  .bg-green,
+  button.rumbles-vote-up.active,
+  .rumbles-vote-up.active {
+    background: var(--ctp-green) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-green) !important;
+  }
+
+  .bg-blue,
+  .header-upload,
+  .bg-purple {
+    background: var(--ctp-mauve) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-mauve) !important;
+  }
+
+  .bg-blue:hover,
+  .header-upload:hover,
+  .bg-purple:hover {
+    background: var(--ctp-sky) !important;
+    color: var(--ctp-crust) !important;
+  }
+
+  .bg-red,
+  button.locals-button,
+  .locals-button,
+  button.rumbles-vote-down.active,
+  .video-processing-error,
+  .lrt--error {
+    background: var(--ctp-red) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-red) !important;
+  }
+
+  .locals-button:hover,
+  .bg-red:hover {
+    background: var(--ctp-maroon) !important;
+    color: var(--ctp-crust) !important;
+  }
+
+  .rumbles-vote,
+  .comment-count {
+    color: var(--ctp-sky) !important;
+  }
+
+  /* Player / chat */
+  .theater-mode #theaterVideoPlayer,
+  .video-player,
+  .player,
+  video {
+    background: var(--ctp-crust) !important;
+  }
+
+  .docked-chat,
+  .chat,
+  .chat-history,
+  .comments-list,
+  #video-comments {
+    background: var(--ctp-mantle) !important;
+    color: var(--ctp-text) !important;
+  }
+
+  .tab-heading.tab-active,
+  .tab-heading {
+    background: var(--ctp-base) !important;
+    border-color: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+  }
+
+  .tab-heading.tab-active {
+    color: var(--ctp-peach) !important;
+    border-bottom-color: var(--ctp-peach) !important;
+  }
+
+  /* Avatars / icons */
+  .user-image,
+  .user-image.user-image--img,
+  svg.user-image--icon {
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface2) !important;
+    stroke: var(--ctp-sky);
+  }
+
+  .media-icon-license,
+  .media-icon-embed {
+    stroke: var(--ctp-subtext1);
+  }
+
+  /* Footer / misc */
+  footer,
+  .footer {
+    background: var(--ctp-crust) !important;
+    color: var(--ctp-subtext0) !important;
+    border-color: var(--ctp-surface0) !important;
+  }
+
+  footer a,
+  .footer a {
+    color: var(--ctp-sky) !important;
+  }
+
+  hr,
+  .divider,
+  .footer-divider {
+    border-color: var(--ctp-surface0) !important;
+    background: var(--ctp-surface0) !important;
+  }
+
+  .loading-spinner {
+    border-color: var(--ctp-surface1) !important;
+    border-top-color: var(--ctp-peach) !important;
+  }
+
+  .lrt--success {
+    background: var(--ctp-green) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-green) !important;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--ctp-mauve) 45%, var(--ctp-base));
+    color: var(--ctp-text);
+  }
+
+  /* Keep embedded players from flashing white under color-scheme: dark */
+  iframe,
+  .share-fb-container {
+    color-scheme: auto;
+  }
+}

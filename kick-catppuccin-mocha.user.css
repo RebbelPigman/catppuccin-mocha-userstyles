@@ -1,0 +1,178 @@
+/* ==UserStyle==
+@name         Kick Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.3
+@description  Catppuccin Mocha for kick.com. Base #1e1e2e, text #cdd6f4, accents peach / mauve / sky.
+@author       Rebbel
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/kick-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/kick-catppuccin-mocha.user.css
+==/UserStyle== */
+
+@-moz-document domain("kick.com") {
+  :root, html {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --background-color: #1e1e2e !important;
+    --edge-color-surface-bg-lowest: #1e1e2e !important;
+    --edge-color-surface-bg-lower: #181825 !important;
+    --edge-color-surface-bg-base: #1e1e2e !important;
+    --edge-color-surface-on-surface: #cdd6f4 !important;
+    --edge-color-surface-on-surface-primary: #cdd6f4 !important;
+    --edge-color-surface-on-surface-secondary: #a6adc8 !important;
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html, body, main, #main-container, #channel-content {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  nav, header, #sidebar-wrapper, aside,
+  .bg-surface-lowest, .bg-surface-lower, .bg-surface-base,
+  .bg-grey-950, .bg-gray-900, .bg-secondary, .bg-secondary-dark, .bg-secondary-lighter {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .bg-surface-highest, .bg-surface-high, [class*="chatroom"], #chatroom, #chatroom-messages {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  h1, h2, h3, h4, p, span, li, label, button, a,
+  .text-white, .text-neutral, .text-subtle, .text-primary {
+    color: #cdd6f4;
+  }
+
+  .text-subtle, .text-neutral, [class*="viewer"], [class*="metadata"] {
+    color: #a6adc8 !important;
+  }
+
+  /* Peach: Kick green, live, follow, primary */
+  .bg-green-500, .bg-primary-base, .bg-primary,
+  button[class*="follow"], button[class*="subscribe"],
+  .text-green-500, .border-green-500, .ring-green-500,
+  .text-primary-base, .text-primary-onPrimary {
+    --tw-ring-color: #fab387 !important;
+  }
+
+  .bg-green-500, .bg-primary-base, .bg-primary,
+  button[class*="follow"], button[class*="subscribe"],
+  button.bg-green-500, a.bg-green-500, a.bg-primary-base {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  /* Kick brand buttons: bg-brand-bg-default / text-brand-fg-default (Subscribe) */
+  .bg-brand-bg-default,
+  button.bg-brand-bg-default,
+  a.bg-brand-bg-default,
+  [class*="bg-kick-voltGreen"],
+  [class*="bg-brand-bg"] {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #1e1e2e !important;
+    border-color: #fab387 !important;
+  }
+
+  .bg-brand-bg-default,
+  .bg-brand-bg-default *,
+  .text-brand-fg-default,
+  .text-brand-fg-default *,
+  [class*="bg-kick-voltGreen"],
+  [class*="bg-kick-voltGreen"] *,
+  [class*="bg-brand-bg"],
+  [class*="bg-brand-bg"] *,
+  .bg-green-500, .bg-green-500 *,
+  .bg-primary-base, .bg-primary-base *,
+  .bg-primary, .bg-primary *,
+  button[class*="follow"], button[class*="follow"] *,
+  button[class*="subscribe"], button[class*="subscribe"] * {
+    color: #1e1e2e !important;
+    fill: #1e1e2e !important;
+  }
+
+  .bg-brand-bg-default svg,
+  .bg-brand-bg-default svg path,
+  [class*="bg-brand-bg"] svg path {
+    fill: #1e1e2e !important;
+  }
+
+  .text-green-500, .text-primary-base, .border-green-500 {
+    color: #fab387 !important;
+    border-color: #fab387 !important;
+  }
+
+  .ring-green-500 {
+    box-shadow: 0 0 0 2px #fab387 !important;
+  }
+
+  /* Mauve: links and active nav */
+  a, nav a, aside a {
+    color: #cba6f7;
+  }
+
+  a:hover, nav a:hover, aside a:hover,
+  aside a.active, aside a[aria-current="page"],
+  #sidebar-wrapper a[aria-current="page"] {
+    color: #89dceb !important;
+  }
+
+  aside a.active, aside a[aria-current="page"],
+  #sidebar-wrapper a[aria-current="page"] {
+    background: #313244 !important;
+    color: #fab387 !important;
+  }
+
+  /* Sky: chat names and channel names */
+  span[class*="username"], [class*="chat-entry"] strong,
+  [data-testid^="sidebar-recommended-channel-"] span,
+  #channel-username, [class*="channel-name"] {
+    color: #89dceb !important;
+  }
+
+  input, textarea, .editor-input, [contenteditable="true"] {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  input:focus, textarea:focus, .editor-input:focus {
+    border-color: #fab387 !important;
+    outline-color: #fab387 !important;
+  }
+
+  video, [class*="player"]:not([class*="player-controls"]) {
+    background: #11111b !important;
+  }
+
+  .bg-negative-base, .text-negative {
+    background-color: #f38ba8 !important;
+    color: #11111b !important;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, #cba6f7 45%, #1e1e2e);
+    color: #cdd6f4;
+  }
+}
