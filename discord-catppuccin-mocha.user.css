@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Discord Catppuccin Mocha
 @namespace    github.com/RebbelPigman
-@version      1.0.1
+@version      1.0.2
 @description  Catppuccin Mocha for discord.com. Base #1e1e2e, peach primary, mauve mentions/links, sky names.
 @author       Rebbel
 @license      MIT
@@ -100,29 +100,36 @@
     color: #cdd6f4 !important;
   }
 
-  [class*="sidebar-"],
-  [class*="panels-"],
-  [class*="container-"][class*="guilds"],
-  [class*="scroller-"],
-  [class*="channel-"],
-  [class*="chat-"],
-  [class*="messages-"],
-  [class*="content-"],
-  [class*="members-"],
-  [class*="profile-"],
-  [class*="userPanel-"],
-  [class*="header-"],
-  [class*="title-"],
-  [class*="toolbar-"] {
-    background: #181825 !important;
+  /* Force key containers (Discord visual refresh uses hashed classes) */
+  .appMount__51fd7,
+  [class*="appMount"],
+  [class*="app_"],
+  [class*="baseLayer"],
+  [class*="layers"],
+  [class*="layer_"] {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+  }
+
+  [class*="sidebar"],
+  [class*="panels"],
+  [class*="guilds"],
+  [class*="channel"],
+  [class*="chat"],
+  [class*="messages"],
+  [class*="content"],
+  [class*="members"],
+  [class*="profile"],
+  [class*="userPanel"],
+  [class*="header"],
+  [class*="toolbar"],
+  [class*="scroller"] {
     background-color: #181825 !important;
   }
 
-  /* Chat area specifically */
-  [class*="chatContent-"],
-  [class*="messagesWrapper-"],
-  [class*="scrollerInner-"] {
-    background: #1e1e2e !important;
+  [class*="chatContent"],
+  [class*="messagesWrapper"],
+  [class*="scrollerInner"] {
     background-color: #1e1e2e !important;
   }
 
