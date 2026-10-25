@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Discord Catppuccin Mocha
 @namespace    github.com/RebbelPigman
-@version      1.0.0
+@version      1.0.1
 @description  Catppuccin Mocha for discord.com. Base #1e1e2e, peach primary, mauve mentions/links, sky names.
 @author       Rebbel
 @license      MIT
@@ -63,12 +63,28 @@
     --brand-experiment: #fab387 !important;
     --brand-experiment-hover: #f9c99e !important;
     --button-secondary-background: #313244 !important;
+    --button-secondary-background-hover: #45475a !important;
     --modal-background: #181825 !important;
     --scrollbar-auto-thumb: #585b70 !important;
     --scrollbar-auto-track: #181825 !important;
     --scrollbar-thin-thumb: #45475a !important;
     --elevation-low: 0 1px 0 rgba(17, 17, 27, 0.2) !important;
     --elevation-high: 0 8px 16px rgba(17, 17, 27, 0.24) !important;
+
+    /* Additional Discord variables */
+    --bg-overlay-1: #181825 !important;
+    --bg-overlay-2: #1e1e2e !important;
+    --bg-overlay-3: #313244 !important;
+    --bg-base-primary: #1e1e2e !important;
+    --bg-base-secondary: #181825 !important;
+    --bg-base-tertiary: #11111b !important;
+    --chat-background: #1e1e2e !important;
+    --chat-border: #313244 !important;
+    --channel-icon: #a6adc8 !important;
+    --panel-background: #181825 !important;
+    --home-background: #1e1e2e !important;
+    --activity-card-background: #181825 !important;
+    --input-placeholder-text: #7f849c !important;
 
     background: #1e1e2e !important;
     color: #cdd6f4 !important;
@@ -92,9 +108,39 @@
   [class*="chat-"],
   [class*="messages-"],
   [class*="content-"],
-  [class*="members-"] {
+  [class*="members-"],
+  [class*="profile-"],
+  [class*="userPanel-"],
+  [class*="header-"],
+  [class*="title-"],
+  [class*="toolbar-"] {
     background: #181825 !important;
     background-color: #181825 !important;
+  }
+
+  /* Chat area specifically */
+  [class*="chatContent-"],
+  [class*="messagesWrapper-"],
+  [class*="scrollerInner-"] {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+  }
+
+  /* Secondary buttons and panels */
+  [class*="lookFilled-"][class*="colorPrimary"],
+  [class*="lookOutlined-"],
+  button[class*="secondary"],
+  [class*="button-"][class*="secondary"] {
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  [class*="lookFilled-"][class*="colorPrimary"]:hover,
+  button[class*="secondary"]:hover {
+    background: #45475a !important;
+    background-color: #45475a !important;
   }
 
   [class*="message-"],
