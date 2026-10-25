@@ -27,7 +27,7 @@ Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@v
 | Teams Catppuccin Mocha | 1.0.0 | [teams-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css) |
 | OneDrive Catppuccin Mocha | 1.0.0 | [onedrive-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css) |
 | GitHub Catppuccin Mocha | 1.0.0 | [github-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/github-catppuccin-mocha.user.css) |
-| Grok Catppuccin Mocha | 1.0.1 | [grok-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css) |
+| Grok Catppuccin Mocha | 1.0.2 | [grok-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css) |
 | Discord Catppuccin Mocha | 1.0.0 | [discord-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/discord-catppuccin-mocha.user.css) |
 
 YouTube imports the Catppuccin library from `userstyles.catppuccin.com` at apply time. YouTube Music is self-contained and only matches `music.youtube.com`. Google is one file: a shared Material token layer for `*.google.com` (login at `accounts.google.com` excluded), plus product blocks for Drive and Gemini. Gmail, Docs, Calendar, Keep, Photos, Meet, and Chat are next.
