@@ -124,7 +124,7 @@
     border-color: #45475a !important;
   }
 
-  button[class*"primary"]:hover,
+  button[class*="primary"]:hover,
   .bg-button-primary:hover {
     background: #45475a !important;
     background-color: #45475a !important;
