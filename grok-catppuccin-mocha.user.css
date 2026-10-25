@@ -1,0 +1,155 @@
+/* ==UserStyle==
+@name         Grok Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for grok.com. Base #1e1e2e, peach primary, mauve links, sky accents.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css
+==/UserStyle== */
+
+@-moz-document domain("grok.com") {
+  :root,
+  html,
+  body,
+  html.light,
+  .scheme-light,
+  .light {
+    color-scheme: dark !important;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --surface-base: #1e1e2e !important;
+    --color-surface-base: #1e1e2e !important;
+    --surface-l1: #181825 !important;
+    --surface-l2: #313244 !important;
+    --surface-l3: #45475a !important;
+    --surface-elevated: #181825 !important;
+    --surface-inset: #11111b !important;
+    --fg-primary: #cdd6f4 !important;
+    --color-fg-primary: #cdd6f4 !important;
+    --fg-secondary: #a6adc8 !important;
+    --color-fg-secondary: #a6adc8 !important;
+    --fg-tertiary: #7f849c !important;
+    --fg-link: #cba6f7 !important;
+    --fg-link-hover: #b4befe !important;
+    --button-primary: #fab387 !important;
+    --button-primary-hover: #f9c99e !important;
+    --primary-foreground: #11111b !important;
+    --accent: #fab387 !important;
+    --accent-foreground: #11111b !important;
+    --border: 240 6% 25% !important;
+    --border-l1: 240 6% 25% !important;
+    --border-l2: 240 6% 30% !important;
+    --color-border: #313244 !important;
+    --color-border-l1: #313244 !important;
+    --sidebar-border: #313244 !important;
+    --sidebar-accent: #313244 !important;
+    --input-border: #45475a !important;
+    --x-bg-primary: #1e1e2e !important;
+    --x-bg-secondary: #181825 !important;
+    --x-fg-primary: #cdd6f4 !important;
+    --x-fg-secondary: #a6adc8 !important;
+    --x-btn-primary: #fab387 !important;
+    --x-btn-primary-hover: #f9c99e !important;
+
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html, body,
+  .bg-surface-base,
+  [class*="bg-surface"],
+  main, #__next, [class*="app"],
+  .group\/sidebar-wrapper,
+  [class*="mainview"] {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .bg-surface-elevated,
+  .bg-surface-l1,
+  aside, nav, header,
+  [class*="sidebar"],
+  [class*="chat"],
+  .ring-border-l1 {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    border-color: #313244 !important;
+  }
+
+  .text-fg-primary,
+  .text-fg-secondary,
+  h1, h2, h3, h4, p, span, li, label {
+    color: #cdd6f4;
+  }
+
+  .text-fg-secondary,
+  [class*="text-secondary"],
+  .text-muted {
+    color: #a6adc8 !important;
+  }
+
+  a, [class*="link"], .text-link {
+    color: #cba6f7 !important;
+  }
+
+  a:hover {
+    color: #b4befe !important;
+  }
+
+  button[class*="primary"],
+  .bg-button-primary,
+  [class*="btn-primary"],
+  button.bg-primary,
+  [class*="bg-black"],
+  [class*="bg-primary"] {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  button[class*="primary"]:hover,
+  .bg-button-primary:hover {
+    background: #f9c99e !important;
+    background-color: #f9c99e !important;
+  }
+
+  input, textarea, [contenteditable],
+  [class*="input"], [class*="composer"] {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  [class*="mention"],
+  [class*="username"],
+  .font-semibold {
+    color: #89dceb;
+  }
+
+  ::selection {
+    background: #cba6f733;
+  }
+
+  /* Force dark scheme classes */
+  html.scheme-light,
+  .light {
+    color-scheme: dark !important;
+  }
+}

@@ -1,0 +1,153 @@
+/* ==UserStyle==
+@name         GitHub Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for github.com. Base #1e1e2e, peach primary/actions, mauve links, sky names.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/github-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/github-catppuccin-mocha.user.css
+==/UserStyle== */
+
+@-moz-document domain("github.com"), domain("gist.github.com") {
+  :root,
+  html,
+  body,
+  [data-color-mode="dark"],
+  [data-dark-theme="dark"] {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-yellow: #f9e2af;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --bgColor-default: #1e1e2e !important;
+    --bgColor-muted: #181825 !important;
+    --bgColor-inset: #11111b !important;
+    --bgColor-emphasis: #313244 !important;
+    --fgColor-default: #cdd6f4 !important;
+    --fgColor-muted: #a6adc8 !important;
+    --fgColor-accent: #fab387 !important;
+    --fgColor-done: #a6e3a1 !important;
+    --fgColor-danger: #f38ba8 !important;
+    --borderColor-default: #313244 !important;
+    --borderColor-muted: #45475a !important;
+    --button-primary-bgColor-rest: #fab387 !important;
+    --button-primary-bgColor-hover: #f9c99e !important;
+    --button-primary-fgColor-rest: #11111b !important;
+    --button-primary-borderColor-rest: #fab387 !important;
+    --link-fgColor-rest: #cba6f7 !important;
+    --link-fgColor-hover: #b4befe !important;
+    --focus-outlineColor: #fab387 !important;
+    --accent-fgColor: #fab387 !important;
+    --accent-emphasis: #fab387 !important;
+    --canvas-default: #1e1e2e !important;
+    --canvas-subtle: #181825 !important;
+    --canvas-inset: #11111b !important;
+    --neutral-emphasis: #45475a !important;
+    --neutral-muted: #313244 !important;
+
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  body, main, .application-main, #js-repo-pjax-container,
+  .js-site-search-form, .Header, header, .footer,
+  .Layout, .PageLayout, .Layout-main {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .Header, header, .gh-header, .BorderGrid,
+  .SideNav, .UnderlineNav, .SubNav,
+  .Box, .Box-header, .Box-row, .Box-body,
+  .blankslate, .discussion-timeline-actions,
+  .timeline-comment, .review-comment,
+  .commit-tease, .file-wrap, .blob-wrapper,
+  .markdown-body, .comment-body, pre, code {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    border-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .Box, .Box-header, .timeline-comment-header,
+  .gh-header-sticky, .pr-toolbar, .repository-content {
+    border-color: #313244 !important;
+  }
+
+  a, .Link--primary, .Link--secondary,
+  .js-navigation-open, .css-truncate-target {
+    color: #cba6f7;
+  }
+
+  a:hover, .Link--primary:hover {
+    color: #b4befe !important;
+  }
+
+  .btn-primary, .btn.btn-primary,
+  [data-variant="primary"],
+  .Button--primary, button.btn-primary {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  .btn-primary:hover, .btn.btn-primary:hover {
+    background: #f9c99e !important;
+    background-color: #f9c99e !important;
+  }
+
+  .Label--primary, .State--open,
+  .text-green, .text-success, .octicon-check,
+  .progress-bar-success {
+    color: #a6e3a1 !important;
+    background-color: #313244 !important;
+  }
+
+  .State--closed, .text-red, .text-danger,
+  .octicon-x, .progress-bar-danger {
+    color: #f38ba8 !important;
+  }
+
+  .user-mention, .team-mention,
+  [class*="mention"], .author, .commit-author {
+    color: #89dceb !important;
+  }
+
+  input, textarea, select, .form-control,
+  .js-comment-field, .comment-form-textarea {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  .UnderlineNav-item.selected,
+  .SideNav-item.selected,
+  .filter-item.selected {
+    color: #fab387 !important;
+    border-color: #fab387 !important;
+  }
+
+  .contribution-activity-listing,
+  .js-calendar-graph-svg rect {
+    /* contribution graph stays mostly default; peach accent on hover handled by vars */
+  }
+
+  ::selection {
+    background: #cba6f733;
+  }
+}
