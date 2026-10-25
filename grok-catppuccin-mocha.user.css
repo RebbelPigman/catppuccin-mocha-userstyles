@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Grok Catppuccin Mocha
 @namespace    github.com/RebbelPigman
-@version      1.0.0
+@version      1.0.1
 @description  Catppuccin Mocha for grok.com. Base #1e1e2e, peach primary, mauve links, sky accents.
 @author       Rebbel
 @license      MIT
@@ -46,9 +46,9 @@
     --fg-tertiary: #7f849c !important;
     --fg-link: #cba6f7 !important;
     --fg-link-hover: #b4befe !important;
-    --button-primary: #fab387 !important;
-    --button-primary-hover: #f9c99e !important;
-    --primary-foreground: #11111b !important;
+    --button-primary: #313244 !important;
+    --button-primary-hover: #45475a !important;
+    --primary-foreground: #fab387 !important;
     --accent: #fab387 !important;
     --accent-foreground: #11111b !important;
     --border: 240 6% 25% !important;
@@ -63,8 +63,8 @@
     --x-bg-secondary: #181825 !important;
     --x-fg-primary: #cdd6f4 !important;
     --x-fg-secondary: #a6adc8 !important;
-    --x-btn-primary: #fab387 !important;
-    --x-btn-primary-hover: #f9c99e !important;
+    --x-btn-primary: #313244 !important;
+    --x-btn-primary-hover: #45475a !important;
 
     background: #1e1e2e !important;
     color: #cdd6f4 !important;
@@ -118,16 +118,16 @@
   button.bg-primary,
   [class*="bg-black"],
   [class*="bg-primary"] {
-    background: #fab387 !important;
-    background-color: #fab387 !important;
-    color: #11111b !important;
-    border-color: #fab387 !important;
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #fab387 !important;
+    border-color: #45475a !important;
   }
 
-  button[class*="primary"]:hover,
+  button[class*"primary"]:hover,
   .bg-button-primary:hover {
-    background: #f9c99e !important;
-    background-color: #f9c99e !important;
+    background: #45475a !important;
+    background-color: #45475a !important;
   }
 
   input, textarea, [contenteditable],
