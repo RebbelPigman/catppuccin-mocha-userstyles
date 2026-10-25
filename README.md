@@ -14,7 +14,7 @@ Install with Stylus. Leave **Check for updates** ticked. Stylus updates when `@v
 [![Install Teams](https://img.shields.io/badge/Install-Teams-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css)
 [![Install OneDrive](https://img.shields.io/badge/Install-OneDrive-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css)
 [![Install GitHub](https://img.shields.io/badge/Install-GitHub-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/github-catppuccin-mocha.user.css)
-[![Install Grok](https://img.shields.io/badge/Install-Grok-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css)
+[![Install Grok 1.0.2](https://img.shields.io/badge/Install-Grok_1.0.2-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css)
 [![Install Discord](https://img.shields.io/badge/Install-Discord-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/discord-catppuccin-mocha.user.css)
 
 | Style | Version | Raw |
