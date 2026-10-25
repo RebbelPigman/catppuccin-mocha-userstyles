@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Discord Catppuccin Mocha
 @namespace    github.com/RebbelPigman
-@version      1.0.2
+@version      1.0.3
 @description  Catppuccin Mocha for discord.com. Base #1e1e2e, peach primary, mauve mentions/links, sky names.
 @author       Rebbel
 @license      MIT
@@ -192,13 +192,46 @@
     background-color: #f9c99e !important;
   }
 
-  [class*="input-"],
-  [class*="textArea-"],
-  [class*="channelTextArea-"],
-  textarea, input[type="text"] {
-    background: #313244 !important;
+  /* Message input / text entry bar */
+  [class*="channelTextArea"],
+  [class*="textArea"],
+  [class*="scrollableContainer"],
+  [class*="inner"],
+  [class*="input"],
+  form[class*="form"],
+  [class*="messageInput"],
+  [class*="composer"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
     color: #cdd6f4 !important;
-    border-color: #45475a !important;
+    border-color: #313244 !important;
+  }
+
+  [class*="channelTextArea"] textarea,
+  [class*="textArea"] [contenteditable],
+  [class*="slateTextArea"] {
+    background: transparent !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Name plates / user list items / DM rows */
+  [class*="nameplate"],
+  [class*="namePlate"],
+  [class*="user_"],
+  [class*="username"],
+  [class*="channel_"],
+  [class*="privateChannel"],
+  [class*="listItem"],
+  [class*="peopleList"],
+  [class*="member"],
+  [class*="wrapper"][class*="user"] {
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  [class*="selected"],
+  [class*="active"] {
+    background-color: #313244 !important;
   }
 
   [class*="status-"][class*="online"],
