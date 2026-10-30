@@ -1,0 +1,198 @@
+/* ==UserStyle==
+@name         Spotify Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for open.spotify.com. Base #1e1e2e. Peach primary/accent, mauve links, sky artist names.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css
+==/UserStyle== */
+
+@-moz-document domain("open.spotify.com") {
+  :root,
+  html,
+  html.encore-dark-theme,
+  html.encore-light-theme,
+  .encore-dark-theme,
+  .encore-dark-theme .encore-base-set,
+  .encore-light-theme,
+  .encore-light-theme .encore-base-set,
+  .encore-dark-theme .encore-inverted-light-set,
+  body,
+  #main,
+  .Root {
+    color-scheme: dark !important;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-overlay0: #6c7086;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay2: #9399b2;
+    --ctp-subtext0: #a6adc8;
+    --ctp-subtext1: #bac2de;
+    --ctp-text: #cdd6f4;
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-yellow: #f9e2af;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+
+    /* Core Spotify / Encore tokens – forced Mocha + peach accent */
+    --background-base: #1e1e2e !important;
+    --background-highlight: #313244 !important;
+    --background-press: #11111b !important;
+    --background-elevated-base: #313244 !important;
+    --background-elevated-highlight: #45475a !important;
+    --background-elevated-press: #11111b !important;
+    --background-tinted-base: #11111b !important;
+    --background-tinted-highlight: #181825 !important;
+    --background-tinted-press: #1e1e2e !important;
+    --background-unsafe-for-small-text-base: #1e1e2e !important;
+    --background-unsafe-for-small-text-highlight: #1e1e2e !important;
+    --background-unsafe-for-small-text-press: #1e1e2e !important;
+
+    --text-base: #cdd6f4 !important;
+    --text-subdued: #bac2de !important;
+    --text-bright-accent: #fab387 !important;
+    --text-negative: #f38ba8 !important;
+    --text-warning: #f9e2af !important;
+    --text-positive: #fab387 !important;
+    --text-announcement: #74c7ec !important;
+
+    --essential-base: #cdd6f4 !important;
+    --essential-subdued: #bac2de !important;
+    --essential-bright-accent: #fab387 !important;
+    --essential-negative: #f38ba8 !important;
+    --essential-warning: #f9e2af !important;
+    --essential-positive: #a6e3a1 !important;
+    --essential-announcement: #1e1e2e !important;
+
+    --decorative-base: #cdd6f4 !important;
+    --decorative-subdued: #585b70 !important;
+
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Bright accent set (play buttons etc.) */
+  .encore-dark-theme .encore-bright-accent-set,
+  .encore-bright-accent-set {
+    --background-base: #fab387 !important;
+    --background-highlight: #fab387 !important;
+    --background-press: #fab387 !important;
+    --background-elevated-base: #fab387 !important;
+    --background-elevated-highlight: #fab387 !important;
+    --background-elevated-press: #fab387 !important;
+    --text-base: #11111b !important;
+    --essential-base: #11111b !important;
+    color: #11111b !important;
+  }
+
+  /* Force main surfaces */
+  html,
+  body,
+  #main,
+  .Root,
+  .main-view-container,
+  .main-view-container__scroll-node,
+  .os-viewport,
+  nav,
+  aside,
+  footer,
+  [data-testid="now-playing-bar"],
+  .now-playing-bar,
+  .player-controls,
+  .main-nowPlayingBar-container {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Sidebar / library slightly darker */
+  aside,
+  [data-testid="root-list"],
+  .main-navBar-navBar,
+  .main-yourLibraryX-library {
+    background: #181825 !important;
+    background-color: #181825 !important;
+  }
+
+  /* Player bar */
+  footer,
+  [data-testid="now-playing-bar"],
+  .main-nowPlayingBar-container,
+  .now-playing-bar {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    border-top: 1px solid #313244 !important;
+  }
+
+  /* Links */
+  a,
+  a:visited,
+  [role="link"] {
+    color: #cba6f7 !important;
+  }
+  a:hover,
+  a:focus {
+    color: #b4befe !important;
+  }
+
+  /* Artist / channel-like names */
+  .artist-name,
+  [data-testid="artist-name"],
+  .track-name-wrapper a,
+  .main-trackList-rowSectionStart a[href*="/artist/"] {
+    color: #89dceb !important;
+  }
+
+  /* Primary buttons / accents already covered by tokens, but reinforce */
+  button[aria-label*="Play"],
+  [data-testid="play-button"],
+  .encore-button-primary {
+    background-color: #fab387 !important;
+    color: #11111b !important;
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #181825;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #585b70;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6c7086;
+  }
+
+  /* Progress bar accent */
+  .progress-bar,
+  [data-testid="playback-progressbar"] .progress-bar__fg,
+  .playback-bar__progress-time {
+    background-color: #fab387 !important;
+  }
+
+  /* Inputs / search */
+  input,
+  [role="search"] input,
+  .SearchInput {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+}
