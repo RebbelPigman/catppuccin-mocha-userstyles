@@ -1,0 +1,4420 @@
+/* ==UserStyle==
+@name         Catppuccin Mocha — Everything
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  One-click install of every Catppuccin Mocha userstyle in this repo (Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify). Use this OR the per-site styles — not both. Mocha base #1e1e2e, peach primary, mauve links, sky names.
+@author       Rebbel
+@license      MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Primary accent (progress, subscribe, live)" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach*", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+@var checkbox logo "Enable YouTube logo" 1
+@var checkbox oled "Enable black bars" 0
+@var checkbox sponsorBlock "Enable SponsorBlock segments" 1
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css
+==/UserStyle== */
+
+/* Bundled build — regenerate with: python3 scripts/build-all.py */
+
+/* ===== kick-catppuccin-mocha.user.css ===== */
+@-moz-document domain("kick.com") {
+  :root, html {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --background-color: #1e1e2e !important;
+    --edge-color-surface-bg-lowest: #1e1e2e !important;
+    --edge-color-surface-bg-lower: #181825 !important;
+    --edge-color-surface-bg-base: #1e1e2e !important;
+    --edge-color-surface-on-surface: #cdd6f4 !important;
+    --edge-color-surface-on-surface-primary: #cdd6f4 !important;
+    --edge-color-surface-on-surface-secondary: #a6adc8 !important;
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html, body, main, #main-container, #channel-content {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  nav, header, #sidebar-wrapper, aside,
+  .bg-surface-lowest, .bg-surface-lower, .bg-surface-base,
+  .bg-grey-950, .bg-gray-900, .bg-secondary, .bg-secondary-dark, .bg-secondary-lighter {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .bg-surface-highest, .bg-surface-high, [class*="chatroom"], #chatroom, #chatroom-messages {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  h1, h2, h3, h4, p, span, li, label, button, a,
+  .text-white, .text-neutral, .text-subtle, .text-primary {
+    color: #cdd6f4;
+  }
+
+  .text-subtle, .text-neutral, [class*="viewer"], [class*="metadata"] {
+    color: #a6adc8 !important;
+  }
+
+  /* Peach: Kick green, live, follow, primary */
+  .bg-green-500, .bg-primary-base, .bg-primary,
+  button[class*="follow"], button[class*="subscribe"],
+  .text-green-500, .border-green-500, .ring-green-500,
+  .text-primary-base, .text-primary-onPrimary {
+    --tw-ring-color: #fab387 !important;
+  }
+
+  .bg-green-500, .bg-primary-base, .bg-primary,
+  button[class*="follow"], button[class*="subscribe"],
+  button.bg-green-500, a.bg-green-500, a.bg-primary-base {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  /* Kick brand buttons: bg-brand-bg-default / text-brand-fg-default (Subscribe) */
+  .bg-brand-bg-default,
+  button.bg-brand-bg-default,
+  a.bg-brand-bg-default,
+  [class*="bg-kick-voltGreen"],
+  [class*="bg-brand-bg"] {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #1e1e2e !important;
+    border-color: #fab387 !important;
+  }
+
+  .bg-brand-bg-default,
+  .bg-brand-bg-default *,
+  .text-brand-fg-default,
+  .text-brand-fg-default *,
+  [class*="bg-kick-voltGreen"],
+  [class*="bg-kick-voltGreen"] *,
+  [class*="bg-brand-bg"],
+  [class*="bg-brand-bg"] *,
+  .bg-green-500, .bg-green-500 *,
+  .bg-primary-base, .bg-primary-base *,
+  .bg-primary, .bg-primary *,
+  button[class*="follow"], button[class*="follow"] *,
+  button[class*="subscribe"], button[class*="subscribe"] * {
+    color: #1e1e2e !important;
+    fill: #1e1e2e !important;
+  }
+
+  .bg-brand-bg-default svg,
+  .bg-brand-bg-default svg path,
+  [class*="bg-brand-bg"] svg path {
+    fill: #1e1e2e !important;
+  }
+
+  .text-green-500, .text-primary-base, .border-green-500 {
+    color: #fab387 !important;
+    border-color: #fab387 !important;
+  }
+
+  .ring-green-500 {
+    box-shadow: 0 0 0 2px #fab387 !important;
+  }
+
+  /* Mauve: links and active nav */
+  a, nav a, aside a {
+    color: #cba6f7;
+  }
+
+  a:hover, nav a:hover, aside a:hover,
+  aside a.active, aside a[aria-current="page"],
+  #sidebar-wrapper a[aria-current="page"] {
+    color: #89dceb !important;
+  }
+
+  aside a.active, aside a[aria-current="page"],
+  #sidebar-wrapper a[aria-current="page"] {
+    background: #313244 !important;
+    color: #fab387 !important;
+  }
+
+  /* Sky: chat names and channel names */
+  span[class*="username"], [class*="chat-entry"] strong,
+  [data-testid^="sidebar-recommended-channel-"] span,
+  #channel-username, [class*="channel-name"] {
+    color: #89dceb !important;
+  }
+
+  input, textarea, .editor-input, [contenteditable="true"] {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  input:focus, textarea:focus, .editor-input:focus {
+    border-color: #fab387 !important;
+    outline-color: #fab387 !important;
+  }
+
+  video, [class*="player"]:not([class*="player-controls"]) {
+    background: #11111b !important;
+  }
+
+  .bg-negative-base, .text-negative {
+    background-color: #f38ba8 !important;
+    color: #11111b !important;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, #cba6f7 45%, #1e1e2e);
+    color: #cdd6f4;
+  }
+}
+
+/* ===== rumble-catppuccin-mocha.user.css ===== */
+@-moz-document domain("rumble.com") {
+  :root {
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    color-scheme: dark;
+    scrollbar-color: var(--ctp-surface2) var(--ctp-mantle);
+  }
+
+  html,
+  body {
+    background: var(--ctp-base) !important;
+    color: var(--ctp-text) !important;
+    color-scheme: dark;
+  }
+
+  /* Catch-all for light surfaces Rumble paints inline or via utility classes */
+  body,
+  .content,
+  main,
+  #main,
+  .main,
+  .page,
+  .container,
+  .constrained,
+  .main-and-sidebar,
+  .video-page,
+  .channel-page {
+    background-color: var(--ctp-base) !important;
+    color: var(--ctp-text);
+  }
+
+  /* Header / nav */
+  header,
+  .header,
+  .header-main,
+  .site-header,
+  nav,
+  .main-menu,
+  #main-menu,
+  .hover-menu,
+  .menu,
+  .dropdown,
+  .dropdown-menu,
+  .user-menu {
+    background: var(--ctp-mantle) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface0) !important;
+    box-shadow: none !important;
+  }
+
+  .header a,
+  header a,
+  nav a,
+  .main-menu a,
+  #main-menu a,
+  .hover-menu a {
+    color: var(--ctp-subtext1) !important;
+  }
+
+  .header a:hover,
+  header a:hover,
+  nav a:hover,
+  .main-menu a:hover,
+  #main-menu a:hover,
+  .hover-menu a:hover,
+  .header a:focus-visible,
+  nav a[aria-current="page"],
+  .tab-active,
+  .active {
+    color: var(--ctp-peach) !important;
+  }
+
+  .main-menu-open,
+  .main-menu-close,
+  .header-search-icon,
+  header svg,
+  .header svg {
+    stroke: var(--ctp-text);
+  }
+
+  .header-search,
+  .header-search:focus-within {
+    background: var(--ctp-surface0) !important;
+    box-shadow: 0 0 0 1px var(--ctp-surface1) !important;
+    border-color: var(--ctp-surface1) !important;
+  }
+
+  .header-search-select,
+  .header-search-field,
+  input,
+  textarea,
+  select {
+    background: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface1) !important;
+  }
+
+  .header-search-field::placeholder,
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--ctp-overlay1) !important;
+  }
+
+  .header-search-select option,
+  select option {
+    background: var(--ctp-mantle);
+    color: var(--ctp-text);
+  }
+
+  /* Cards / lists */
+  .video-item,
+  .mediaList-item,
+  .mediaList-list,
+  .mediaList-list.related,
+  .thumbnail,
+  .videostream,
+  article,
+  .card,
+  aside,
+  .sidebar,
+  .related,
+  .comments,
+  .comment,
+  .module,
+  .tab,
+  .tabs,
+  .playlist,
+  .channel-item {
+    background: var(--ctp-base) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface0) !important;
+    box-shadow: none !important;
+  }
+
+  .video-item:hover,
+  .mediaList-item:hover,
+  .mediaList-link:hover,
+  .mediaList-link:focus-visible,
+  .thumbnail:hover,
+  article:hover {
+    background: var(--ctp-surface0) !important;
+    border-radius: 8px;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1,
+  .module-title,
+  .video-item--title,
+  .thumbnail__title,
+  .media-heading-info,
+  .mediaList-by-heading {
+    color: var(--ctp-text) !important;
+  }
+
+  .video-item:hover h3,
+  .mediaList-link:hover h3,
+  .thumbnail:hover .thumbnail__title,
+  a:hover h3 {
+    color: var(--ctp-mauve) !important;
+  }
+
+  .channel__name,
+  .media-heading-name,
+  .mediaList-by,
+  .streamed-on,
+  .mediaList-timestamp,
+  .mediaList-plays,
+  small,
+  .video-counters--icon,
+  .media-heading-num-followers {
+    color: var(--ctp-subtext0) !important;
+  }
+
+  .watching-now,
+  .livestream-begins,
+  .mediaList-liveCount,
+  .mediaList-live,
+  [class*="live"] {
+    color: var(--ctp-peach) !important;
+  }
+
+  .mediaList-live,
+  .live-badge,
+  .badge-live {
+    background: var(--ctp-peach) !important;
+    color: var(--ctp-crust) !important;
+  }
+
+  .mediaList-duration,
+  .duration,
+  .video-duration {
+    color: var(--ctp-text) !important;
+    background: color-mix(in srgb, var(--ctp-crust) 72%, transparent) !important;
+  }
+
+  /* Links: mauve default, sky on hover, peach for current */
+  a {
+    color: var(--ctp-mauve);
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--ctp-sky) !important;
+  }
+
+  .media-description,
+  .media-description p {
+    color: var(--ctp-subtext1) !important;
+    background: transparent !important;
+  }
+
+  .media-description a,
+  .comment a {
+    color: var(--ctp-sky) !important;
+  }
+
+  .media-description a:hover,
+  .comment a:hover {
+    color: var(--ctp-peach) !important;
+  }
+
+  /* Buttons */
+  button,
+  .round-button,
+  .btn,
+  .button {
+    color: var(--ctp-text);
+    border-color: var(--ctp-surface1);
+  }
+
+  .round-button,
+  .bg-white,
+  .bg-grey,
+  .video-category-tag,
+  button.rumbles-vote-up,
+  button.rumbles-vote-down,
+  .rumbles-vote-up,
+  .rumbles-vote-down,
+  #chat-dock-button {
+    background: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+    border-color: var(--ctp-surface1) !important;
+  }
+
+  .round-button:hover,
+  .round-button:focus-visible,
+  .video-category-tag:hover,
+  button.rumbles-vote-up:hover,
+  button.rumbles-vote-down:hover,
+  .bg-grey:hover {
+    background: var(--ctp-surface1) !important;
+    color: var(--ctp-peach) !important;
+  }
+
+  .bg-green,
+  button.rumbles-vote-up.active,
+  .rumbles-vote-up.active {
+    background: var(--ctp-green) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-green) !important;
+  }
+
+  .bg-blue,
+  .header-upload,
+  .bg-purple {
+    background: var(--ctp-mauve) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-mauve) !important;
+  }
+
+  .bg-blue:hover,
+  .header-upload:hover,
+  .bg-purple:hover {
+    background: var(--ctp-sky) !important;
+    color: var(--ctp-crust) !important;
+  }
+
+  .bg-red,
+  button.locals-button,
+  .locals-button,
+  button.rumbles-vote-down.active,
+  .video-processing-error,
+  .lrt--error {
+    background: var(--ctp-red) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-red) !important;
+  }
+
+  .locals-button:hover,
+  .bg-red:hover {
+    background: var(--ctp-maroon) !important;
+    color: var(--ctp-crust) !important;
+  }
+
+  .rumbles-vote,
+  .comment-count {
+    color: var(--ctp-sky) !important;
+  }
+
+  /* Player / chat */
+  .theater-mode #theaterVideoPlayer,
+  .video-player,
+  .player,
+  video {
+    background: var(--ctp-crust) !important;
+  }
+
+  .docked-chat,
+  .chat,
+  .chat-history,
+  .comments-list,
+  #video-comments {
+    background: var(--ctp-mantle) !important;
+    color: var(--ctp-text) !important;
+  }
+
+  .tab-heading.tab-active,
+  .tab-heading {
+    background: var(--ctp-base) !important;
+    border-color: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+  }
+
+  .tab-heading.tab-active {
+    color: var(--ctp-peach) !important;
+    border-bottom-color: var(--ctp-peach) !important;
+  }
+
+  /* Avatars / icons */
+  .user-image,
+  .user-image.user-image--img,
+  svg.user-image--icon {
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface2) !important;
+    stroke: var(--ctp-sky);
+  }
+
+  .media-icon-license,
+  .media-icon-embed {
+    stroke: var(--ctp-subtext1);
+  }
+
+  /* Footer / misc */
+  footer,
+  .footer {
+    background: var(--ctp-crust) !important;
+    color: var(--ctp-subtext0) !important;
+    border-color: var(--ctp-surface0) !important;
+  }
+
+  footer a,
+  .footer a {
+    color: var(--ctp-sky) !important;
+  }
+
+  hr,
+  .divider,
+  .footer-divider {
+    border-color: var(--ctp-surface0) !important;
+    background: var(--ctp-surface0) !important;
+  }
+
+  .loading-spinner {
+    border-color: var(--ctp-surface1) !important;
+    border-top-color: var(--ctp-peach) !important;
+  }
+
+  .lrt--success {
+    background: var(--ctp-green) !important;
+    color: var(--ctp-crust) !important;
+    border-color: var(--ctp-green) !important;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--ctp-mauve) 45%, var(--ctp-base));
+    color: var(--ctp-text);
+  }
+
+  /* Keep embedded players from flashing white under color-scheme: dark */
+  iframe,
+  .share-fb-container {
+    color-scheme: auto;
+  }
+}
+
+/* ===== youtube-catppuccin-mocha.user.css ===== */
+@import "https://userstyles.catppuccin.com/lib/std/v1.less";
+
+@-moz-document domain("youtube.com") {
+  :root[dark] {
+    #catppuccin(@darkFlavor);
+  }
+  :root:not([dark]) {
+    #catppuccin(@darkFlavor);
+  }
+
+  #catppuccin(@flavor) {
+    #lib.palette();
+    #lib.defaults();
+    @peach: #fab387;
+    @mauve: #cba6f7;
+    @accent: #fab387;
+
+    @white: if(@flavor = latte, @base, @text);
+    @black: if(@flavor = latte, @text, @base);
+
+    color: @text;
+    background: @base;
+
+    #--variables() {
+      &,
+      [dark],
+      [system-icons],
+      [darker-dark-theme],
+      &[dark],
+      &[system-icons],
+      &[darker-dark-theme] {
+        --efyt-control-bar-background-color: @mantle;
+        --dimmer-text: @text;
+
+        /* Newest Variables */
+        --yt-sys-color-baseline--base-background: @base;
+        --yt-sys-color-baseline--menu-background: @mantle;
+        --yt-sys-color-baseline--raised-background: @surface0;
+        --yt-sys-color-baseline--additive-background: @surface0;
+        --yt-sys-color-baseline--wordmark-text: @text;
+        --yt-sys-color-baseline--text-primary: @text;
+        --yt-sys-color-baseline--text-secondary: @subtext0;
+        --yt-sys-color-baseline--call-to-action: @accent;
+        --yt-sys-color-baseline--suggested-action: mix(@accent, @base, 30%);
+        --yt-sys-color-baseline--outline: @surface0;
+        --yt-sys-color-baseline--outline-opaque: @surface1;
+        --yt-sys-color-baseline--outline-inverse-opaque: @overlay0;
+        --yt-sys-color-baseline--overlay-background-medium-light: fade(
+          @black,
+          60%
+        );
+        --yt-sys-color-baseline--overlay-background-heavy: fade(@black, 80%);
+        --yt-sys-color-baseline--overlay-background-solid: @crust;
+        --yt-sys-color-baseline--overlay-text-primary: @text;
+
+        --yt-spec-white-1: @text;
+        --yt-spec-white-2: @subtext0;
+        --yt-spec-white-3: @subtext1;
+        --yt-spec-white-4: darken(@subtext1, 5%);
+        --yt-spec-black-1: @overlay1;
+        --yt-spec-black-2: @overlay0;
+        --yt-spec-black-3: @surface2;
+        --yt-spec-black-4: @surface1;
+        --yt-spec-black-pure: @surface0;
+        --yt-spec-grey-1: @text;
+        --yt-spec-grey-2: @subtext0;
+        --yt-spec-grey-3: @subtext1;
+        --yt-spec-grey-4: @overlay2;
+        --yt-spec-grey-5: @overlay1;
+        --yt-brand-youtube-red: @accent;
+        --yt-brand-medium-red: @accent;
+        --yt-brand-light-red: @accent;
+        --yt-spec-red-30: @peach;
+        --yt-spec-red-70: @red;
+        --yt-spec-red-indicator: @accent;
+        --yt-spec-pale-blue: @sky;
+        --yt-spec-light-blue: @sky;
+        --yt-spec-dark-blue: @sapphire;
+        --yt-spec-navy-blue: @teal;
+        --yt-spec-light-green: @green;
+        --yt-spec-dark-green: @green;
+        --yt-spec-yellow: @peach;
+        --yt-spec-black-pure-alpha-5: @subtext0;
+        --yt-spec-black-pure-alpha-10: @overlay2;
+        --yt-spec-black-pure-alpha-15: fade(@crust, 85%);
+        --yt-spec-black-pure-alpha-30: fade(@crust, 70%);
+        --yt-spec-black-pure-alpha-60: fade(@crust, 40%);
+        --yt-spec-black-pure-alpha-80: fade(@crust, 20%);
+        --yt-spec-black-1-alpha-98: fade(@crust, 2%);
+        --yt-spec-black-1-alpha-95: fade(@crust, 5%);
+        --yt-spec-white-1-alpha-10: fade(@text, 90%);
+        --yt-spec-white-1-alpha-20: fade(@text, 80%);
+        --yt-spec-white-1-alpha-25: fade(@text, 75%);
+        --yt-spec-white-1-alpha-30: fade(@text, 70%);
+        --yt-spec-white-1-alpha-70: fade(@text, 30%);
+        --yt-spec-white-1-alpha-95: fade(@text, 5%);
+        --yt-spec-white-1-alpha-98: fade(@text, 2%);
+        --yt-brand-medium-red-alpha-90: fade(@accent, 10%);
+        --yt-brand-medium-red-alpha-30: fade(@accent, 70%);
+        --yt-brand-light-red-alpha-30: fade(@accent, 70%);
+        --yt-spec-light-blue-alpha-30: fade(@sapphire, 70%);
+        --yt-spec-dark-blue-alpha-30: fade(@sapphire, 70%);
+
+        --yt-spec-base-background: @base;
+        --yt-spec-raised-background: @surface0;
+        --yt-spec-menu-background: @mantle;
+        --yt-spec-inverted-background: @text;
+        --yt-spec-additive-background: @surface0;
+        --yt-spec-outline: @surface0;
+        --yt-spec-shadow: fade(@crust, 75%);
+        --yt-spec-text-primary: @text;
+        --yt-spec-text-secondary: @subtext0;
+        --yt-spec-text-disabled: @subtext1;
+        --yt-spec-text-primary-inverse: @crust;
+        --yt-spec-call-to-action: @accent;
+        --yt-spec-call-to-action-inverse: @accent;
+        --yt-spec-suggested-action: fade(@accent, 20%);
+        --yt-spec-suggested-action-inverse: @text;
+        --yt-spec-icon-active-other: @text;
+        --yt-spec-button-chip-background-hover: @surface1;
+        --yt-spec-touch-response: @surface0;
+
+        --yt-spec-touch-response-inverse: @accent;
+        --yt-spec-brand-icon-active: @accent;
+        --yt-spec-brand-button-background: @accent;
+        --yt-spec-brand-link-text: @sapphire;
+        --yt-spec-wordmark-text: @text;
+        --yt-spec-error-indicator: @red;
+        --yt-spec-themed-blue: @accent;
+        --yt-spec-themed-green: @green;
+        --yt-spec-ad-indicator: @teal;
+        --yt-spec-themed-overlay-background: fade(@crust, 80%);
+        --yt-spec-commerce-badge-background: @green;
+        --yt-spec-static-brand-red: @accent;
+        --yt-spec-static-brand-white: @text;
+        --yt-spec-static-brand-black: @base;
+        --yt-spec-static-clear-color: fade(@crust, 100%);
+        --yt-spec-static-clear-black: @base;
+        --yt-spec-static-ad-yellow: @peach;
+        --yt-spec-static-grey: @subtext0;
+        --yt-spec-static-overlay-background-solid: @crust;
+        --yt-spec-static-overlay-background-heavy: @crust;
+        --yt-spec-static-overlay-background-medium: fade(@crust, 50%);
+        --yt-spec-static-overlay-background-light: fade(
+          @crust,
+          90%
+        );
+        --yt-spec-static-overlay-text-primary: @text;
+        --yt-spec-static-overlay-text-secondary: fade(
+          @subtext0,
+          30%
+        );
+        --yt-spec-static-overlay-text-disabled: fade(
+          @subtext0,
+          70%
+        );
+        --yt-spec-static-overlay-call-to-action: @accent;
+        --yt-spec-static-overlay-icon-active-other: @crust;
+        --yt-spec-static-overlay-icon-inactive: @surface1;
+        --yt-spec-static-overlay-icon-disabled: @surface2;
+        --yt-spec-static-overlay-button-primary: @accent;
+        --yt-spec-static-overlay-touch-response: @overlay1;
+        --yt-spec-static-overlay-touch-response-inverse: @surface1;
+        --yt-spec-static-overlay-background-brand: @accent;
+        --yt-spec-assistive-feed-themed-gradient-1: @subtext0;
+        --yt-spec-assistive-feed-themed-gradient-2: @lavender;
+        --yt-spec-assistive-feed-themed-gradient-3: @red;
+        --yt-spec-brand-background-solid: @base;
+        --yt-spec-brand-background-primary: @base;
+        --yt-spec-brand-background-secondary: @mantle;
+        --yt-spec-general-background-a: @base;
+        --yt-spec-general-background-b: @base;
+        --yt-spec-general-background-c: @crust;
+        --yt-spec-error-background: @base;
+        --yt-spec-10-percent-layer: @surface1;
+        --yt-spec-snackbar-background: @mantle;
+        --yt-spec-snackbar-background-updated: @mantle;
+        --yt-spec-badge-chip-background: if(
+          @flavor = latte,
+          @crust,
+          @surface0
+        );
+        --yt-spec-verified-badge-background: @overlay0;
+        --yt-spec-call-to-action-fadeoutd: fade(@sapphire, 70%);
+        --yt-spec-call-to-action-hover: @accent;
+        --yt-spec-brand-button-background-hover: @accent;
+        --yt-spec-brand-link-text-fadeoutd: fade(
+          @accent,
+          70%
+        );
+        --yt-spec-filled-button-focus-outline: @surface0;
+        --yt-spec-static-overlay-button-hover: @surface1;
+        --yt-spec-mono-filled-hover: @surface1;
+        --yt-spec-commerce-filled-hover: @accent;
+        --yt-spec-mono-tonal-hover: @surface1;
+        --yt-spec-commerce-tonal-hover: @surface2;
+        --yt-spec-static-overlay-filled-hover: @overlay1;
+        --yt-spec-static-overlay-tonal-hover: @surface1;
+        --yt-spec-paper-tab-ink: fade(@text, 70%);
+        --yt-spec-filled-button-text: @text;
+        --yt-spec-selected-nav-text: @text;
+        --iron-icon-fill-color: @text;
+
+        --yt-spec-overlay-text-primary: @text;
+        --yt-spec-overlay-background-medium-light: fade(@black, 60%);
+        --yt-spec-overlay-background-heavy: fade(@black, 80%);
+        --yt-spec-overlay-background-solid: @black;
+
+        /* Search bar */
+        --ytd-searchbox-border-color: @surface0;
+        --ytd-searchbox-legacy-border-color: @surface0;
+        --ytd-searchbox-legacy-border-shadow-color: fade(
+          @crust,
+          100%
+        );
+        --ytd-searchbox-legacy-button-color: @mantle;
+        --ytd-searchbox-legacy-button-border-color: @surface0;
+        --ytd-searchbox-legacy-button-focus-color: @accent;
+        --ytd-searchbox-legacy-button-hover-color: @mantle;
+        --ytd-searchbox-legacy-button-hover-border-color: @surface0;
+        --ytd-searchbox-legacy-button-icon-color: @accent;
+        --ytd-searchbox-background: @base;
+        --ytd-searchbox-text-color: @text;
+
+        /* System icons */
+        --yt-spec-icon-inactive: @text;
+        --yt-spec-icon-disabled: @overlay1;
+        --yt-spec-brand-icon-inactive: @overlay2;
+
+        /* Live chat */
+        --yt-live-chat-background-color: @base;
+        --yt-live-chat-primary-text-color: @text;
+        --yt-live-chat-action-panel-background-color: @base;
+        --yt-live-chat-secondary-background-color: @surface1;
+        --yt-live-chat-toast-background-color: @surface2;
+        --yt-live-chat-mode-change-background-color: @base;
+        --yt-live-chat-secondary-text-color: @subtext0;
+        --yt-live-chat-tertiary-text-color: fade(@text, 46%);
+        --yt-live-chat-text-input-field-inactive-underline-color: @subtext0;
+
+        --yt-live-chat-text-input-field-placeholder-color: @subtext0;
+        --yt-live-chat-enabled-send-button-color: @text;
+        --yt-live-chat-disabled-icon-button-color: @subtext1;
+        --yt-live-chat-picker-button-hover-color: @accent;
+        --yt-live-chat-mention-background-color: @accent;
+        --yt-live-chat-mention-text-color: @text;
+        --yt-live-chat-deleted-message-color: @subtext0;
+        --yt-live-chat-deleted-message-bar-color: @subtext1;
+        --yt-live-chat-reconnect-message-color: @text;
+        --yt-live-chat-disabled-button-background-color: @overlay0;
+        --yt-live-chat-sub-panel-background-color: @base;
+        --yt-live-chat-sub-panel-background-color-transparent: @mantle;
+        --yt-live-chat-moderator-color: @lavender;
+        --yt-live-chat-owner-color: @peach;
+        --yt-live-chat-message-highlight-background-color: @base;
+        --yt-live-chat-sponsor-color: @green;
+        --yt-live-chat-overlay-color: fade(@mantle, 50%);
+        --yt-live-chat-dialog-background-color: @base;
+        --yt-emoji-picker-variant-selector-bg-color: @base;
+        --yt-live-chat-moderation-mode-hover-background-color: fade(
+          @mantle,
+          70%
+        );
+        --yt-grey: @subtext0;
+        --yt-live-chat-text-input-field-suggestion-background-color: @subtext0;
+
+        --yt-live-chat-text-input-field-suggestion-background-color-hover: @subtext1;
+
+        --yt-emoji-picker-search-background-color: @surface0;
+        --yt-emoji-picker-search-color: @text;
+        --yt-emoji-picker-search-placeholder-color: @accent;
+        --yt-live-chat-slider-active-color: @accent;
+        --yt-live-chat-slider-container-color: @surface0;
+        --yt-live-chat-slider-markers-color: @text;
+        --yt-live-chat-banner-gradient-scrim: linear-gradient(
+          @mantle,
+          transparent
+        );
+        --yt-live-chat-action-panel-gradient-scrim: linear-gradient(
+          to top,
+          @mantle,
+          transparent
+        );
+        --yt-live-chat-automod-button-background-color-hover: fade(
+          @crust,
+          50%
+        );
+        --yt-live-chat-automod-button-explanation-color: fade(
+          @accent,
+          30%
+        );
+        --yt-live-chat-shimmer-background-color: fade(@crust, 60%);
+        --yt-live-chat-shimmer-linear-gradient: linear-gradient(
+          0deg,
+          fade(@text, 90%) 40%,
+          fade(@base, 70%) 50%,
+          fade(@text, 90%) 60%
+        );
+        --yt-live-chat-vem-background-color: @mantle;
+        --yt-live-chat-product-picker-icon-color: fade(@text, 50%);
+        --yt-live-chat-product-picker-hover-color: @overlay0;
+        --yt-live-chat-product-picker-disabled-icon-color: fade(
+          @text,
+          70%
+        );
+        --yt-live-chat-action-panel-background-color-transparent: (null);
+
+        --paper-tooltip-background: @surface2;
+        --paper-tooltip-text-color: @text;
+        .ytTooltipContainerDefaultTooltipContent {
+          background: var(--paper-tooltip-background);
+          color: var(--paper-tooltip-text-color);
+        }
+
+        /* Links */
+        --yt-endpoint-color: @text;
+        --yt-endpoint-visited-color: @text;
+        --yt-endpoint-hover-color: @accent;
+
+        --sb-dark-red-outline: @accent;
+        --sb-main-bg-color: @base;
+        --sb-main-fg-color: @text;
+        --sb-grey-bg-color: @base;
+        --sb-grey-fg-color: @subtext0;
+        --sb-red-bg-color: @accent;
+
+        & when (@sponsorBlock = 1) {
+          --sb-category-sponsor: @green;
+          --sb-category-selfpromo: @yellow;
+          --sb-category-exclusive_access: @teal;
+          --sb-category-interaction: @mauve;
+          --sb-category-poi_highlight: @pink;
+          --sb-category-intro: @sky;
+          --sb-category-outro: @blue;
+          --sb-category-preview: @sapphire;
+          --sb-category-filler: @lavender;
+          --sb-category-music_offtopic: @peach;
+        }
+      }
+
+      &:not(.style-scope) {
+        --primary-text-color: @text;
+        --primary-background-color: @base;
+        --secondary-text-color: @subtext0;
+        --disabled-text-color: @subtext1;
+        --divider-color: @overlay0;
+        --error-color: @red;
+        --primary-color: @accent;
+        --light-primary-color: @accent;
+        --dark-primary-color: @blue;
+        --accent-color: @accent;
+        --light-accent-color: @accent;
+        --dark-accent-color: @accent;
+        --light-theme-background-color: @base;
+        --light-theme-base-color: @text;
+        --light-theme-text-color: @text;
+        --light-theme-secondary-color: @subtext0;
+        --light-theme-disabled-color: @subtext1;
+        --light-theme-divider-color: @overlay0;
+        --dark-theme-background-color: @base;
+        --dark-theme-base-color: @text;
+        --dark-theme-text-color: @text;
+        --dark-theme-secondary-color: @subtext0;
+        --dark-theme-disabled-color: @subtext1;
+        --dark-theme-divider-color: @overlay0;
+      }
+    }
+
+    #--variables() !important;
+
+    /* Misc */
+
+    & when (@logo = 0) {
+      ytd-topbar-logo-renderer,
+      svg.ytd-consent-bump-v2-lightbox {
+        display: none;
+      }
+    }
+
+    #progress.yt-page-navigation-progress {
+      background: @accent;
+    }
+
+    /* Selected chapter */
+    ytd-macro-markers-list-item-renderer {
+      --ytd-macro-markers-list-item-background-color: @surface0;
+      --ytd-macro-markers-list-item-title-color: @text;
+      --ytd-macro-markers-list-item-secondary-color: @subtext1;
+      --ytd-macro-markers-list-item-timestamp-background-color: @surface1;
+    }
+
+    ytd-playlist-panel-video-renderer {
+      --yt-lightsource-section2-color: @surface1;
+      --yt-lightsource-section4-color: @surface2;
+      --yt-lightsource-primary-title-color: @text;
+      --yt-lightsource-secondary-title-color: @text;
+      --yt-active-playlist-panel-background-color: @surface0;
+    }
+
+    ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette]
+      .header.ytd-playlist-panel-renderer {
+      --iron-icon-fill-color: @text;
+      background-color: @base;
+    }
+
+    #container.ytd-masthead {
+      --iron-icon-fill-color: @text;
+    }
+
+    #background.ytd-masthead,
+    #frosted-glass {
+      --yt-frosted-glass-desktop: @base;
+      --yt-spec-frosted-glass-desktop: @base;
+    }
+
+    ytd-feed-filter-chip-bar-renderer[expand-instead-of-scroll]
+      #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+      --iron-icon-fill-color: @text;
+      background-color: @base;
+    }
+
+    .ytp-progress-list when not(@flavor = latte) {
+      background: fade(@surface0, 80%);
+    }
+    .ytp-load-progress when not(@flavor = latte) {
+      background: fade(@overlay0, 100%);
+    }
+
+    ytd-expandable-metadata-renderer {
+      --yt-lightsource-section1-color: @base;
+      --yt-lightsource-section2-color: @surface0;
+      --yt-lightsource-section3-color: @surface1;
+      --yt-lightsource-section4-color: @surface2;
+      --yt-lightsource-primary-title-color: @text;
+      --yt-lightsource-secondary-title-color: @subtext0;
+    }
+
+    yt-live-chat-renderer {
+      --yt-button-default-text-color: @text;
+      --yt-button-default-background-color: @base;
+      --yt-button-dark-text-color: @base;
+      --yt-button-dark-background-color: @accent;
+      --yt-button-payment-background-color: @accent;
+    }
+
+    yt-icon-button.yt-live-chat-item-list-renderer {
+      background-color: @accent;
+      color: @base;
+
+      &:hover {
+        background-color: darken(@accent, 5%);
+      }
+    }
+
+    /* Skeleton */
+    #guide-skeleton,
+    #home-container-skeleton,
+    #home-chips {
+      background-color: @base;
+      z-index: -1;
+    }
+
+    ytd-app[is-shorts-page] {
+      background: var(
+        --yt-spec-base-background
+      ); // fix unset background on shorts page
+    }
+
+    #guide-skeleton .guide-ghost-icon,
+    #guide-skeleton .guide-ghost-text,
+    .masthead-skeleton-icon,
+    #home-page-skeleton .skeleton-bg-color,
+    .watch-skeleton .skeleton-bg-color {
+      background-color: @surface1;
+    }
+
+    /* Ambient mode */
+    #cinematics,
+    #cinematic-container {
+      display: none;
+    }
+
+    .ytp-settings-button.ytp-hd-quality-badge::after,
+    .ytp-settings-button.ytp-hdr-quality-badge::after,
+    .ytp-settings-button.ytp-4k-quality-badge::after,
+    .ytp-settings-button.ytp-5k-quality-badge::after,
+    .ytp-settings-button.ytp-8k-quality-badge::after,
+    .ytp-settings-button.ytp-3d-badge-grey::after,
+    .ytp-settings-button.ytp-3d-badge::after {
+      background-color: @accent;
+    }
+
+    /* Icons */
+
+    [fill="red"],
+    [fill="#F00"],
+    [fill="#FF0000"],
+    [fill="#f03"],
+    [fill="#FF0033"] {
+      fill: @accent;
+    }
+
+    [fill="white"] {
+      fill: if(@flavor = latte, @base, @text);
+    }
+
+    yt-icon.ytd-logo [fill="white"] {
+      fill: @crust;
+    }
+
+    .yt-spec-icon-shape {
+      [fill="#FAFAFA"],
+      [fill="#000"],
+      [fill="#fff"],
+      [fill="#FFF"],
+      [fill="#FFFFFF"] {
+        fill: @crust;
+      }
+    }
+
+    /* Notifications Bell and Indicator */
+    .ytSpecIconBadgeShapeStyleOverlay .ytSpecIconBadgeShapeIcon,
+    .ytSpecIconBadgeShapeBadge {
+      color: @text;
+    }
+    .ytSpecIconBadgeShapeTypeNotification .ytSpecIconBadgeShapeBadge {
+      background-color: @accent;
+      color: @base;
+    }
+
+    /* Buttons */
+
+    .yt-spec-button-shape-next--mono {
+      &.yt-spec-button-shape-next--tonal {
+        color: @text;
+        background-color: @surface0;
+
+        [fill="rgb(3,3,3)"],
+        [fill="rgb(0,0,0)"],
+        [fill="rgb(255,255,255)"] {
+          fill: @text;
+        }
+
+        [stroke="rgb(0,0,0)"],
+        [stroke="rgb(255,255,255)"] {
+          stroke: @text;
+        }
+
+        /* Accent for filled-in thumbs up (like button) */
+        [animated-icon-type="LIKE"] {
+          g path[fill] {
+            fill: @accent;
+
+            + [stroke] {
+              stroke: @accent;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: @surface1;
+        }
+      }
+
+      &.yt-spec-button-shape-next--outline {
+        color: @text;
+        border-color: @surface2;
+
+        &:hover {
+          background-color: @surface2;
+        }
+      }
+
+      &.yt-spec-button-shape-next--text {
+        color: @text;
+
+        /* Accent for filled-in thumbs up (like button) */
+        path[d="M3,11h3v10H3V11z M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11v10h10.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z"] {
+          fill: @accent;
+        }
+
+        &:hover {
+          background-color: @surface1;
+        }
+      }
+
+      &.yt-spec-button-shape-next--filled {
+        color: @base;
+        background-color: @accent;
+
+        &:hover {
+          background-color: darken(@accent, 5%);
+        }
+      }
+    }
+
+    .yt-spec-button-shape-next--disabled {
+      color: @overlay1;
+    }
+
+    .yt-spec-button-shape-next--overlay {
+      &.yt-spec-button-shape-next--tonal {
+        color: @text;
+        background-color: @surface0;
+        &:hover {
+          background-color: @surface1;
+        }
+      }
+      &.yt-spec-button-shape-next--text {
+        color: @text;
+        &:hover {
+          background-color: @surface0;
+        }
+      }
+
+      &.yt-spec-button-shape-next--filled {
+        color: @base;
+        background-color: @accent;
+      }
+
+      &.yt-spec-button-shape-next--outline {
+        color: @text;
+        border-color: @surface1;
+        &:hover {
+          background: @surface0;
+        }
+      }
+    }
+
+    .yt-spec-button-shape-next--call-to-action {
+      &.yt-spec-button-shape-next--outline {
+        color: @accent;
+        border-color: @surface2;
+
+        &:hover {
+          background-color: fade(@accent, 30%);
+          color: @accent;
+        }
+      }
+
+      &.yt-spec-button-shape-next--text {
+        color: @accent;
+
+        &:hover {
+          background-color: fade(@accent, 30%);
+        }
+      }
+
+      &.yt-spec-button-shape-next--filled {
+        color: @base;
+        background-color: @accent;
+
+        &:hover {
+          background-color: lighten(@accent, 5%);
+        }
+      }
+    }
+
+    .yt-spec-button-shape-next--disabled.yt-spec-button-shape-next--filled {
+      color: @subtext0;
+      background-color: fade(@surface1, 70%);
+    }
+
+    /* Search box */
+
+    .ytSearchboxComponentInputBox,
+    .ytSearchboxComponentInputBoxDark {
+      background: var(--ytd-searchbox-background);
+      color: var(--ytd-searchbox-text-color);
+      border-color: var(--ytd-searchbox-border-color);
+      box-shadow: none;
+    }
+
+    .ytSearchboxComponentInputBoxHasFocus,
+    .ytSearchboxComponentInputBoxHasFocusDark {
+      border-color: @accent;
+    }
+
+    .ytSuggestionComponentPersonalizedSuggestion {
+      color: @text;
+    }
+    .ytSuggestionComponentHighlighted {
+      background: @surface1;
+    }
+    .ytSuggestionComponentLargerRemovedText {
+      color: @overlay1;
+    }
+
+    .ytSearchboxComponentSuggestionsContainer,
+    .ytSearchboxComponentSuggestionsContainerDark {
+      background: var(--yt-spec-raised-background);
+      border-color: var(--yt-spec-raised-background);
+    }
+
+    .ytSuggestionComponentSuggestion,
+    .ytSuggestionComponentSuggestionDark {
+      color: var(--ytd-searchbox-text-color);
+    }
+
+    .ytSearchboxComponentSearchButton,
+    .ytSearchboxComponentSearchButtonDark {
+      color: var(--ytd-searchbox-text-color);
+      background: var(--yt-spec-raised-background);
+      border-color: var(--ytd-searchbox-border-color);
+    }
+
+    .ytSearchboxComponentClearButtonIcon,
+    .ytSearchboxComponentClearButtonIconDark {
+      color: var(--ytd-searchbox-text-color);
+    }
+
+    /* Video description */
+
+    // Video description background (collapsed on hover)
+    ytd-watch-metadata {
+      --yt-saturated-raised-background: @surface1 !important;
+      --yt-saturated-text-primary: @text !important;
+      --yt-saturated-text-secondary: @subtext1 !important;
+    }
+    // Video description text (expanded)
+    ytd-text-inline-expander
+      .ytAttributedStringLinkInheritColor:not(
+        .ytAttributedStringLink
+      ) {
+      color: @text !important;
+    }
+    // Video description YouTube links
+    .ytAttributedStringHighlightTextDecorator {
+      background-color: @surface2 !important;
+    }
+
+    /* Links */
+    .ytAttributedStringLinkCallToActionColor {
+      color: @accent;
+    }
+
+    /* Course Playlist (e.g. https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6) */
+    .ytwCourseProgressViewModelHostProgressTitle,
+    .ytwCourseProgressViewModelHostProgressSubtitle {
+      color: @text;
+    }
+    .ytwCourseProgressViewModelHostProgressBar {
+      background-color: fade(@white, 20%);
+
+      .ytwCourseProgressViewModelHostProgressBarFill {
+        background-color: @text;
+      }
+    }
+
+    .ytwHowThisWasMadeSectionViewModelSectionTitle,
+    .ytwHowThisWasMadeSectionViewModelBodyHeader {
+      color: @text;
+    }
+
+    .ytwHowThisWasMadeSectionViewModelBodyText {
+      color: @subtext0;
+    }
+
+    // "Ask" - AI chat
+    .ytVideoDescriptionYouchatSectionViewModelSectionTitle {
+      color: @text;
+    }
+    .ytVideoDescriptionYouchatSectionViewModelSubHeaderText {
+      color: @subtext0;
+    }
+    .ytwYouChatItemViewModelHost {
+      color: @text;
+    }
+    .ytwYouChatChipsDataChip {
+      color: @text;
+      border-color: @surface2;
+
+      &:hover {
+        background-color: @surface1;
+      }
+    }
+    .chatInputViewModelChatDisclaimer {
+      color: @subtext0;
+    }
+
+    // Timeline/Transcript
+    .ytwTimelineChapterViewModelTitle,
+    .ytShelfHeaderLayoutTitle {
+      color: @text;
+    }
+    .ytwTranscriptSegmentViewModelHost {
+      color: @subtext0;
+    }
+    .ytwTranscriptSegmentViewModelTimestamp {
+      background-color: @surface2;
+      color: @subtext1;
+    }
+    .ytwTranscriptSegmentViewModelTimestampActive {
+      background-color: @overlay0;
+      color: @text;
+    }
+
+    // Video Attributes (Music, Games)
+    .videoAttributesSectionViewModelTitle,
+    .ytVideoAttributeViewModelTitle {
+      color: @text;
+    }
+    .ytVideoAttributeViewModelSubtitle,
+    .ytVideoAttributeViewModelSecondarySubtitle {
+      color: @subtext1;
+    }
+
+    /* Thumbnails */
+
+    .ytp-sb-unsubscribe {
+      background-color: @surface2;
+      color: @text;
+    }
+    .ytp-sb-subscribe {
+      background-color: @accent;
+      color: @base;
+    }
+
+    // Watch progress bar
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+      background-color: @surface2;
+    }
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+      background: @accent;
+    }
+    // Watch progress bar (legacy component)
+    ytd-thumbnail-overlay-resume-playback-renderer {
+      background-color: @surface2;
+
+      #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+        background: @accent;
+      }
+    }
+
+    /* Panels, popups, tooltips */
+
+    .ytp-tooltip-bottom-text {
+      background: fade(@surface0, 90%);
+      color: @text;
+      text-shadow: none;
+    }
+
+    .ytp-popup {
+      background: fade(@surface0, 90%);
+      text-shadow: none;
+    }
+
+    .ytp-panel-menu,
+    .ytp-panel-header,
+    .ytp-panel-footer,
+    .ytp-menuitem-label,
+    .ytp-premium-label,
+    .ytp-menuitem-content,
+    .ytp-menuitem-label-count,
+    .ytp-menu-label-secondary,
+    .ytd-menu-title-renderer {
+      color: @text;
+    }
+
+    .ytp-panel-footer-content-link {
+      color: @accent;
+    }
+
+    .ytp-panel-back-button {
+      @svg: escape(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" version="1.1"><path d="m19.41 20.09-4.58-4.59 4.58-4.59L18 9.5l-6 6 6 6z" fill="@{text}"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+
+    .ytp-menuitem[aria-checked="false"] .ytp-menuitem-toggle-checkbox {
+      &::after {
+        background-color: @overlay1;
+      }
+    }
+    .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
+      background-color: @surface2;
+
+      &::after {
+        background-color: @text;
+      }
+    }
+
+    .ytp-menuitem {
+      &:not([aria-disabled="true"]):hover {
+        background-color: @surface1;
+      }
+    }
+
+    /* Video player */
+
+    // Shorts and video hover preview progress bars
+    yt-progress-bar {
+      .ytProgressBarLineProgressBarPlayed,
+      .ytProgressBarPlayheadProgressBarPlayheadDot {
+        background: @accent;
+      }
+
+      .ytProgressBarLineProgressBarHovered,
+      .ytProgressBarLineProgressBarBackground {
+        background: @text; // (background) opacity is already adequately set
+      }
+    }
+
+    .ytp-cards-button {
+      .ytp-cards-button-icon {
+        use {
+          fill: @black;
+        }
+        path {
+          fill: @white;
+        }
+      }
+    }
+    .ytp-cards-teaser {
+      .ytp-cards-teaser-box {
+        background-color: @surface2;
+        border-bottom-color: @surface2;
+      }
+      .ytp-cards-teaser-text {
+        color: @text;
+      }
+    }
+
+    .html5-video-player {
+      color: @white;
+      & when (@oled = 0) {
+        background-color: @crust;
+      }
+
+      .ytp-swatch-background-color,
+      .ytp-play-progress {
+        background: @accent;
+      }
+
+      .ytp-svg-fill,
+      [fill="#fff"] {
+        fill: @white;
+      }
+
+      .ytp-volume-slider-handle {
+        &,
+        &::before {
+          background-color: @white;
+        }
+        &::after {
+          background-color: fade(@white, 20%);
+        }
+      }
+
+      .ytp-time-current,
+      .ytp-time-separator,
+      .ytp-time-duration {
+        color: @white;
+      }
+
+      .ytp-live-badge {
+        &[disabled]::before {
+          background: @accent;
+        }
+        &::before {
+          background: @overlay0;
+        }
+      }
+
+      .ytp-button,
+      .ytp-subtitles-button {
+        &[aria-pressed]::after {
+          background-color: @accent;
+        }
+      }
+
+      /* stats for nerds */
+      .ytp-sfn {
+        background: fade(@base, 80%);
+        color: @text;
+      }
+
+      .ytp-autonav-toggle-button {
+        background-color: @surface2;
+
+        &::after {
+          @svg: escape(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M12.75 4.5h-3c-.6 0-1.17.23-1.6.65-.42.43-.65 1-.65 1.6v22.5c0 .59.23 1.16.65 1.59.43.42 1 .66 1.6.66h3c.59 0 1.16-.24 1.59-.66.42-.43.66-1 .66-1.59V6.75c0-.6-.24-1.17-.66-1.6-.43-.42-1-.65-1.59-.65m13.5 0h-3c-.6 0-1.17.23-1.6.65-.42.43-.65 1-.65 1.6v22.5c0 .59.23 1.16.65 1.59.43.42 1 .66 1.6.66h3c.59 0 1.16-.24 1.59-.66.42-.43.66-1 .66-1.59V6.75c0-.6-.24-1.17-.66-1.6-.43-.42-1-.65-1.59-.65" fill="@{white}"/></svg>'
+          );
+          background-image: url("data:image/svg+xml,@{svg}");
+          background-color: @overlay1;
+        }
+
+        &[aria-checked="true"] {
+          &::after {
+            @svg: escape(
+              '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="m17 8.6-6.11-3.61c-1.5-.88-3.39.2-3.39 1.94v22.13c0 1.74 1.89 2.82 3.39 1.94L17 27.4zm0 0v18.8L33 18z" fill="@{black}"/></svg>'
+            );
+            background-image: url("data:image/svg+xml,@{svg}");
+            background-color: @white;
+          }
+        }
+      }
+    }
+
+    /* Video highlight */
+    ytd-rich-item-renderer.ytd-rich-item-renderer-highlight {
+      background-color: fade(@accent, 10%);
+      box-shadow: fade(@accent, 10%) 0 0 0 10px;
+    }
+
+    #shorts-container {
+      --yt-spec-static-overlay-text-primary: @white;
+
+      .YtwFactoidRendererLabel {
+        color: @subtext0;
+      }
+      .YtwFactoidRendererValue {
+        color: @text;
+      }
+
+      ytd-reel-video-renderer:not([is-watch-while-mode]) {
+        .ytSpecButtonShapeWithLabelLabel {
+          color: @subtext1;
+        }
+      }
+      ytd-reel-video-renderer[is-watch-while-mode]
+        .ytSpecButtonShapeWithLabelLabel {
+        color: @white;
+      }
+
+      .ytdVolumeControlsMuteIcon {
+        color: @white;
+      }
+
+      /* Buy super thanks button */
+      .YtdShortsSuggestedActionStaticHostContainer {
+        background-color: fade(@black, 60%);
+
+        .YtdShortsSuggestedActionStaticHostLeadingIcon,
+        .YtdShortsSuggestedActionStaticHostPrimaryText {
+          color: @text;
+        }
+      }
+    }
+    // Video/thumbnail renderer overlayed buttons
+    .ytBadgeShapeThumbnailDefaultRedesign, // Timestamp
+    // Play Next
+    .yt-spec-button-shape-next--overlay-dark.yt-spec-button-shape-next--tonal[style="background-color: rgba(0, 0, 0, 0.3);"],
+    .ytdVolumeControlsBackgroundScrim, // Shorts Volume Slider
+    .ytInlinePlayerControlsTopRightControlsCircleButton // Homepage
+    {
+      background: fade(@black, 60%) !important;
+      color: @white;
+    }
+
+    .yt-spec-button-shape-next--overlay-dark.yt-spec-button-shape-next--filled {
+      background: @accent;
+      color: @base;
+    }
+
+    /* Video previews */
+
+    // Background (on hover)
+    .ytSpecTouchFeedbackShapeHoverEffect {
+      background-color: @surface0 !important;
+    }
+    // Title
+    .ytLockupMetadataViewModelTitle {
+      color: @text !important;
+    }
+    // Details
+    .ytLockupMetadataViewModelMetadata {
+      color: @subtext0 !important;
+    }
+    // Badges (e.g. "CC", "New")
+    .ytBadgeShapeDefault {
+      color: @subtext0;
+      background: @surface1;
+
+      &.ytBadgeShapeModern {
+        background: none;
+      }
+    }
+    // "Fundraiser"
+    .ytBadgeShapeCommerce {
+      color: @green;
+    }
+    // "Live"
+    .ytBadgeShapeThumbnailLive {
+      background: @accent;
+      color: @base;
+    }
+
+    /* Shorts titles and views on homepage */
+    .shortsLockupViewModelHostOutsideMetadataEndpoint {
+      color: @text;
+    }
+    .shortsLockupViewModelHostOutsideMetadataSubhead {
+      color: @subtext0;
+    }
+
+    /* Buy super thanks bar */
+    #progressContainer.tp-yt-paper-progress {
+      background-color: @mantle;
+    }
+
+    #comment-chip-container.yt-pdg-comment-chip-renderer,
+    .slider-knob-inner.tp-yt-paper-slider {
+      background: @accent;
+    }
+
+    #primaryProgress.tp-yt-paper-progress {
+      background: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+    }
+
+    #container.ytd-pdg-comment-preview-renderer {
+      background-color: @mantle;
+    }
+
+    #comment-chip-price.yt-pdg-comment-chip-renderer,
+    yt-icon.yt-pdg-comment-chip-renderer {
+      color: @crust;
+    }
+
+    /* Avatar */
+    .ytSpecAvatarShapeLiveRing::after {
+      background: @accent !important;
+    }
+    .ytSpecAvatarShapeLiveBadge {
+      background-color: @accent;
+    }
+    .ytSpecAvatarShapeLiveBadgeText {
+      color: @base;
+    }
+
+    /* Channel pages */
+
+    // Channel name
+    .ytPageHeaderViewModelHost {
+      .ytPageHeaderViewModelTitle {
+        color: @text;
+      }
+
+      // Subscribers and video statistics
+      .ytPageHeaderViewModelContentMetadata {
+        color: @subtext0;
+      }
+
+      // Handle and verified checkmark
+      [style$="color: rgb(255, 255, 255);"] {
+        color: @text !important;
+      }
+    }
+    // Channel bio
+    .ytTruncatedTextHost {
+      color: @subtext0;
+    }
+    // "...More", "and X more links"
+    .ytAttributionViewModelSuffix .ytAttributedStringLinkCallToActionColor,
+    .ytTruncatedTextAbsoluteButton {
+      color: @text;
+    }
+
+    // Channel tabs
+    .ytTabShapeTab {
+      color: @subtext1;
+    }
+    .ytTabShapeTabSelected {
+      color: @text;
+    }
+    .tabGroupShapeSlider {
+      background-color: @text;
+    }
+    .ytTabShapeHost:hover .ytTabShapeTabBar {
+      background-color: @subtext1;
+    }
+
+    /* Components */
+
+    /* Menus and context sheets */
+    .ytContextualSheetLayoutHost, ytd-menu-popup-renderer {
+      background-color: @mantle;
+    }
+    .ytListItemViewModelTappable:hover {
+      background-color: @surface0;
+    }
+    .ytPanelHeaderViewModelTitle,
+    .ytListItemViewModelTitle,
+    .ytListItemViewModelAccessory {
+      color: @text;
+    }
+    .ytListItemViewModelSubtitle {
+      color: @subtext1;
+    }
+    /* Dialogs */
+    .ytSpecDialogLayoutHost {
+      background-color: @mantle;
+
+      .ytDialogHeaderViewModelText {
+        color: @text;
+      }
+    }
+
+    /* Dropdowns */
+    .ytDropdownViewModelTitle {
+      color: @text;
+    }
+    .ytDropdownViewModelLabel {
+      color: @subtext0;
+    }
+    .ytDropdownViewModelSupportError {
+      color: @red;
+    }
+    .ytDropdownViewModelDropdownContainerErrorBorder {
+      border-color: @red;
+    }
+    .ytStandardsTextareaShapeTextareaContainerOutline:focus-within {
+      border-color: @text;
+    }
+
+    /* Toggles/Switches */
+
+    .ytSwitchShapeTrack {
+      background-color: @surface2;
+    }
+    .ytSwitchShapeKnob {
+      background-color: @mantle;
+    }
+    .ytSwitchShapeTrackActive {
+      background-color: @accent;
+    }
+
+    /* Textareas */
+    .ytStandardsTextareaShapeTextarea {
+      color: @text;
+    }
+    .ytStandardsTextareaShapePlaceholder {
+      color: @subtext0;
+    }
+    .ytStandardsTextareaShapeTextarea::placeholder {
+      color: transparent !important; // defaults important overrides this
+    }
+
+    /* Comments */
+    .ytSubThreadConnection,
+    .ytSubThreadContinuation {
+      border-left-color: @surface1;
+    }
+    .ytSubThreadConnection {
+      border-bottom-color: @surface1;
+    }
+    .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection,
+    .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadContinuation {
+      border-left-color: @overlay0;
+    }
+    .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection {
+      border-bottom-color: @overlay0;
+    }
+
+    /* Profile Card */
+    // (Click a user's profile picture in the comments to view.)
+    .ytProfileCardViewModelHost {
+      background-color: @mantle;
+
+      // Name and handle
+      .ytProfileIdentityInfoViewModelChannelName,
+      .ytProfileIdentityInfoViewModelMetadataHandleWithBoldFont {
+        color: @text;
+      }
+      // Verification badge
+      .ytProfileIdentityInfoViewModelBadge {
+        filter: @text-filter;
+      }
+      // Statistics
+      .ytProfileIdentityInfoViewModelMetadataContent {
+        color: @subtext0;
+      }
+
+      // Subsection (e.g. "On this channel")
+      .ytProfileInfoViewModelSectionTitle {
+        color: @text;
+      }
+      .ytProfileInfoViewModelSectionSubtitle {
+        color: @subtext1;
+      }
+      .ytProfileInfoViewModelSectionHeartIcon {
+        filter: @subtext1-filter;
+      }
+
+      // Subsection - "Recent comments on this channel"
+      .ytCommentInteractionViewModelVideoTitle {
+        color: @text;
+      }
+      .ytCommentInteractionViewModelCommentContent {
+        color: @subtext1;
+      }
+    }
+
+    /* Live chat replay */
+    .ytVideoMetadataCarouselViewModelHost,
+    .YtVideoMetadataCarouselViewModelHost {
+      background-color: @surface0;
+
+      .ytCarouselTitleViewModelTitle,
+      .YtCarouselTitleViewModelTitle,
+      .yt-core-attributed-string,
+      .yt-icon-shape {
+        color: @text;
+      }
+      .ytTextCarouselItemViewModelHost {
+        color: @subtext1;
+      }
+    }
+
+    /* Category tag pills */
+    .ytChipShapeInactive {
+      background-color: @surface0;
+      color: @text;
+    }
+    .ytChipShapeActive {
+      background-color: @accent;
+      color: @base;
+    }
+  }
+}
+
+@-moz-document url-prefix("https://studio.youtube.com") {
+  :root[dark] {
+    #catppuccin(@darkFlavor);
+  }
+  :root {
+    #catppuccin(@lightFlavor);
+  }
+
+  #catppuccin(@flavor) {
+    #lib.palette();
+
+    [src="https://www.gstatic.com/youtube/img/creator/yt_studio_logo_white.svg"] {
+      @svg: escape(
+        '<svg viewBox="0 0 97.55 24" xmlns="http://www.w3.org/2000/svg"><path fill="@{accent}" d="M17.1 0S6.4 0 3.8.7a4.15 4.15 0 0 0-3 3C0 6.4 0 12 0 12a45 45 0 0 0 .7 8.2 4.32 4.32 0 0 0 3 3c2.7.8 13.4.8 13.4.8s10.7 0 13.4-.7a4.32 4.32 0 0 0 3-3 45 45 0 0 0 .7-8.2s.1-5.7-.6-8.3a4.32 4.32 0 0 0-3-3C27.9 0 17.1 0 17.1 0m-3.4 6.9 8.9 5.1-8.9 5.1z"/><path fill="@{text}" d="M76.3.9v4.4c0 1.1 0 2 .1 3.3h-.1A3.36 3.36 0 0 0 73.4 7c-2.3 0-3.3 2-3.3 6.6V16c0 4.9.8 6.6 3.2 6.6a3.42 3.42 0 0 0 3.2-2.4h.1l.4 2.1h2.6V.9zm6.688.4c-1.126.032-1.687.55-1.687 2.1 0 1.7.599 2.1 1.799 2.1s1.8-.5 1.8-2.1-.6-2.1-1.8-2.1zM45 1.4c-3.6 0-5 1.7-5 4.9s1.1 4.5 3.7 6.8c1.6 1.4 2.8 2.5 2.8 4.8 0 1.5-.4 2.2-1.6 2.2s-1.7-.8-1.6-3.6h-3.1c-.6 4.2.8 6.1 4.5 6.2 3.5 0 5-1.5 5-5.4 0-3.1-1.3-4.4-3.7-6.6-1.9-1.8-2.8-2.5-2.8-4.6 0-1.4.3-2.2 1.6-2.2s1.6 1.1 1.5 3.9l3.1-.2c.5-4.2-.8-6.2-4.4-6.2m7.6 1.4-.4 4.5h-1.4v2.6H52v8.8c0 2.7.4 3.8 2.6 3.8a7.4 7.4 0 0 0 3.1-.6l-.6-2.2a5.2 5.2 0 0 1-1.3.2c-.5 0-.7-.3-.7-1.7V9.9h2.2V7.3H55V2.8zM91 7c-3.3 0-4.7 1.8-4.7 6.7v2.2c0 4.7 1.1 6.7 4.6 6.7s4.7-2 4.7-6.7v-2.2C95.6 8.9 94.3 7 91 7m-31.8.3v11.4c0 2.7.9 4 2.9 4a3.46 3.46 0 0 0 3.2-2.1h.1l.3 1.8h2.7V7.3H65v12a1.51 1.51 0 0 1-1.4 1c-.7 0-1-.6-1-1.9V7.3zm22.3 0v15.1h3.2V7.3zm9.4 2c1 0 1.3 1 1.3 3.1v4.7c0 2.2-.4 3.1-1.3 3.1s-1.2-.9-1.2-3.1v-4.7c0-2 .2-3.1 1.2-3.1M75 9.4a1.56 1.56 0 0 1 1.3.8v8.5c-.2.9-.9 1.4-1.4 1.3-1 0-1.3-1-1.3-4.4v-1.9c0-3.3.3-4.3 1.4-4.3"/></svg>'
+      );
+      content: url("data:image/svg+xml,@{svg}");
+    }
+
+    &,
+    html,
+    html[dark],
+    html[dark][dark],
+    &[dark],
+    &[light],
+    [light],
+    html[light],
+    html[light][light] {
+      --yt-spec-black-pure-alpha-80: (null);
+      --yt-spec-black-pure-alpha-60: (null);
+      --yt-spec-black-1-alpha-98: (null);
+      --yt-spec-black-1-alpha-95: (null);
+      --iron-icon-fill-color: unset;
+
+      --yt-spec-text-primary: @text;
+      --ytcp-text-primary: @text;
+      --ytcp-text-primary-inverse: @base;
+      --ytcp-static-overlay-text-primary-inverse: @base;
+      --ytcp-wordmark-text: @text;
+      --ytcp-text-secondary: @subtext0;
+      --ytcp-text-disabled: @subtext1;
+      --ytcp-overlay-text-primary: @overlay2;
+
+      --ytcp-general-background-a: @base;
+      --yt-spec-base-background: @base;
+      --yt-spec-black-3: @base;
+
+      --yt-spec-brand-background-solid: @mantle;
+      --ytcp-brand-background-solid: @mantle;
+      --yt-spec-raised-background: @mantle;
+      --ytcp-general-background-b: @mantle;
+      --ytcp-analytics-reach-background: @mantle;
+      --yt-spec-black-2: @mantle;
+
+      --ytcp-general-background-c: @crust;
+      --ytcp-menu-background: @surface0;
+
+      --ytcp-container-border-color: @surface0;
+      --ytcp-container-hovered-border-color: @surface0;
+      --ytcp-line-divider-solid: @surface0;
+      --ytcp-container-border-color-inverse: @subtext0;
+      --ytcp-line-divider-solid-inverse: @subtext0;
+
+      --ytcp-call-to-action: @accent;
+      --ytcp-call-to-action-inverse: @mantle;
+      --ytcp-call-to-action-raised-background: @accent;
+      --yt-spec-brand-button-background: @accent;
+      --ytcp-call-to-action-raised-disabled: @surface2;
+      --ytcp-call-to-action-raised-disabled-background: @overlay2;
+      --ytcp-call-to-action-raised-background-inverse: @base;
+      --ytcp-call-to-action-raised-disabled-inverse: @surface2;
+      --ytcp-call-to-action-raised-disabled-background-inverse: @overlay2;
+
+      --yt-spec-brand-background-primary: @surface0;
+
+      --yt-compact-link-icon-color: @overlay2;
+      --ytcp-icon-active: @accent;
+      --ytcp-icon-inactive: @overlay2;
+      --ytcp-icon-disabled: @overlay0;
+      --ytcp-icon-active-inverse: @overlay1;
+      --ytcp-icon-disabled-inverse: @subtext1;
+
+      --ytcp-error-red: @red;
+      --ytcp-badge-red: @red;
+      --ytcp-error-red-inverse: @red;
+      --ytcp-themed-red-inverse: @red;
+      --ytcp-themed-red: @accent;
+      --ytcp-themed-blue: @accent;
+      --ytcp-badge-blue: fade(@accent, 30%);
+      --ytcp-badge-blue-solid: @blue;
+      --ytcp-themed-blue-inverse: @blue;
+      --ytcp-themed-green: @green;
+      --ytmus-genre-primary-melon: @green;
+      --ytcp-themed-green-inverse: @green;
+      --ytcp-analytics-pine: @green;
+      --ytcp-analytics-pine-inverse: @green;
+      --ytcp-analytics-parrot: @green;
+      --ytcp-themed-yellow: @peach;
+      --ytmus-genre-primary-gold: @peach;
+      --ytcp-yellow-inverse: @peach;
+      --ytcp-badge-yellow: @peach;
+      --ytcp-analytics-yellow: @peach;
+      --ytcp-analytics-apricot: @peach;
+      --ytcp-suggested-action: @teal;
+      --ytcp-analytics-overview: @teal;
+      --ytcp-analytics-revenue: @teal;
+      --ytcp-analytics-default-secondary: @teal;
+      --ytcp-analytics-royal-blue: @lavender;
+      --ytcp-analytics-reach: @lavender;
+      --ytcp-analytics-audience: @lavender;
+      --ytcp-analytics-engagement: @pink;
+      --ytcp-analytics-revenue-secondary: @pink;
+      --ytcp-analytics-bubblegum: @flamingo;
+      --ytmus-genre-primary-ruby: @flamingo;
+      --ytmus-genre-primary-salmon: @mauve;
+      --ytmus-genre-primary-orange: @maroon;
+      --ytmus-genre-primary-sky: @sky;
+      --ytmus-genre-primary-sky-inverse: @sky;
+
+      --yt-spec-badge-chip-background: @surface1;
+      --ytcp-focus-inverse: @accent;
+      --ytcp-focus: @accent;
+      --ytcp-selected-item: @accent;
+      --ytcp-hover-item: @overlay2;
+      --ytcp-chip-active-focus: @accent;
+      --ytcp-playhead: @overlay2;
+      --ytcp-playhead-inverse: @overlay2;
+    }
+
+    ytcp-button.destructive.ytls-error-dialog {
+      color: @base;
+    }
+
+    yt-formatted-string.ytls-error-dialog,
+    tp-yt-iron-icon.ytls-error-dialog {
+      color: @text;
+    }
+  }
+}
+
+@-moz-document domain("m.youtube.com") {
+  html[darker-dark-theme] {
+    #catppuccin(@darkFlavor);
+  }
+  html {
+    #catppuccin(@lightFlavor);
+  }
+
+  #catppuccin(@flavor) {
+    #lib.palette();
+
+    background-color: @base !important;
+    color: @text !important;
+
+    /* Ambient mode */
+    #cinematics {
+      mix-blend-mode: lighten;
+    }
+
+    .mobile-topbar-header[data-mode="watch"],
+    ytm-mobile-topbar-renderer:not([ambient-topbar]) {
+      background: @base;
+    }
+
+    .mobile-topbar-header[data-mode="watch"] .mobile-topbar-logo,
+    .mobile-topbar-header[data-mode="watch"] .mobile-topbar-title,
+    .mobile-topbar-header[data-mode="watch"] .mobile-topbar-header-content {
+      color: @text;
+    }
+
+    .yt-spec-bottom-sheet-layout__bottom-sheet-renderer-container,
+    .modern-styling {
+      background: @surface0;
+    }
+
+    .yt-spec-bottom-sheet-layout__bottom-sheet-layout-header-wrapper {
+      border-bottom-color: @surface0;
+    }
+
+    .yt-spec-bottom-sheet-layout__bottom-sheet-content {
+      color: @text;
+    }
+
+    /* Comment box */
+    .engagement-panel-container {
+      background: @mantle;
+    }
+
+    /* Bottom bar */
+    ytm-pivot-bar-renderer {
+      background: @mantle;
+      color: @text;
+      border-top-color: @surface0;
+    }
+
+    /* Chips */
+    .chip-bar {
+      background-color: @base;
+    }
+
+    [chip-style*="STYLE_"] {
+      .chip-container {
+        color: @text;
+        background-color: @surface0;
+      }
+
+      &.selected .chip-container {
+        color: @base;
+        background-color: @accent;
+      }
+    }
+
+    /* Buttons */
+
+    .yt-spec-touch-feedback-shape--touch-response {
+      .yt-spec-touch-feedback-shape__fill {
+        background-color: @text;
+      }
+
+      .yt-spec-touch-feedback-shape__stroke {
+        border-color: @surface1;
+      }
+    }
+
+    .yt-spec-touch-feedback-shape--overlay-touch-response-inverse
+      .yt-spec-touch-feedback-shape__fill {
+      background-color: @accent;
+    }
+    .yt-spec-touch-feedback-shape--overlay-touch-response
+      .yt-spec-touch-feedback-shape__fill {
+      background-color: @text;
+    }
+  }
+}
+
+
+/* Accent split: peach stays the brand accent from accentColor.
+   Mauve = selected chips, link hover, comment links.
+   Sky = channel names and brand link text. */
+@-moz-document domain("youtube.com"), domain("m.youtube.com") {
+  :root, html, html[dark], ytd-app, ytd-masthead {
+    --yt-spec-base-background: #1e1e2e !important;
+    --yt-spec-raised-background: #313244 !important;
+    --yt-spec-menu-background: #181825 !important;
+    --yt-spec-general-background-a: #1e1e2e !important;
+    --yt-spec-general-background-b: #181825 !important;
+    --yt-spec-general-background-c: #11111b !important;
+    --yt-sys-color-baseline--base-background: #1e1e2e !important;
+    --yt-sys-color-baseline--menu-background: #181825 !important;
+    --yt-sys-color-baseline--raised-background: #313244 !important;
+    --yt-frosted-glass-desktop: #1e1e2e !important;
+    --yt-spec-frosted-glass-desktop: #1e1e2e !important;
+    --yt-spec-brand-link-text: #89dceb !important;
+    --ctp-peach: #fab387 !important;
+    --ctp-mauve: #cba6f7 !important;
+    --yt-spec-themed-blue: #cba6f7 !important;
+    --yt-endpoint-color: #cba6f7 !important;
+    --yt-endpoint-hover-color: #89dceb !important;
+    --yt-live-chat-owner-color: #fab387 !important;
+    --yt-brand-youtube-red: #fab387 !important;
+    --yt-spec-call-to-action: #fab387 !important;
+    --yt-spec-brand-button-background: #fab387 !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html, body, ytd-app, #content, #page-manager, #primary, #columns,
+  ytd-browse, ytd-watch-flexy, ytd-two-column-browse-results-renderer,
+  ytd-rich-grid-renderer, ytd-item-section-renderer, #below, #below-the-player,
+  ytd-comments, ytd-watch-metadata, #cinematics-container {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  :root, html, html[dark], ytd-app {
+    --yt-spec-text-primary: #cdd6f4 !important;
+    --yt-spec-text-secondary: #a6adc8 !important;
+    --yt-spec-text-disabled: #7f849c !important;
+    --yt-spec-wordmark-text: #cdd6f4 !important;
+    --yt-spec-static-brand-white: #cdd6f4 !important;
+    --yt-spec-white-1: #cdd6f4 !important;
+    --yt-spec-white-2: #a6adc8 !important;
+    --yt-spec-white-3: #bac2de !important;
+    --yt-spec-grey-1: #cdd6f4 !important;
+    --yt-sys-color-baseline--text-primary: #cdd6f4 !important;
+    --yt-sys-color-baseline--text-secondary: #a6adc8 !important;
+    --yt-sys-color-baseline--wordmark-text: #cdd6f4 !important;
+    --yt-endpoint-color: #cba6f7 !important;
+    --iron-icon-fill-color: #cdd6f4 !important;
+  }
+
+  ytd-app, #video-title, yt-formatted-string, .yt-formatted-string,
+  .ytLockupMetadataViewModelTitle, .ytPageHeaderViewModelTitle,
+  h1, h2, h3, .yt-core-attributed-string, #description, #content-text,
+  ytd-comment-view-model, ytd-comment-renderer #content-text,
+  .ytp-time-current, .ytp-time-separator, .ytp-time-duration,
+  .ytp-menuitem-label, #guide-content, ytd-guide-entry-renderer,
+  ytd-mini-guide-entry-renderer, tp-yt-paper-item, ytd-menu-popup-renderer {
+    color: #cdd6f4 !important;
+  }
+
+  #metadata-line, #metadata-line span, .ytLockupMetadataViewModelMetadata,
+  .ytPageHeaderViewModelContentMetadata, #description-text {
+    color: #a6adc8 !important;
+  }
+
+  yt-icon, .yt-icon-shape, #guide-icon, ytd-guide-entry-renderer yt-icon {
+    color: #cdd6f4 !important;
+    fill: #cdd6f4 !important;
+  }
+
+  ytd-masthead, #masthead-container, #container.ytd-masthead,
+  #background.ytd-masthead, #frosted-glass, #chips-wrapper,
+  ytd-feed-filter-chip-bar-renderer, tp-yt-app-drawer, #guide-content,
+  ytd-mini-guide-renderer, ytd-guide-renderer, #guide-inner-content {
+    background: #181825 !important;
+    background-color: #181825 !important;
+  }
+
+  .html5-video-player, #movie_player {
+    background: #11111b !important;
+    background-color: #11111b !important;
+  }
+
+  .ytChipShapeActive,
+  yt-chip-cloud-chip-renderer[selected],
+  yt-chip-cloud-chip-renderer[aria-selected="true"],
+  [chip-style].selected .chip-container {
+    background: #cba6f7 !important;
+    background-color: #cba6f7 !important;
+    color: #11111b !important;
+  }
+
+  .ytChipShapeActive span,
+  yt-chip-cloud-chip-renderer[selected] span,
+  yt-chip-cloud-chip-renderer[aria-selected="true"] span {
+    color: #11111b !important;
+  }
+
+  ytd-channel-name a,
+  #channel-name a,
+  #owner-name a,
+  ytd-video-owner-renderer a,
+  #byline a,
+  .yt-core-attributed-string--link-inherit-color {
+    color: #89dceb !important;
+  }
+
+  ytd-channel-name a:hover,
+  #owner-name a:hover,
+  #byline a:hover {
+    color: #fab387 !important;
+  }
+
+  ytd-comment-renderer a,
+  #description a,
+  .ytAttributedStringLinkCallToActionColor {
+    color: #cba6f7 !important;
+  }
+
+  a.yt-simple-endpoint:hover #video-title,
+  ytd-rich-grid-media:hover #video-title,
+  .ytLockupMetadataViewModelTitle:hover {
+    color: #cba6f7 !important;
+  }
+}
+
+/* ===== youtube-music-catppuccin-mocha.user.css ===== */
+@-moz-document domain("music.youtube.com") {
+  :root,
+  html,
+  ytmusic-app,
+  ytmusic-app-layout {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --ytmusic-background: #1e1e2e !important;
+    --ytmusic-general-background-a: #1e1e2e !important;
+    --ytmusic-general-background-b: #181825 !important;
+    --ytmusic-general-background-c: #11111b !important;
+    --ytmusic-nav-bar-background: #181825 !important;
+    --ytmusic-player-bar-background: #181825 !important;
+    --ytmusic-search-background: #313244 !important;
+    --ytmusic-dialog-background: #181825 !important;
+    --ytmusic-overlay-background: #181825 !important;
+    --ytmusic-track-list-hover: #313244 !important;
+    --ytmusic-10-percent-layer: #313244 !important;
+    --ytmusic-divider: #45475a !important;
+    --ytmusic-brand-background-solid: #fab387 !important;
+    --ytmusic-text-primary: #cdd6f4 !important;
+    --ytmusic-text-secondary: #a6adc8 !important;
+    --ytmusic-brand-icon-active: #fab387 !important;
+    --ytmusic-brand-icon-inactive: #cdd6f4 !important;
+    --ytmusic-subscribe-button-color: #fab387 !important;
+    --ytmusic-play-button-icon-color: #11111b !important;
+    --ytmusic-fullscreen-player-overlay-gradient: linear-gradient(rgba(17, 17, 27, 0.2), #11111b) !important;
+
+    --ytmusic-color-white1: #cdd6f4 !important;
+    --ytmusic-color-grey1: #bac2de !important;
+    --ytmusic-color-grey2: #a6adc8 !important;
+    --ytmusic-color-grey3: #6c7086 !important;
+    --ytmusic-color-grey4: #45475a !important;
+    --ytmusic-color-grey5: #313244 !important;
+    --ytmusic-color-black1: #1e1e2e !important;
+    --ytmusic-color-black2: #181825 !important;
+    --ytmusic-color-black3: #11111b !important;
+    --ytmusic-color-black4: #11111b !important;
+    --ytmusic-color-blackpure: #11111b !important;
+
+    --yt-spec-base-background: #1e1e2e !important;
+    --yt-spec-raised-background: #313244 !important;
+    --yt-spec-menu-background: #181825 !important;
+    --yt-spec-additive-background: #313244 !important;
+    --yt-spec-inverted-background: #cdd6f4 !important;
+    --yt-spec-text-primary: #cdd6f4 !important;
+    --yt-spec-text-secondary: #a6adc8 !important;
+    --yt-spec-text-disabled: #6c7086 !important;
+    --yt-spec-call-to-action: #fab387 !important;
+    --yt-spec-call-to-action-inverse: #11111b !important;
+    --yt-spec-suggested-action: #45475a !important;
+    --yt-spec-icon-active-other: #fab387 !important;
+    --yt-spec-icon-inactive: #cdd6f4 !important;
+    --yt-spec-brand-background-primary: #fab387 !important;
+    --yt-spec-brand-background-solid: #fab387 !important;
+    --yt-spec-static-brand-red: #fab387 !important;
+    --yt-spec-static-brand-white: #cdd6f4 !important;
+    --yt-spec-static-brand-black: #11111b !important;
+    --yt-spec-outline: #45475a !important;
+    --yt-spec-10-percent-layer: #313244 !important;
+    --yt-spec-badge-chip-background: #313244 !important;
+    --yt-spec-commerce-filled-hover: #fab387 !important;
+    --yt-spec-themed-blue: #cba6f7 !important;
+    --yt-spec-themed-green: #a6e3a1 !important;
+    --yt-spec-error-background: #f38ba8 !important;
+    --yt-spec-white-1: #cdd6f4 !important;
+    --yt-spec-white-2: #a6adc8 !important;
+    --yt-spec-white-3: #bac2de !important;
+    --yt-spec-white-4: #9399b2 !important;
+    --yt-spec-black-1: #7f849c !important;
+    --yt-spec-black-2: #6c7086 !important;
+    --yt-spec-black-3: #585b70 !important;
+    --yt-spec-black-4: #45475a !important;
+    --yt-spec-black-pure: #313244 !important;
+    --yt-spec-grey-1: #cdd6f4 !important;
+    --yt-spec-grey-2: #a6adc8 !important;
+    --yt-spec-grey-3: #bac2de !important;
+    --yt-spec-grey-4: #9399b2 !important;
+    --yt-spec-grey-5: #7f849c !important;
+    --yt-brand-youtube-red: #fab387 !important;
+    --yt-brand-medium-red: #fab387 !important;
+    --yt-brand-light-red: #fab387 !important;
+    --yt-spec-red-indicator: #fab387 !important;
+    --yt-spec-pale-blue: #89dceb !important;
+    --yt-spec-light-blue: #89dceb !important;
+
+    --yt-sys-color-baseline--base-background: #1e1e2e !important;
+    --yt-sys-color-baseline--menu-background: #181825 !important;
+    --yt-sys-color-baseline--raised-background: #313244 !important;
+    --yt-sys-color-baseline--additive-background: #313244 !important;
+    --yt-sys-color-baseline--text-primary: #cdd6f4 !important;
+    --yt-sys-color-baseline--text-secondary: #a6adc8 !important;
+    --yt-sys-color-baseline--call-to-action: #fab387 !important;
+    --yt-sys-color-baseline--outline: #45475a !important;
+    --yt-sys-color-baseline--overlay-background-solid: #11111b !important;
+
+    --paper-slider-active-color: #fab387 !important;
+    --paper-slider-secondary-color: #45475a !important;
+    --paper-slider-container-color: #45475a !important;
+    --paper-slider-knob-color: #fab387 !important;
+    --paper-tabs-selection-bar-color: #cba6f7 !important;
+    --paper-spinner-color: #fab387 !important;
+    --iron-icon-fill-color: #cdd6f4 !important;
+    --yt-button-color: #cdd6f4 !important;
+    --yt-endpoint-color: #cba6f7 !important;
+    --yt-endpoint-hover-color: #f5c2e7 !important;
+    --yt-endpoint-visited-color: #cba6f7 !important;
+
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html,
+  body,
+  ytmusic-app,
+  ytmusic-app-layout,
+  #layout.ytmusic-app-layout,
+  #content.ytmusic-app-layout,
+  #main-panel,
+  #browse-page,
+  ytmusic-browse-response,
+  ytmusic-section-list-renderer,
+  ytmusic-shelf-renderer,
+  ytmusic-carousel-shelf-renderer,
+  ytmusic-player-page,
+  ytmusic-search-page,
+  ytmusic-tabbed-search-results-renderer,
+  ytmusic-settings-page {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Shell */
+  #nav-bar-background.ytmusic-app-layout,
+  #mini-guide-background.ytmusic-app-layout,
+  #guide-wrapper.ytmusic-app-layout,
+  #player-bar-background.ytmusic-app-layout,
+  #side-panel.ytmusic-app-layout,
+  ytmusic-nav-bar,
+  ytmusic-guide-renderer,
+  ytmusic-player-bar,
+  ytmusic-player-queue,
+  ytmusic-pivot-bar-renderer {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  ytmusic-nav-bar,
+  #nav-bar-background.ytmusic-app-layout {
+    border-bottom: 1px solid #313244 !important;
+    box-shadow: none !important;
+  }
+
+  ytmusic-guide-renderer,
+  #guide-wrapper.ytmusic-app-layout {
+    border-right: 1px solid #313244 !important;
+  }
+
+  ytmusic-player-bar,
+  #player-bar-background.ytmusic-app-layout {
+    border-top: 1px solid #313244 !important;
+    box-shadow: none !important;
+  }
+
+  /* Text */
+  yt-formatted-string,
+  .title,
+  h1, h2, h3, h4,
+  .text.style-scope,
+  ytmusic-responsive-list-item-renderer,
+  ytmusic-two-row-item-renderer,
+  ytmusic-list-item-renderer,
+  ytmusic-player-queue-item {
+    color: #cdd6f4;
+  }
+
+  .subtitle,
+  .secondary-flex-column,
+  .secondary-flex-columns,
+  .duration,
+  .index,
+  .description,
+  yt-formatted-string.duration,
+  .strapline,
+  .ytmusic-detail-header-renderer.subtitle {
+    color: #a6adc8 !important;
+  }
+
+  /* Sky: artist / channel names */
+  .byline,
+  yt-formatted-string.byline,
+  .byline-wrapper,
+  a.yt-simple-endpoint.yt-formatted-string[href*="channel"],
+  a.yt-simple-endpoint.yt-formatted-string[href*="/artist"],
+  ytmusic-responsive-list-item-renderer .secondary-flex-columns a,
+  ytmusic-two-row-item-renderer .subtitle a,
+  ytmusic-player-bar .byline,
+  ytmusic-player-bar .subtitle a,
+  .complex-string a,
+  ytmusic-player-queue-item .byline {
+    color: #89dceb !important;
+  }
+
+  .byline a:hover,
+  ytmusic-player-bar .byline a:hover,
+  .complex-string a:hover {
+    color: #74c7ec !important;
+  }
+
+  /* Mauve: links and chips */
+  a,
+  a.yt-simple-endpoint,
+  yt-formatted-string.yt-simple-endpoint,
+  .ytmusic-content-update-chip {
+    color: #cba6f7;
+  }
+
+  a:hover,
+  a.yt-simple-endpoint:hover {
+    color: #f5c2e7 !important;
+  }
+
+  ytmusic-chip-cloud-chip-renderer,
+  ytmusic-chip-cloud-chip-renderer a,
+  .ytmusic-chip-cloud-chip-renderer {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-radius: 8px !important;
+  }
+
+  ytmusic-chip-cloud-chip-renderer[chip-style="STYLE_SELECTED"],
+  ytmusic-chip-cloud-chip-renderer[selected],
+  ytmusic-chip-cloud-chip-renderer.iron-selected,
+  ytmusic-chip-cloud-chip-renderer[aria-selected="true"] {
+    background: #cba6f7 !important;
+    color: #11111b !important;
+  }
+
+  ytmusic-chip-cloud-chip-renderer[chip-style="STYLE_SELECTED"] *,
+  ytmusic-chip-cloud-chip-renderer[selected] *,
+  ytmusic-chip-cloud-chip-renderer.iron-selected *,
+  ytmusic-chip-cloud-chip-renderer[aria-selected="true"] * {
+    color: #11111b !important;
+    fill: #11111b !important;
+  }
+
+  ytmusic-chip-cloud-chip-renderer:hover {
+    background: #45475a !important;
+  }
+
+  /* Guide / pivot selection */
+  ytmusic-guide-entry-renderer,
+  ytmusic-pivot-bar-item-renderer,
+  ytmusic-navigation-button-renderer {
+    color: #cdd6f4 !important;
+  }
+
+  ytmusic-guide-entry-renderer:hover,
+  ytmusic-pivot-bar-item-renderer:hover,
+  ytmusic-guide-entry-renderer[active],
+  ytmusic-guide-entry-renderer.iron-selected,
+  ytmusic-pivot-bar-item-renderer.iron-selected,
+  tp-yt-paper-tab.iron-selected,
+  ytmusic-item-section-tab-renderer.selected,
+  .tab.selected {
+    background: #313244 !important;
+    color: #cba6f7 !important;
+  }
+
+  ytmusic-guide-entry-renderer[active] .title,
+  ytmusic-guide-entry-renderer.iron-selected .title,
+  ytmusic-pivot-bar-item-renderer.iron-selected,
+  tp-yt-paper-tab.iron-selected {
+    color: #cba6f7 !important;
+  }
+
+  ytmusic-guide-entry-renderer[active] yt-icon,
+  ytmusic-guide-entry-renderer.iron-selected yt-icon,
+  ytmusic-pivot-bar-item-renderer.iron-selected yt-icon {
+    fill: #cba6f7 !important;
+    color: #cba6f7 !important;
+  }
+
+  #selectionBar.tp-yt-paper-tabs,
+  paper-tabs,
+  tp-yt-paper-tabs {
+    --paper-tabs-selection-bar-color: #cba6f7 !important;
+    border-color: #cba6f7 !important;
+  }
+
+  #selectionBar.tp-yt-paper-tabs {
+    border-bottom: 2px solid #cba6f7 !important;
+  }
+
+  /* Peach: play, progress, subscribe, like */
+  #progress-bar.ytmusic-player-bar,
+  #progress-bar.ytmusic-player-bar[focused],
+  ytmusic-player-bar:hover #progress-bar.ytmusic-player-bar,
+  tp-yt-paper-slider#progress-bar {
+    --paper-slider-active-color: #fab387 !important;
+    --paper-slider-knob-color: #fab387 !important;
+    --paper-slider-knob-start-color: #fab387 !important;
+    --paper-slider-knob-start-border-color: #fab387 !important;
+    --paper-slider-secondary-color: #45475a !important;
+    --paper-slider-container-color: #45475a !important;
+  }
+
+  #primaryProgress.tp-yt-paper-progress,
+  #primaryProgress {
+    background: #fab387 !important;
+  }
+
+  #secondaryProgress.tp-yt-paper-progress,
+  #progressContainer.tp-yt-paper-progress {
+    background: #45475a !important;
+  }
+
+  yt-page-navigation-progress {
+    --yt-page-navigation-container-color: #313244 !important;
+    --yt-page-navigation-progress-color: #fab387 !important;
+  }
+
+  ytmusic-play-button-renderer,
+  ytmusic-play-button-renderer[state="default"],
+  .ytmusic-play-button-renderer {
+    --ytmusic-play-button-icon-color: #11111b !important;
+  }
+
+  ytmusic-play-button-renderer #button,
+  ytmusic-play-button-renderer button,
+  ytmusic-play-button-renderer tp-yt-paper-icon-button,
+  .content-wrapper.ytmusic-play-button-renderer,
+  #play-button.ytmusic-play-button-renderer {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-radius: 50% !important;
+  }
+
+  ytmusic-play-button-renderer svg,
+  ytmusic-play-button-renderer path,
+  ytmusic-play-button-renderer yt-icon {
+    fill: #11111b !important;
+    color: #11111b !important;
+  }
+
+  ytmusic-subscribe-button-renderer,
+  ytmusic-subscribe-button-renderer[subscribed],
+  .ytmusic-subscribe-button-renderer {
+    --ytmusic-subscribe-button-color: #fab387 !important;
+  }
+
+  ytmusic-subscribe-button-renderer button,
+  ytmusic-subscribe-button-renderer tp-yt-paper-button,
+  ytmusic-subscribe-button-renderer yt-button-shape button {
+    background: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  ytmusic-subscribe-button-renderer button *,
+  ytmusic-subscribe-button-renderer yt-button-shape * {
+    color: #11111b !important;
+    fill: #11111b !important;
+  }
+
+  .yt-spec-button-shape-next--filled,
+  .yt-spec-button-shape-next--call-to-action,
+  .yt-spec-button-shape-next--call-to-action-inverse,
+  yt-button-renderer[is-paper-button],
+  ytmusic-nav-bar .sign-in-link,
+  a.sign-in-link.ytmusic-nav-bar {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  .yt-spec-button-shape-next--filled *,
+  .yt-spec-button-shape-next--call-to-action *,
+  yt-button-renderer[is-paper-button] * {
+    color: #11111b !important;
+    fill: #11111b !important;
+  }
+
+  .yt-spec-button-shape-next--outline,
+  .yt-spec-button-shape-next--tonal,
+  .yt-spec-button-shape-next--mono {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #585b70 !important;
+  }
+
+  ytmusic-like-button-renderer[like-status="LIKE"] yt-icon,
+  ytmusic-like-button-renderer[like-status="DISLIKE"] yt-icon,
+  ytmusic-like-button-renderer[like-status="LIKE"] button,
+  .ytmusic-like-status-renderer[like-status="LIKE"] {
+    color: #fab387 !important;
+    fill: #fab387 !important;
+  }
+
+  /* Rows, cards, queue */
+  ytmusic-responsive-list-item-renderer:hover,
+  ytmusic-list-item-renderer:hover,
+  ytmusic-player-queue-item:hover,
+  ytmusic-two-row-item-renderer:hover,
+  ytmusic-menu-navigation-item-renderer:hover,
+  ytmusic-menu-service-item-renderer:hover,
+  ytmusic-search-suggestion:hover,
+  ytmusic-guide-entry-renderer:hover {
+    background: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  ytmusic-player-queue-item[selected],
+  ytmusic-player-queue-item[play-button-state="playing"],
+  ytmusic-responsive-list-item-renderer[play-button-state="playing"] {
+    background: #313244 !important;
+  }
+
+  ytmusic-player-queue-item[selected] .title,
+  ytmusic-responsive-list-item-renderer[play-button-state="playing"] .title {
+    color: #fab387 !important;
+  }
+
+  ytmusic-two-row-item-renderer,
+  ytmusic-immersive-header-renderer,
+  ytmusic-visual-header-renderer,
+  ytmusic-detail-header-renderer,
+  ytmusic-responsive-header-renderer,
+  ytmusic-data-bound-header-renderer,
+  ytmusic-carousel-shelf-basic-header-renderer,
+  ytmusic-item-section-renderer,
+  ytmusic-description-shelf-renderer {
+    background: transparent !important;
+    color: #cdd6f4 !important;
+  }
+
+  .background-gradient,
+  ytmusic-browse-response > picture,
+  ytmusic-background-overlay-renderer {
+    background: linear-gradient(180deg, #313244 0%, #1e1e2e 72%) !important;
+    background-image: linear-gradient(180deg, #313244 0%, #1e1e2e 72%) !important;
+  }
+
+  /* Search */
+  ytmusic-search-box,
+  .search-box.ytmusic-search-box,
+  ytmusic-search-box[opened],
+  ytmusic-search-box #suggestions,
+  ytmusic-search-suggestion {
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  ytmusic-search-box input,
+  input {
+    color: #cdd6f4 !important;
+    caret-color: #fab387 !important;
+  }
+
+  input::placeholder {
+    color: #6c7086 !important;
+  }
+
+  /* Menus, dialogs, toasts */
+  tp-yt-paper-dialog,
+  tp-yt-paper-listbox,
+  tp-yt-paper-toast,
+  ytmusic-popup-container,
+  ytmusic-menu-popup-renderer,
+  ytmusic-add-to-playlist-renderer,
+  ytmusic-dialog,
+  ytmusic-multi-select-menu-renderer,
+  ytd-multi-page-menu-renderer,
+  #contentWrapper.ytmusic-menu-popup-renderer,
+  .ytmusic-menu-popup-renderer {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border: 1px solid #313244 !important;
+  }
+
+  tp-yt-paper-item,
+  ytmusic-menu-service-item-renderer,
+  ytmusic-menu-navigation-item-renderer,
+  ytmusic-toggle-menu-service-item-renderer,
+  ytmusic-dropdown-item-renderer {
+    background: transparent !important;
+    color: #cdd6f4 !important;
+  }
+
+  ytmusic-mealbar-promo-renderer,
+  ytmusic-background-promo-renderer {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border: 1px solid #313244 !important;
+  }
+
+  /* Icons stay readable; active playback icons stay peach */
+  yt-icon,
+  tp-yt-iron-icon,
+  paper-icon-button,
+  tp-yt-paper-icon-button {
+    color: #cdd6f4;
+    fill: #cdd6f4;
+    --iron-icon-fill-color: #cdd6f4 !important;
+    --paper-icon-button_-_color: #cdd6f4 !important;
+  }
+
+  ytmusic-player-bar .time-info,
+  #left-controls.ytmusic-player-bar,
+  #right-controls.ytmusic-player-bar,
+  .title.ytmusic-player-bar,
+  .content-info-wrapper.ytmusic-player-bar {
+    color: #cdd6f4 !important;
+  }
+
+  .volume-slider.ytmusic-player-bar,
+  .expand-volume-slider.ytmusic-player-bar,
+  paper-slider#volume-slider {
+    --paper-slider-active-color: #cdd6f4 !important;
+    --paper-slider-knob-color: #cdd6f4 !important;
+    --paper-slider-container-color: #585b70 !important;
+  }
+
+  /* Toggles and inputs */
+  tp-yt-paper-toggle-button[checked],
+  tp-yt-paper-checkbox[checked] {
+    --paper-toggle-button-checked-bar-color: #fab387 !important;
+    --paper-toggle-button-checked-button-color: #fab387 !important;
+    --paper-checkbox-checked-color: #fab387 !important;
+  }
+
+  tp-yt-paper-input-container,
+  tp-yt-paper-input {
+    --paper-input-container-color: #a6adc8 !important;
+    --paper-input-container-focus-color: #fab387 !important;
+    color: #cdd6f4 !important;
+  }
+
+  ::selection {
+    background: #cba6f7;
+    color: #11111b;
+  }
+
+  img,
+  yt-img-shadow,
+  .image.ytmusic-player-bar,
+  #song-image,
+  ytmusic-thumbnail-renderer img {
+    background: transparent !important;
+  }
+}
+
+/* ===== google-catppuccin-mocha.user.css ===== */
+/*
+  Shared painting matches every google.com host except accounts.google.com.
+  Product blocks below only add what the shared tokens miss.
+  Future blocks: mail, docs, calendar, keep, photos, meet, chat.
+  domain("google.com") is not used: it cannot exclude accounts, and it
+  would also miss nothing we want — the regexp covers nested hosts
+  such as console.cloud.google.com.
+*/
+
+@-moz-document regexp("https?://(?!accounts\\.google\\.com)(?:[a-z0-9-]+\\.)*google\\.com/.*") {
+  :root,
+  html,
+  body {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-red: #f38ba8;
+    --ctp-green: #a6e3a1;
+
+    --gm3-sys-color-background: #1e1e2e !important;
+    --gm3-sys-color-background-rgb: 30, 30, 46 !important;
+    --gm3-sys-color-on-background: #cdd6f4 !important;
+    --gm3-sys-color-on-background-rgb: 205, 214, 244 !important;
+    --gm3-sys-color-surface: #1e1e2e !important;
+    --gm3-sys-color-surface-rgb: 30, 30, 46 !important;
+    --gm3-sys-color-surface-bright: #313244 !important;
+    --gm3-sys-color-surface-bright-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-surface-dim: #181825 !important;
+    --gm3-sys-color-surface-dim-rgb: 24, 24, 37 !important;
+    --gm3-sys-color-surface-variant: #313244 !important;
+    --gm3-sys-color-surface-variant-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-surface-container-lowest: #11111b !important;
+    --gm3-sys-color-surface-container-lowest-rgb: 17, 17, 27 !important;
+    --gm3-sys-color-surface-container-low: #181825 !important;
+    --gm3-sys-color-surface-container-low-rgb: 24, 24, 37 !important;
+    --gm3-sys-color-surface-container: #313244 !important;
+    --gm3-sys-color-surface-container-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-surface-container-high: #45475a !important;
+    --gm3-sys-color-surface-container-high-rgb: 69, 71, 90 !important;
+    --gm3-sys-color-surface-container-highest: #585b70 !important;
+    --gm3-sys-color-surface-container-highest-rgb: 88, 91, 112 !important;
+    --gm3-sys-color-on-surface: #cdd6f4 !important;
+    --gm3-sys-color-on-surface-rgb: 205, 214, 244 !important;
+    --gm3-sys-color-on-surface-variant: #a6adc8 !important;
+    --gm3-sys-color-on-surface-variant-rgb: 166, 173, 200 !important;
+    --gm3-sys-color-outline: #585b70 !important;
+    --gm3-sys-color-outline-rgb: 88, 91, 112 !important;
+    --gm3-sys-color-outline-variant: #45475a !important;
+    --gm3-sys-color-outline-variant-rgb: 69, 71, 90 !important;
+    --gm3-sys-color-primary: #fab387 !important;
+    --gm3-sys-color-primary-rgb: 250, 179, 135 !important;
+    --gm3-sys-color-on-primary: #11111b !important;
+    --gm3-sys-color-on-primary-rgb: 17, 17, 27 !important;
+    --gm3-sys-color-primary-container: #45475a !important;
+    --gm3-sys-color-primary-container-rgb: 69, 71, 90 !important;
+    --gm3-sys-color-on-primary-container: #fab387 !important;
+    --gm3-sys-color-on-primary-container-rgb: 250, 179, 135 !important;
+    --gm3-sys-color-secondary: #cba6f7 !important;
+    --gm3-sys-color-secondary-rgb: 203, 166, 247 !important;
+    --gm3-sys-color-on-secondary: #11111b !important;
+    --gm3-sys-color-secondary-container: #313244 !important;
+    --gm3-sys-color-secondary-container-rgb: 49, 50, 68 !important;
+    --gm3-sys-color-on-secondary-container: #cba6f7 !important;
+    --gm3-sys-color-on-secondary-container-rgb: 203, 166, 247 !important;
+    --gm3-sys-color-error: #f38ba8 !important;
+    --gm3-sys-color-error-rgb: 243, 139, 168 !important;
+    --gm3-sys-color-on-error: #11111b !important;
+    --gm3-sys-color-inverse-surface: #cdd6f4 !important;
+    --gm3-sys-color-inverse-on-surface: #1e1e2e !important;
+    --gm3-sys-color-inverse-primary: #fab387 !important;
+    --gm3-sys-color-scrim: #11111b !important;
+
+    --mat-sys-background: #1e1e2e !important;
+    --mat-sys-on-background: #cdd6f4 !important;
+    --mat-sys-surface: #1e1e2e !important;
+    --mat-sys-surface-bright: #313244 !important;
+    --mat-sys-surface-dim: #181825 !important;
+    --mat-sys-surface-variant: #313244 !important;
+    --mat-sys-surface-container-lowest: #11111b !important;
+    --mat-sys-surface-container-low: #181825 !important;
+    --mat-sys-surface-container: #313244 !important;
+    --mat-sys-surface-container-high: #45475a !important;
+    --mat-sys-surface-container-highest: #585b70 !important;
+    --mat-sys-on-surface: #cdd6f4 !important;
+    --mat-sys-on-surface-variant: #a6adc8 !important;
+    --mat-sys-outline: #585b70 !important;
+    --mat-sys-outline-variant: #45475a !important;
+    --mat-sys-primary: #fab387 !important;
+    --mat-sys-on-primary: #11111b !important;
+    --mat-sys-primary-container: #45475a !important;
+    --mat-sys-on-primary-container: #fab387 !important;
+    --mat-sys-secondary: #cba6f7 !important;
+    --mat-sys-on-secondary: #11111b !important;
+    --mat-sys-secondary-container: #313244 !important;
+    --mat-sys-on-secondary-container: #cba6f7 !important;
+    --mat-sys-error: #f38ba8 !important;
+    --mat-app-background-color: #1e1e2e !important;
+    --mat-app-text-color: #cdd6f4 !important;
+    --mat-divider-color: #313244 !important;
+
+    --dt-background: #1e1e2e !important;
+    --dt-on-background: #cdd6f4 !important;
+    --dt-surface: #1e1e2e !important;
+    --dt-on-surface: #cdd6f4 !important;
+    --dt-on-surface-variant: #a6adc8 !important;
+    --dt-on-surface-secondary: #a6adc8 !important;
+    --dt-surface-variant: #313244 !important;
+    --dt-surface-bright: #313244 !important;
+    --dt-surface-dim: #181825 !important;
+    --dt-surface-container-lowest: #11111b !important;
+    --dt-surface-container-low: #181825 !important;
+    --dt-surface-container: #313244 !important;
+    --dt-surface-container-high: #45475a !important;
+    --dt-surface-container-highest: #585b70 !important;
+    --dt-primary: #fab387 !important;
+    --dt-on-primary: #11111b !important;
+    --dt-primary-container: #45475a !important;
+    --dt-on-primary-container: #fab387 !important;
+    --dt-secondary: #cba6f7 !important;
+    --dt-secondary-container: #313244 !important;
+    --dt-on-secondary-container: #cba6f7 !important;
+    --dt-outline: #585b70 !important;
+    --dt-outline-variant: #45475a !important;
+    --dt-error: #f38ba8 !important;
+
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html,
+  body,
+  #yDmH0d,
+  c-wiz {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  #gb,
+  #gb .gb_Z,
+  .gb_Ld,
+  .gb_cd,
+  header[role="banner"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  #gb a,
+  #gb button,
+  .gb_A,
+  .gb_B {
+    color: #cdd6f4 !important;
+  }
+
+  a {
+    color: #cba6f7;
+  }
+
+  a:hover {
+    color: #f5c2e7;
+  }
+
+  ::selection {
+    background: #cba6f7;
+    color: #11111b;
+  }
+
+  input,
+  textarea {
+    color: #cdd6f4;
+    caret-color: #fab387;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #6c7086;
+  }
+}
+
+/* Drive. Tokens come from the shared block; this only paints Drive chrome. */
+@-moz-document url-prefix("https://drive.google.com/") {
+  body,
+  #drive-active-item-info,
+  .a-s-tb-pa {
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .a-s-tb-sc-Ja,
+  .a-s-tb-sc,
+  [role="navigation"] {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  [role="navigation"] [aria-current="page"],
+  [role="navigation"] [aria-selected="true"] {
+    background: #313244 !important;
+    color: #cba6f7 !important;
+  }
+
+  input[aria-label*="Search"],
+  div[role="search"] {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  div[role="row"]:hover,
+  div[role="option"]:hover,
+  div[role="gridcell"]:hover {
+    background: #313244 !important;
+  }
+
+  div[role="row"][aria-selected="true"],
+  div[role="option"][aria-selected="true"] {
+    background: #313244 !important;
+  }
+
+  div[role="row"][aria-selected="true"] [data-tooltip],
+  div[role="option"][aria-selected="true"] {
+    color: #fab387 !important;
+  }
+
+  div[role="gridcell"] a,
+  div[role="row"] a[aria-label] {
+    color: #cdd6f4 !important;
+  }
+
+  div[data-tooltip*="@"],
+  [data-id] span[aria-label*="@"] {
+    color: #89dceb !important;
+  }
+
+  [role="progressbar"] > div,
+  .a-s-Ba-Ak-j {
+    background: #fab387 !important;
+  }
+
+  div[role="dialog"],
+  div[role="menu"],
+  div[role="listbox"] {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border: 1px solid #313244 !important;
+  }
+
+  div[role="menuitem"]:hover,
+  div[role="option"]:hover {
+    background: #313244 !important;
+  }
+}
+
+/* Gemini. Own token set (--gem-sys-color--, --bard-color-synthetic--). */
+@-moz-document url-prefix("https://gemini.google.com/") {
+  :root,
+  html,
+  body,
+  .theme-host,
+  :where(.theme-host) {
+    color-scheme: dark;
+    --bard-color-synthetic--chat-window-surface: #1e1e2e !important;
+    --gem-sys-color--surface: #1e1e2e !important;
+    --gem-sys-color--surface-surface: #1e1e2e !important;
+    --gem-sys-color--surface-bright: #313244 !important;
+    --gem-sys-color--surface-dim: #181825 !important;
+    --gem-sys-color--surface-container-lowest: #11111b !important;
+    --gem-sys-color--surface-container-low: #181825 !important;
+    --gem-sys-color--surface-container: #181825 !important;
+    --gem-sys-color--surface-container-high: #313244 !important;
+    --gem-sys-color--surface-container-highest: #45475a !important;
+    --gem-sys-color--on-surface: #cdd6f4 !important;
+    --gem-sys-color--on-surface-variant: #a6adc8 !important;
+    --gem-sys-color--outline: #585b70 !important;
+    --gem-sys-color--outline-variant: #45475a !important;
+    --gem-sys-color--primary: #fab387 !important;
+    --gem-sys-color--on-primary: #11111b !important;
+    --gem-sys-color--primary-container: #45475a !important;
+    --gem-sys-color--on-primary-container: #fab387 !important;
+    --gem-sys-color--secondary: #cba6f7 !important;
+    --gem-sys-color--secondary-container: #313244 !important;
+    --gem-sys-color--on-secondary-container: #cba6f7 !important;
+    --gem-sys-color--secondary-emphasis-1: #cba6f7 !important;
+    --gem-sys-color--error: #f38ba8 !important;
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  chat-app,
+  chat-app main,
+  main.chat-app,
+  .chat-app {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  bard-sidenav,
+  [data-test-id="bard-sidenav-container"],
+  side-navigation-content,
+  mat-sidenav {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  bard-sidenav a,
+  bard-sidenav button,
+  side-navigation-content a {
+    color: #cdd6f4 !important;
+  }
+
+  bard-sidenav [aria-selected="true"],
+  bard-sidenav [aria-current="page"],
+  .selected-chat,
+  [class*="selected"][class*="conversation"] {
+    background: #313244 !important;
+    color: #cba6f7 !important;
+  }
+
+  user-query,
+  [class*="user-query"] {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-radius: 12px !important;
+  }
+
+  model-response,
+  [class*="model-response"],
+  response-container,
+  message-content {
+    background: transparent !important;
+    color: #cdd6f4 !important;
+  }
+
+  model-response a,
+  message-content a {
+    color: #cba6f7 !important;
+  }
+
+  input-area,
+  [class*="input-area"],
+  rich-textarea,
+  .ql-editor,
+  [role="textbox"] {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  button[aria-label*="Send"],
+  button[data-test-id*="send"],
+  [class*="send-button"] {
+    background: #fab387 !important;
+    color: #11111b !important;
+  }
+
+  button[aria-label*="Send"] *,
+  button[data-test-id*="send"] * {
+    color: #11111b !important;
+    fill: #11111b !important;
+  }
+
+  div[role="dialog"],
+  div[role="menu"],
+  mat-menu,
+  .mat-mdc-menu-panel {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border: 1px solid #313244 !important;
+  }
+}
+
+/*
+  Future product blocks go here, same shape as Drive and Gemini.
+  mail.google.com, docs.google.com, calendar.google.com, keep.google.com,
+  photos.google.com, meet.google.com, chat.google.com.
+*/
+
+/* ===== teams-catppuccin-mocha.user.css ===== */
+/*
+  New Teams (teams.cloud.microsoft/v2, also served on teams.microsoft.com)
+  paints through Fluent UI v9 tokens on fui-FluentProvider. Those win
+  over :root unless the override is !important.
+
+  Set Teams itself to Dark so illustrations and a few hardcoded assets
+  match. If the shell stays Microsoft blue, enable Stylus > Advanced >
+  Patch CSP. login.microsoftonline.com is not matched.
+*/
+
+@-moz-document domain("teams.cloud.microsoft"), domain("teams.microsoft.com") {
+  :root,
+  html,
+  body,
+  [class*="fui-FluentProvider"] {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-overlay: #9399b2;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-red: #f38ba8;
+    --ctp-green: #a6e3a1;
+    --ctp-yellow: #f9e2af;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-lavender: #b4befe;
+
+    /* Canvas is base, rails are mantle, deepest chrome is crust. */
+    --colorNeutralBackground1: #1e1e2e !important;
+    --colorNeutralBackground1Hover: #313244 !important;
+    --colorNeutralBackground1Pressed: #45475a !important;
+    --colorNeutralBackground1Selected: #313244 !important;
+    --colorNeutralBackground2: #181825 !important;
+    --colorNeutralBackground2Hover: #313244 !important;
+    --colorNeutralBackground2Pressed: #11111b !important;
+    --colorNeutralBackground2Selected: #313244 !important;
+    --colorNeutralBackground3: #1e1e2e !important;
+    --colorNeutralBackground3Hover: #313244 !important;
+    --colorNeutralBackground3Pressed: #181825 !important;
+    --colorNeutralBackground3Selected: #313244 !important;
+    --colorNeutralBackground4: #181825 !important;
+    --colorNeutralBackground4Hover: #1e1e2e !important;
+    --colorNeutralBackground4Pressed: #11111b !important;
+    --colorNeutralBackground4Selected: #313244 !important;
+    --colorNeutralBackground5: #11111b !important;
+    --colorNeutralBackground5Hover: #181825 !important;
+    --colorNeutralBackground5Pressed: #11111b !important;
+    --colorNeutralBackground5Selected: #1e1e2e !important;
+    --colorNeutralBackground6: #313244 !important;
+    --colorNeutralBackgroundInverted: #cdd6f4 !important;
+    --colorNeutralBackgroundStatic: #313244 !important;
+    --colorNeutralBackgroundDisabled: #181825 !important;
+    --colorNeutralBackgroundAlpha: rgba(30, 30, 46, 0.5) !important;
+    --colorNeutralBackgroundAlpha2: rgba(24, 24, 37, 0.7) !important;
+
+    --colorSubtleBackground: transparent !important;
+    --colorSubtleBackgroundHover: #313244 !important;
+    --colorSubtleBackgroundPressed: #45475a !important;
+    --colorSubtleBackgroundSelected: #313244 !important;
+    --colorSubtleBackgroundLightAlphaHover: rgba(49, 50, 68, 0.8) !important;
+    --colorSubtleBackgroundLightAlphaPressed: rgba(69, 71, 90, 0.8) !important;
+    --colorSubtleBackgroundLightAlphaSelected: rgba(49, 50, 68, 0.8) !important;
+    --colorTransparentBackground: transparent !important;
+    --colorTransparentBackgroundHover: #313244 !important;
+    --colorTransparentBackgroundPressed: #45475a !important;
+    --colorTransparentBackgroundSelected: #313244 !important;
+
+    --colorNeutralForeground1: #cdd6f4 !important;
+    --colorNeutralForeground1Hover: #cdd6f4 !important;
+    --colorNeutralForeground1Pressed: #bac2de !important;
+    --colorNeutralForeground1Selected: #cdd6f4 !important;
+    --colorNeutralForeground1Static: #cdd6f4 !important;
+    --colorNeutralForeground2: #a6adc8 !important;
+    --colorNeutralForeground2Hover: #cdd6f4 !important;
+    --colorNeutralForeground2Pressed: #bac2de !important;
+    --colorNeutralForeground2Selected: #cdd6f4 !important;
+    --colorNeutralForeground2BrandHover: #fab387 !important;
+    --colorNeutralForeground2BrandPressed: #f5e0dc !important;
+    --colorNeutralForeground2BrandSelected: #cba6f7 !important;
+    --colorNeutralForeground2Link: #cba6f7 !important;
+    --colorNeutralForeground2LinkHover: #b4befe !important;
+    --colorNeutralForeground2LinkPressed: #cba6f7 !important;
+    --colorNeutralForeground3: #9399b2 !important;
+    --colorNeutralForeground3Hover: #a6adc8 !important;
+    --colorNeutralForeground3Pressed: #7f849c !important;
+    --colorNeutralForeground3BrandHover: #fab387 !important;
+    --colorNeutralForeground3BrandPressed: #f5e0dc !important;
+    --colorNeutralForeground3BrandSelected: #cba6f7 !important;
+    --colorNeutralForeground4: #7f849c !important;
+    --colorNeutralForegroundDisabled: #6c7086 !important;
+    --colorNeutralForegroundOnBrand: #11111b !important;
+    --colorNeutralForegroundInverted: #1e1e2e !important;
+    --colorNeutralForegroundInvertedHover: #11111b !important;
+    --colorNeutralForegroundInvertedPressed: #181825 !important;
+    --colorNeutralForegroundInvertedSelected: #11111b !important;
+    --colorNeutralForegroundInvertedLink: #8839ef !important;
+    --colorNeutralForegroundInvertedLinkHover: #7287fd !important;
+    --colorNeutralForegroundStaticInverted: #cdd6f4 !important;
+
+    --colorNeutralStrokeAccessible: #585b70 !important;
+    --colorNeutralStrokeAccessibleHover: #6c7086 !important;
+    --colorNeutralStrokeAccessiblePressed: #7f849c !important;
+    --colorNeutralStrokeAccessibleSelected: #fab387 !important;
+    --colorNeutralStroke1: #45475a !important;
+    --colorNeutralStroke1Hover: #585b70 !important;
+    --colorNeutralStroke1Pressed: #6c7086 !important;
+    --colorNeutralStroke1Selected: #585b70 !important;
+    --colorNeutralStroke2: #313244 !important;
+    --colorNeutralStroke3: #313244 !important;
+    --colorNeutralStrokeSubtle: #181825 !important;
+    --colorNeutralStrokeOnBrand: #11111b !important;
+    --colorNeutralStrokeOnBrand2: #1e1e2e !important;
+    --colorNeutralStrokeDisabled: #313244 !important;
+    --colorNeutralStrokeInverted: #1e1e2e !important;
+    --colorStrokeFocus1: #fab387 !important;
+    --colorStrokeFocus2: #11111b !important;
+    --colorTransparentStroke: transparent !important;
+
+    /* Peach primary. Links stay mauve. */
+    --colorBrandBackground: #fab387 !important;
+    --colorBrandBackgroundHover: #f5e0dc !important;
+    --colorBrandBackgroundPressed: #f2cdcd !important;
+    --colorBrandBackgroundSelected: #45475a !important;
+    --colorBrandBackgroundStatic: #fab387 !important;
+    --colorBrandBackground2: #313244 !important;
+    --colorBrandBackground2Hover: #45475a !important;
+    --colorBrandBackground2Pressed: #585b70 !important;
+    --colorBrandBackgroundInverted: #cdd6f4 !important;
+    --colorBrandBackgroundInvertedHover: #f5e0dc !important;
+    --colorBrandBackgroundInvertedPressed: #fab387 !important;
+    --colorBrandBackgroundInvertedSelected: #45475a !important;
+    --colorBrandForeground1: #fab387 !important;
+    --colorBrandForeground2: #f5e0dc !important;
+    --colorBrandForeground2Hover: #f5e0dc !important;
+    --colorBrandForeground2Pressed: #fab387 !important;
+    --colorBrandForegroundLink: #cba6f7 !important;
+    --colorBrandForegroundLinkHover: #b4befe !important;
+    --colorBrandForegroundLinkPressed: #cba6f7 !important;
+    --colorBrandForegroundLinkSelected: #b4befe !important;
+    --colorBrandForegroundInverted: #8839ef !important;
+    --colorBrandForegroundOnLight: #8839ef !important;
+    --colorBrandStroke1: #fab387 !important;
+    --colorBrandStroke2: #f5e0dc !important;
+    --colorBrandStroke2Hover: #f5e0dc !important;
+    --colorBrandStroke2Pressed: #fab387 !important;
+    --colorBrandStroke2Contrast: #fab387 !important;
+
+    --colorCompoundBrandBackground: #fab387 !important;
+    --colorCompoundBrandBackgroundHover: #f5e0dc !important;
+    --colorCompoundBrandBackgroundPressed: #f2cdcd !important;
+    --colorCompoundBrandForeground1: #fab387 !important;
+    --colorCompoundBrandForeground1Hover: #f5e0dc !important;
+    --colorCompoundBrandForeground1Pressed: #fab387 !important;
+    --colorCompoundBrandStroke: #fab387 !important;
+    --colorCompoundBrandStrokeHover: #f5e0dc !important;
+    --colorCompoundBrandStrokePressed: #f2cdcd !important;
+
+    --colorStatusDangerBackground1: #45273a !important;
+    --colorStatusDangerBackground3: #313244 !important;
+    --colorStatusDangerForeground1: #f38ba8 !important;
+    --colorStatusDangerForeground3: #f38ba8 !important;
+    --colorStatusDangerBorder1: #f38ba8 !important;
+    --colorStatusDangerBorderActive: #f38ba8 !important;
+    --colorStatusSuccessBackground1: #1e3a2f !important;
+    --colorStatusSuccessBackground3: #313244 !important;
+    --colorStatusSuccessForeground1: #a6e3a1 !important;
+    --colorStatusSuccessForeground3: #a6e3a1 !important;
+    --colorStatusSuccessBorder1: #a6e3a1 !important;
+    --colorStatusWarningBackground1: #3d3420 !important;
+    --colorStatusWarningBackground3: #313244 !important;
+    --colorStatusWarningForeground1: #f9e2af !important;
+    --colorStatusWarningForeground3: #f9e2af !important;
+    --colorStatusWarningBorder1: #f9e2af !important;
+
+    --colorPaletteRedForeground1: #f38ba8 !important;
+    --colorPaletteRedForeground3: #f38ba8 !important;
+    --colorPaletteRedBackground1: #45273a !important;
+    --colorPaletteRedBackground3: #313244 !important;
+    --colorPaletteRedBorder1: #f38ba8 !important;
+    --colorPaletteGreenForeground1: #a6e3a1 !important;
+    --colorPaletteGreenForeground3: #a6e3a1 !important;
+    --colorPaletteGreenBackground1: #1e3a2f !important;
+    --colorPaletteGreenBackground3: #313244 !important;
+    --colorPaletteYellowForeground1: #f9e2af !important;
+    --colorPaletteYellowForeground3: #f9e2af !important;
+    --colorPaletteYellowBackground1: #3d3420 !important;
+    --colorPaletteYellowBackground3: #313244 !important;
+    --colorPaletteBerryForeground1: #cba6f7 !important;
+    --colorPaletteLavenderForeground1: #b4befe !important;
+    --colorPaletteMarigoldForeground1: #fab387 !important;
+
+    --shadow2: 0 0 2px rgba(17, 17, 27, 0.45) !important;
+    --shadow4: 0 2px 4px rgba(17, 17, 27, 0.45) !important;
+    --shadow8: 0 4px 8px rgba(17, 17, 27, 0.5) !important;
+    --shadow16: 0 8px 16px rgba(17, 17, 27, 0.55) !important;
+    --shadow28: 0 14px 28px rgba(17, 17, 27, 0.6) !important;
+    --shadow64: 0 32px 64px rgba(17, 17, 27, 0.66) !important;
+  }
+
+  html,
+  body,
+  #root,
+  #app {
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  ::selection {
+    background: #45475a !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* App bar and left rail. data-tid is the stable hook in new Teams. */
+  [data-tid="app-bar"],
+  [data-tid="app-bar-wrapper"],
+  [data-tid*="left-rail"],
+  [data-tid="chat-list"],
+  [data-tid="team-channel-list"],
+  nav[aria-label*="App bar"],
+  nav[aria-label*="app bar"] {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+  }
+
+  [data-tid="app-bar"] button[aria-current="page"],
+  [data-tid="app-bar"] button[aria-pressed="true"],
+  [data-tid="app-bar"] a[aria-current="page"] {
+    color: #fab387 !important;
+  }
+
+  [data-tid*="chat-list-item"][aria-selected="true"],
+  [data-tid*="channel-list-item"][aria-selected="true"],
+  [data-tid*="list-item"][aria-selected="true"] {
+    background: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  /* Sky for chat and channel titles. Mauve for mentions and links. */
+  [data-tid*="chat-list-item-title"],
+  [data-tid*="channel-name"],
+  [data-tid*="team-name"],
+  [data-tid="chat-title"],
+  [data-tid*="display-name"] {
+    color: #89dceb !important;
+  }
+
+  [class*="mention"],
+  [data-tid*="mention"],
+  a[href]:not([class*="fui-Button"]):not([role="button"]):not([data-tid*="app-bar"]) {
+    color: #cba6f7 !important;
+  }
+
+  a[href]:not([class*="fui-Button"]):not([role="button"]):hover {
+    color: #b4befe !important;
+  }
+
+  pre,
+  code,
+  [class*="codeBlock"],
+  [class*="code-block"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  input,
+  textarea,
+  [role="textbox"],
+  [contenteditable="true"] {
+    caret-color: #fab387;
+  }
+
+  /* Classic Teams shell, still served on teams.microsoft.com for some tenants. */
+  .app-bar,
+  .app-header-bar,
+  .app-bar-items,
+  .left-rail-header {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+  }
+
+  .ts-left-rail,
+  .ts-left-rail-tree,
+  #message-pane-layout-a11y,
+  .app-messages-header {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .ts-middle,
+  .ts-middle-messages-body,
+  .ts-middle-messages-container,
+  .ui-chat,
+  .ts-tab-content {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .left-rail-selected,
+  .ts-header-search,
+  .child-popover,
+  div.popover {
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .app-bar ul button:hover,
+  .app-bar ul a:hover,
+  .ui-chat__message:hover,
+  .cle-item:hover {
+    background: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  .activity-badge,
+  .app-bar-app-header-bar-common .activity-badge {
+    background: #f38ba8 !important;
+    color: #11111b !important;
+  }
+}
+
+/* ===== onedrive-catppuccin-mocha.user.css ===== */
+/*
+  OneDrive for Business lives on {tenant}-my.sharepoint.com, not the
+  team-site host. eduvosonline-my.sharepoint.com is that host.
+  Consumer OneDrive is onedrive.live.com. Both paint through Fluent v9
+  tokens, Fabric semantic colors, and a few od3 variables. File-type
+  icons and photo thumbnails are left alone. login.microsoftonline.com
+  is not matched. Set OneDrive to Dark so illustrations match.
+*/
+
+@-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), domain("onedrive.cloud.microsoft"), regexp("https?://[a-z0-9-]+-my\\.sharepoint\\.com/.*") {
+  :root,
+  html,
+  body,
+  [class*="fui-FluentProvider"],
+  [data-theme="fluent-light"],
+  [data-theme="fluent-dark"] {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --pageBackgroundGradientColorStop1: #1e1e2e !important;
+    --pageBackgroundGradientColorStop2: #1e1e2e !important;
+    --pageBackgroundGradientColorStop3: #181825 !important;
+    --buttonHoverBackgroundAlpha: rgba(49, 50, 68, 0.85) !important;
+
+    --od3-row-divider: #313244 !important;
+    --od3-row-inset-background: rgba(250, 179, 135, 0.16) !important;
+    --od3-nav-background: #11111b !important;
+    --od3-canvas-background: #1e1e2e !important;
+
+    /* SharePoint / Fabric theme slots used by the business host. */
+    --themePrimary: #fab387 !important;
+    --themeDarker: #e8a06e !important;
+    --themeDark: #fab387 !important;
+    --themeDarkAlt: #f5e0dc !important;
+    --themeSecondary: #cba6f7 !important;
+    --themeTertiary: #45475a !important;
+    --themeLight: #313244 !important;
+    --themeLighter: #313244 !important;
+    --themeLighterAlt: #181825 !important;
+    --primaryColor: #fab387 !important;
+    --primaryBackground: #fab387 !important;
+    --bodyBackground: #1e1e2e !important;
+    --bodyText: #cdd6f4 !important;
+    --bodySubtext: #a6adc8 !important;
+    --neutralDark: #cdd6f4 !important;
+    --neutralPrimary: #cdd6f4 !important;
+    --neutralSecondary: #a6adc8 !important;
+    --neutralTertiary: #9399b2 !important;
+    --neutralTertiaryAlt: #585b70 !important;
+    --neutralQuaternary: #45475a !important;
+    --neutralQuaternaryAlt: #313244 !important;
+    --neutralLight: #313244 !important;
+    --neutralLighter: #181825 !important;
+    --neutralLighterAlt: #11111b !important;
+    --white: #1e1e2e !important;
+    --black: #cdd6f4 !important;
+    --link: #cba6f7 !important;
+    --linkHovered: #b4befe !important;
+
+    --ms-palette-themePrimary: #fab387 !important;
+    --ms-palette-neutralPrimary: #cdd6f4 !important;
+    --ms-palette-neutralSecondary: #a6adc8 !important;
+    --ms-palette-neutralLighter: #181825 !important;
+    --ms-palette-white: #1e1e2e !important;
+    --ms-semanticColors-bodyBackground: #1e1e2e !important;
+    --ms-semanticColors-bodyText: #cdd6f4 !important;
+    --ms-semanticColors-bodySubtext: #a6adc8 !important;
+    --ms-semanticColors-link: #cba6f7 !important;
+    --ms-semanticColors-linkHovered: #b4befe !important;
+    --ms-semanticColors-primaryButtonBackground: #fab387 !important;
+    --ms-semanticColors-primaryButtonBackgroundHovered: #f5e0dc !important;
+    --ms-semanticColors-primaryButtonBackgroundPressed: #f2cdcd !important;
+    --ms-semanticColors-primaryButtonText: #11111b !important;
+    --ms-semanticColors-buttonBackground: #313244 !important;
+    --ms-semanticColors-buttonText: #cdd6f4 !important;
+    --ms-semanticColors-listBackground: #1e1e2e !important;
+    --ms-semanticColors-listItemBackgroundHovered: #313244 !important;
+    --ms-semanticColors-listItemBackgroundChecked: #313244 !important;
+    --ms-semanticColors-menuBackground: #181825 !important;
+    --ms-semanticColors-menuItemBackgroundHovered: #313244 !important;
+    --ms-semanticColors-inputBackground: #11111b !important;
+    --ms-semanticColors-inputBorder: #45475a !important;
+    --ms-semanticColors-inputText: #cdd6f4 !important;
+    --ms-semanticColors-disabledBackground: #181825 !important;
+    --ms-semanticColors-disabledText: #6c7086 !important;
+
+    --colorNeutralBackground1: #1e1e2e !important;
+    --colorNeutralBackground1Hover: #313244 !important;
+    --colorNeutralBackground1Pressed: #45475a !important;
+    --colorNeutralBackground1Selected: #313244 !important;
+    --colorNeutralBackground2: #181825 !important;
+    --colorNeutralBackground2Hover: #313244 !important;
+    --colorNeutralBackground2Pressed: #11111b !important;
+    --colorNeutralBackground2Selected: #313244 !important;
+    --colorNeutralBackground3: #1e1e2e !important;
+    --colorNeutralBackground3Hover: #313244 !important;
+    --colorNeutralBackground3Pressed: #181825 !important;
+    --colorNeutralBackground3Selected: #313244 !important;
+    --colorNeutralBackground4: #181825 !important;
+    --colorNeutralBackground4Hover: #1e1e2e !important;
+    --colorNeutralBackground4Pressed: #11111b !important;
+    --colorNeutralBackground4Selected: #313244 !important;
+    --colorNeutralBackground5: #11111b !important;
+    --colorNeutralBackground5Hover: #181825 !important;
+    --colorNeutralBackground5Pressed: #11111b !important;
+    --colorNeutralBackground5Selected: #1e1e2e !important;
+    --colorNeutralBackground6: #313244 !important;
+    --colorNeutralBackgroundInverted: #cdd6f4 !important;
+    --colorNeutralBackgroundStatic: #313244 !important;
+    --colorNeutralBackgroundDisabled: #181825 !important;
+    --colorSubtleBackground: transparent !important;
+    --colorSubtleBackgroundHover: #313244 !important;
+    --colorSubtleBackgroundPressed: #45475a !important;
+    --colorSubtleBackgroundSelected: #313244 !important;
+    --colorTransparentBackground: transparent !important;
+    --colorTransparentBackgroundHover: #313244 !important;
+    --colorTransparentBackgroundPressed: #45475a !important;
+    --colorTransparentBackgroundSelected: #313244 !important;
+
+    --colorNeutralForeground1: #cdd6f4 !important;
+    --colorNeutralForeground1Hover: #cdd6f4 !important;
+    --colorNeutralForeground1Pressed: #bac2de !important;
+    --colorNeutralForeground1Selected: #cdd6f4 !important;
+    --colorNeutralForeground2: #a6adc8 !important;
+    --colorNeutralForeground2Hover: #cdd6f4 !important;
+    --colorNeutralForeground2Pressed: #bac2de !important;
+    --colorNeutralForeground2Selected: #cdd6f4 !important;
+    --colorNeutralForeground2Link: #cba6f7 !important;
+    --colorNeutralForeground2LinkHover: #b4befe !important;
+    --colorNeutralForeground2LinkPressed: #cba6f7 !important;
+    --colorNeutralForeground3: #9399b2 !important;
+    --colorNeutralForeground4: #7f849c !important;
+    --colorNeutralForegroundDisabled: #6c7086 !important;
+    --colorNeutralForegroundOnBrand: #11111b !important;
+    --colorNeutralForegroundInverted: #1e1e2e !important;
+
+    --colorNeutralStroke1: #45475a !important;
+    --colorNeutralStroke1Hover: #585b70 !important;
+    --colorNeutralStroke2: #313244 !important;
+    --colorNeutralStrokeAccessible: #585b70 !important;
+    --colorNeutralStrokeAccessibleSelected: #fab387 !important;
+    --colorStrokeFocus1: #fab387 !important;
+    --colorStrokeFocus2: #11111b !important;
+
+    --colorBrandBackground: #fab387 !important;
+    --colorBrandBackgroundHover: #f5e0dc !important;
+    --colorBrandBackgroundPressed: #f2cdcd !important;
+    --colorBrandBackgroundSelected: #45475a !important;
+    --colorBrandBackground2: #313244 !important;
+    --colorBrandForeground1: #fab387 !important;
+    --colorBrandForeground2: #f5e0dc !important;
+    --colorBrandForegroundLink: #cba6f7 !important;
+    --colorBrandForegroundLinkHover: #b4befe !important;
+    --colorBrandForegroundLinkPressed: #cba6f7 !important;
+    --colorBrandForegroundLinkSelected: #b4befe !important;
+    --colorBrandStroke1: #fab387 !important;
+    --colorCompoundBrandBackground: #fab387 !important;
+    --colorCompoundBrandBackgroundHover: #f5e0dc !important;
+    --colorCompoundBrandBackgroundPressed: #f2cdcd !important;
+    --colorCompoundBrandForeground1: #fab387 !important;
+    --colorCompoundBrandStroke: #fab387 !important;
+
+    --colorStatusDangerForeground1: #f38ba8 !important;
+    --colorStatusSuccessForeground1: #a6e3a1 !important;
+    --colorStatusWarningForeground1: #f9e2af !important;
+    --colorPaletteRedForeground1: #f38ba8 !important;
+    --colorPaletteGreenForeground1: #a6e3a1 !important;
+    --colorPaletteYellowForeground1: #f9e2af !important;
+
+    --shadow2: 0 0 2px rgba(17, 17, 27, 0.45) !important;
+    --shadow4: 0 2px 4px rgba(17, 17, 27, 0.45) !important;
+    --shadow8: 0 4px 8px rgba(17, 17, 27, 0.5) !important;
+    --shadow16: 0 8px 16px rgba(17, 17, 27, 0.55) !important;
+  }
+
+  html,
+  body,
+  #appRoot,
+  #app,
+  .od-BasePage,
+  .od-Files-list,
+  [class*="core_"] {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  ::selection {
+    background: #45475a !important;
+    color: #cdd6f4 !important;
+  }
+
+  #O365_NavHeader,
+  .o365cs-base,
+  .o365sx-navbar,
+  #SuiteNavWrapper,
+  [class*="navPane_"],
+  .ms-Nav,
+  [class*="leftNav"],
+  [data-automationid="LeftNav"] {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+  }
+
+  #O365_NavHeader .o365sx-activeButton,
+  .ms-Nav-link.is-selected,
+  [aria-current="page"] {
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #fab387 !important;
+  }
+
+  .ms-DetailsHeader,
+  .ms-DetailsList,
+  .ms-List,
+  [role="grid"],
+  [role="row"] {
+    background-color: transparent;
+    color: #cdd6f4;
+  }
+
+  [role="row"]:hover,
+  .ms-DetailsRow:hover,
+  .ms-DetailsRow.is-selected {
+    background: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  .ms-Button--primary,
+  button[class*="primary"] {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  .ms-Button--primary:hover,
+  button[class*="primary"]:hover {
+    background: #f5e0dc !important;
+    background-color: #f5e0dc !important;
+    color: #11111b !important;
+  }
+
+  .ms-Button--default,
+  .ms-Button--command,
+  .ms-Button--commandBar {
+    color: #cdd6f4 !important;
+  }
+
+  .ms-Callout,
+  .ms-Dialog-main,
+  .ms-Panel,
+  .od-Panel,
+  [role="dialog"],
+  [role="menu"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .ms-SearchBox,
+  .ms-suiteux-search-box input,
+  input[type="search"],
+  input[type="text"],
+  textarea {
+    background: #11111b !important;
+    background-color: #11111b !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+    caret-color: #fab387;
+  }
+
+  /* Sky for folder names. File rows stay text so icons still read. */
+  [class*="folderName"],
+  [data-automationid="FieldRenderer-name"] a[href*="folder"],
+  a[aria-label*="folder" i],
+  a[aria-label*="Folder"] {
+    color: #89dceb !important;
+  }
+
+  a[href]:not([class*="fui-Button"]):not(.ms-Button):not([role="button"]) {
+    color: #cba6f7;
+  }
+
+  a[href]:not([class*="fui-Button"]):not(.ms-Button):not([role="button"]):hover {
+    color: #b4befe !important;
+  }
+
+  pre,
+  code {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+}
+
+/* ===== github-catppuccin-mocha.user.css ===== */
+@-moz-document domain("github.com"), domain("gist.github.com") {
+  :root,
+  html,
+  body,
+  [data-color-mode="dark"],
+  [data-dark-theme="dark"] {
+    color-scheme: dark;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-yellow: #f9e2af;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --bgColor-default: #1e1e2e !important;
+    --bgColor-muted: #181825 !important;
+    --bgColor-inset: #11111b !important;
+    --bgColor-emphasis: #313244 !important;
+    --fgColor-default: #cdd6f4 !important;
+    --fgColor-muted: #a6adc8 !important;
+    --fgColor-accent: #fab387 !important;
+    --fgColor-done: #a6e3a1 !important;
+    --fgColor-danger: #f38ba8 !important;
+    --borderColor-default: #313244 !important;
+    --borderColor-muted: #45475a !important;
+    --button-primary-bgColor-rest: #fab387 !important;
+    --button-primary-bgColor-hover: #f9c99e !important;
+    --button-primary-fgColor-rest: #11111b !important;
+    --button-primary-borderColor-rest: #fab387 !important;
+    --link-fgColor-rest: #cba6f7 !important;
+    --link-fgColor-hover: #b4befe !important;
+    --focus-outlineColor: #fab387 !important;
+    --accent-fgColor: #fab387 !important;
+    --accent-emphasis: #fab387 !important;
+    --canvas-default: #1e1e2e !important;
+    --canvas-subtle: #181825 !important;
+    --canvas-inset: #11111b !important;
+    --neutral-emphasis: #45475a !important;
+    --neutral-muted: #313244 !important;
+
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  body, main, .application-main, #js-repo-pjax-container,
+  .js-site-search-form, .Header, header, .footer,
+  .Layout, .PageLayout, .Layout-main {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .Header, header, .gh-header, .BorderGrid,
+  .SideNav, .UnderlineNav, .SubNav,
+  .Box, .Box-header, .Box-row, .Box-body,
+  .blankslate, .discussion-timeline-actions,
+  .timeline-comment, .review-comment,
+  .commit-tease, .file-wrap, .blob-wrapper,
+  .markdown-body, .comment-body, pre, code {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    border-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .Box, .Box-header, .timeline-comment-header,
+  .gh-header-sticky, .pr-toolbar, .repository-content {
+    border-color: #313244 !important;
+  }
+
+  a, .Link--primary, .Link--secondary,
+  .js-navigation-open, .css-truncate-target {
+    color: #cba6f7;
+  }
+
+  a:hover, .Link--primary:hover {
+    color: #b4befe !important;
+  }
+
+  .btn-primary, .btn.btn-primary,
+  [data-variant="primary"],
+  .Button--primary, button.btn-primary {
+    background: #fab387 !important;
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  .btn-primary:hover, .btn.btn-primary:hover {
+    background: #f9c99e !important;
+    background-color: #f9c99e !important;
+  }
+
+  .Label--primary, .State--open,
+  .text-green, .text-success, .octicon-check,
+  .progress-bar-success {
+    color: #a6e3a1 !important;
+    background-color: #313244 !important;
+  }
+
+  .State--closed, .text-red, .text-danger,
+  .octicon-x, .progress-bar-danger {
+    color: #f38ba8 !important;
+  }
+
+  .user-mention, .team-mention,
+  [class*="mention"], .author, .commit-author {
+    color: #89dceb !important;
+  }
+
+  input, textarea, select, .form-control,
+  .js-comment-field, .comment-form-textarea {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  .UnderlineNav-item.selected,
+  .SideNav-item.selected,
+  .filter-item.selected {
+    color: #fab387 !important;
+    border-color: #fab387 !important;
+  }
+
+  .contribution-activity-listing,
+  .js-calendar-graph-svg rect {
+    /* contribution graph stays mostly default; peach accent on hover handled by vars */
+  }
+
+  ::selection {
+    background: #cba6f733;
+  }
+}
+
+/* ===== grok-catppuccin-mocha.user.css ===== */
+@-moz-document domain("grok.com") {
+  :root,
+  html,
+  body,
+  html.light,
+  .scheme-light,
+  .light {
+    color-scheme: dark !important;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    --surface-base: #1e1e2e !important;
+    --color-surface-base: #1e1e2e !important;
+    --surface-l1: #181825 !important;
+    --surface-l2: #313244 !important;
+    --surface-l3: #45475a !important;
+    --surface-elevated: #181825 !important;
+    --surface-inset: #11111b !important;
+    --fg-primary: #cdd6f4 !important;
+    --color-fg-primary: #cdd6f4 !important;
+    --fg-secondary: #a6adc8 !important;
+    --color-fg-secondary: #a6adc8 !important;
+    --fg-tertiary: #7f849c !important;
+    --fg-link: #cba6f7 !important;
+    --fg-link-hover: #b4befe !important;
+    --button-primary: #313244 !important;
+    --button-primary-hover: #45475a !important;
+    --primary-foreground: #fab387 !important;
+    --accent: #fab387 !important;
+    --accent-foreground: #11111b !important;
+    --border: 240 6% 25% !important;
+    --border-l1: 240 6% 25% !important;
+    --border-l2: 240 6% 30% !important;
+    --color-border: #313244 !important;
+    --color-border-l1: #313244 !important;
+    --sidebar-border: #313244 !important;
+    --sidebar-accent: #313244 !important;
+    --input-border: #45475a !important;
+    --x-bg-primary: #1e1e2e !important;
+    --x-bg-secondary: #181825 !important;
+    --x-fg-primary: #cdd6f4 !important;
+    --x-fg-secondary: #a6adc8 !important;
+    --x-btn-primary: #313244 !important;
+    --x-btn-primary-hover: #45475a !important;
+    --surface-composer: #181825 !important;
+    --color-surface-composer: #181825 !important;
+    --input: #313244 !important;
+    --input-hover: #45475a !important;
+
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html, body,
+  .bg-surface-base,
+  [class*="bg-surface"],
+  main, #__next, [class*="app"],
+  .group\/sidebar-wrapper,
+  [class*="mainview"] {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  .bg-surface-elevated,
+  .bg-surface-l1,
+  aside, nav, header,
+  [class*="sidebar"],
+  [class*="chat"],
+  .ring-border-l1 {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    border-color: #313244 !important;
+  }
+
+  .text-fg-primary,
+  .text-fg-secondary,
+  h1, h2, h3, h4, p, span, li, label {
+    color: #cdd6f4;
+  }
+
+  .text-fg-secondary,
+  [class*="text-secondary"],
+  .text-muted {
+    color: #a6adc8 !important;
+  }
+
+  a, [class*="link"], .text-link {
+    color: #cba6f7 !important;
+  }
+
+  a:hover {
+    color: #b4befe !important;
+  }
+
+  button[class*="primary"],
+  .bg-button-primary,
+  [class*="btn-primary"],
+  button.bg-primary,
+  [class*="bg-black"],
+  [class*="bg-primary"] {
+    background: #313244 !important;
+    background-color: #313244 !important;
+    color: #fab387 !important;
+    border-color: #45475a !important;
+  }
+
+  button[class*="primary"]:hover,
+  .bg-button-primary:hover {
+    background: #45475a !important;
+    background-color: #45475a !important;
+  }
+
+  .query-bar,
+  .bg-surface-composer,
+  [class*="surface-composer"],
+  [class*="composer"] {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  .query-bar .tiptap,
+  .query-bar [contenteditable],
+  .query-bar-editor {
+    background: transparent !important;
+    color: #cdd6f4 !important;
+  }
+
+  [class*="mention"],
+  [class*="username"],
+  .font-semibold {
+    color: #89dceb;
+  }
+
+  ::selection {
+    background: #cba6f733;
+  }
+
+  /* Force dark scheme classes */
+  html.scheme-light,
+  .light {
+    color-scheme: dark !important;
+  }
+}
+
+/* ===== discord-catppuccin-mocha.user.css ===== */
+@-moz-document domain("discord.com") {
+  @import url("https://catppuccin.github.io/discord/dist/catppuccin-macchiato.theme.css");
+}
+
+/* ===== spotify-catppuccin-mocha.user.css ===== */
+@-moz-document domain("open.spotify.com") {
+  :root,
+  html,
+  html.encore-dark-theme,
+  html.encore-light-theme,
+  .encore-dark-theme,
+  .encore-dark-theme .encore-base-set,
+  .encore-light-theme,
+  .encore-light-theme .encore-base-set,
+  .encore-dark-theme .encore-inverted-light-set,
+  body,
+  #main,
+  .Root {
+    color-scheme: dark !important;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-overlay0: #6c7086;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay2: #9399b2;
+    --ctp-subtext0: #a6adc8;
+    --ctp-subtext1: #bac2de;
+    --ctp-text: #cdd6f4;
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-yellow: #f9e2af;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+
+    /* Core Spotify / Encore tokens – forced Mocha + peach accent */
+    --background-base: #1e1e2e !important;
+    --background-highlight: #313244 !important;
+    --background-press: #11111b !important;
+    --background-elevated-base: #313244 !important;
+    --background-elevated-highlight: #45475a !important;
+    --background-elevated-press: #11111b !important;
+    --background-tinted-base: #11111b !important;
+    --background-tinted-highlight: #181825 !important;
+    --background-tinted-press: #1e1e2e !important;
+    --background-unsafe-for-small-text-base: #1e1e2e !important;
+    --background-unsafe-for-small-text-highlight: #1e1e2e !important;
+    --background-unsafe-for-small-text-press: #1e1e2e !important;
+
+    --text-base: #cdd6f4 !important;
+    --text-subdued: #bac2de !important;
+    --text-bright-accent: #fab387 !important;
+    --text-negative: #f38ba8 !important;
+    --text-warning: #f9e2af !important;
+    --text-positive: #fab387 !important;
+    --text-announcement: #74c7ec !important;
+
+    --essential-base: #cdd6f4 !important;
+    --essential-subdued: #bac2de !important;
+    --essential-bright-accent: #fab387 !important;
+    --essential-negative: #f38ba8 !important;
+    --essential-warning: #f9e2af !important;
+    --essential-positive: #a6e3a1 !important;
+    --essential-announcement: #1e1e2e !important;
+
+    --decorative-base: #cdd6f4 !important;
+    --decorative-subdued: #585b70 !important;
+
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Bright accent set (play buttons etc.) */
+  .encore-dark-theme .encore-bright-accent-set,
+  .encore-bright-accent-set {
+    --background-base: #fab387 !important;
+    --background-highlight: #fab387 !important;
+    --background-press: #fab387 !important;
+    --background-elevated-base: #fab387 !important;
+    --background-elevated-highlight: #fab387 !important;
+    --background-elevated-press: #fab387 !important;
+    --text-base: #11111b !important;
+    --essential-base: #11111b !important;
+    color: #11111b !important;
+  }
+
+  /* Force main surfaces */
+  html,
+  body,
+  #main,
+  .Root,
+  .main-view-container,
+  .main-view-container__scroll-node,
+  .os-viewport,
+  nav,
+  aside,
+  footer,
+  [data-testid="now-playing-bar"],
+  .now-playing-bar,
+  .player-controls,
+  .main-nowPlayingBar-container {
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Sidebar / library slightly darker */
+  aside,
+  [data-testid="root-list"],
+  .main-navBar-navBar,
+  .main-yourLibraryX-library {
+    background: #181825 !important;
+    background-color: #181825 !important;
+  }
+
+  /* Player bar */
+  footer,
+  [data-testid="now-playing-bar"],
+  .main-nowPlayingBar-container,
+  .now-playing-bar {
+    background: #181825 !important;
+    background-color: #181825 !important;
+    border-top: 1px solid #313244 !important;
+  }
+
+  /* Links */
+  a,
+  a:visited,
+  [role="link"] {
+    color: #cba6f7 !important;
+  }
+  a:hover,
+  a:focus {
+    color: #b4befe !important;
+  }
+
+  /* Artist / channel-like names */
+  .artist-name,
+  [data-testid="artist-name"],
+  .track-name-wrapper a,
+  .main-trackList-rowSectionStart a[href*="/artist/"] {
+    color: #89dceb !important;
+  }
+
+  /* Primary buttons / accents already covered by tokens, but reinforce */
+  button[aria-label*="Play"],
+  [data-testid="play-button"],
+  .encore-button-primary {
+    background-color: #fab387 !important;
+    color: #11111b !important;
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #181825;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #585b70;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6c7086;
+  }
+
+  /* Progress bar accent */
+  .progress-bar,
+  [data-testid="playback-progressbar"] .progress-bar__fg,
+  .playback-bar__progress-time {
+    background-color: #fab387 !important;
+  }
+
+  /* Inputs / search */
+  input,
+  [role="search"] input,
+  .SearchInput {
+    background: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+}
