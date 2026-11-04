@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name         QuillBot Catppuccin Mocha
 @namespace    github.com/RebbelPigman
-@version      1.0.3
-@description  Catppuccin Mocha for quillbot.com. Shell + main content + editors + popups. Peach primary, mauve links. v1.0.3: content was dark-on-dark (only raccoon showed) — force light text/icons/borders on tool canvas.
+@version      1.0.4
+@description  Catppuccin Mocha for quillbot.com. v1.0.4: stop painting the sticky content overlay (z-index 1202, pointer-events none) opaque — it was covering the whole paraphraser. Transparent sheets over mocha body; opaque only on real panels.
 @author       Rebbel
 @license      MIT
 @updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css
@@ -10,10 +10,10 @@
 ==/UserStyle== */
 
 /*
-  No upstream QuillBot userstyle.
-  Screenshot 1.0.2: sidenav+top OK, main mocha but empty except mascot —
-  tool chrome still using dark greens on mocha = invisible.
-  Do not set --mui-palette-common-white to a dark color (kills light fg).
+  Root cause of “empty main”: emotion puts a second grid-area:content layer
+  (sticky, z-index ~1202, pointer-events:none) over the tool. Painting every
+  MuiBox opaque covered the paraphraser. Fix: mocha on html/body, transparent
+  defaults, opaque only on chrome/papers/editors/popups/buttons.
 */
 
 @-moz-document domain("quillbot.com") {
@@ -77,17 +77,6 @@
     --mui-palette-action-active: #cdd6f4 !important;
     --mui-palette-action-hover: rgba(203, 166, 247, 0.12) !important;
     --mui-palette-action-selected: rgba(250, 179, 135, 0.18) !important;
-    /* keep real light/dark extremes — do not map white→mocha */
-    --mui-palette-common-white: #cdd6f4 !important;
-    --mui-palette-common-black: #11111b !important;
-    --mui-palette-grey-50: #313244 !important;
-    --mui-palette-grey-100: #313244 !important;
-    --mui-palette-grey-200: #45475a !important;
-    --mui-palette-grey-300: #585b70 !important;
-    --mui-palette-grey-400: #6c7086 !important;
-    --mui-palette-grey-500: #7f849c !important;
-    --mui-palette-grey-600: #a6adc8 !important;
-    --mui-palette-grey-700: #bac2de !important;
     --mui-palette-grey-800: #181825 !important;
     --mui-palette-grey-900: #11111b !important;
   }
@@ -102,18 +91,31 @@
 
   #root,
   #__next,
-  #app,
-  body > div,
-  body > div > div,
-  body > div > div > div,
-  #root > div,
-  #root > div > div,
-  #root > div > div > div {
+  #app {
     background-color: #1e1e2e !important;
     color: #cdd6f4 !important;
+    min-height: 100% !important;
   }
 
-  /* Shell */
+  /*
+    Critical: do NOT paint every box opaque.
+    White emotion sheets + overlay hosts become transparent so body mocha
+    shows through and the z-index 1202 content overlay stays see-through.
+  */
+  body *:not(img):not(picture):not(video):not(canvas):not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon):not(use) {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Overlays that must never go opaque */
+  [style*="pointer-events: none"],
+  [style*="pointer-events:none"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* ---------- Opaque chrome only ---------- */
   header,
   nav,
   aside,
@@ -127,87 +129,25 @@
     border-color: #313244 !important;
   }
 
-  /* Content canvas + MUI layout surfaces */
-  main,
-  section,
-  article,
-  [role="main"],
-  .MuiBox-root,
-  .MuiGrid-root,
-  .MuiContainer-root,
-  .MuiStack-root,
-  .MuiTabPanel-root:not([hidden]),
+  /* Real panels / cards / menus / dialogs */
   .MuiPaper-root,
-  .MuiCard-root {
-    background-color: #1e1e2e !important;
+  .MuiCard-root,
+  .MuiDialog-paper,
+  .MuiDrawer-paper:not(.MuiDrawer-paperAnchorDockedLeft):not(.MuiDrawer-paperAnchorDockedRight),
+  .MuiPopover-paper,
+  .MuiMenu-paper,
+  .MuiDialogContent-root,
+  .MuiDialogTitle-root,
+  .MuiDialogActions-root,
+  .MuiAccordion-root,
+  .MuiAccordionSummary-root,
+  .MuiAccordionDetails-root {
+    background-color: #181825 !important;
     color: #cdd6f4 !important;
     border-color: #313244 !important;
   }
 
-  /*
-    Force readable fg on the whole tool UI (emotion bakes #161f19 etc.).
-    Include svg/path so icons aren't dark-on-dark.
-  */
-  .MuiBox-root,
-  .MuiBox-root *:not(img):not(picture):not(video):not(canvas),
-  .MuiGrid-root,
-  .MuiGrid-root *:not(img):not(picture):not(video):not(canvas),
-  .MuiTabPanel-root:not([hidden]),
-  .MuiTabPanel-root:not([hidden]) *:not(img):not(picture):not(video):not(canvas),
-  .MuiTypography-root,
-  .MuiFormLabel-root,
-  .MuiInputLabel-root,
-  .MuiInputBase-input,
-  .MuiListItemText-primary,
-  .MuiListItemText-secondary,
-  .MuiButton-text,
-  .MuiButton-outlined,
-  .MuiIconButton-root,
-  p, h1, h2, h3, h4, h5, h6, li, label, span, div,
-  [contenteditable="true"],
-  [contenteditable=""],
-  .ql-editor,
-  textarea {
-    color: #cdd6f4 !important;
-    -webkit-text-fill-color: #cdd6f4 !important;
-  }
-
-  .MuiBox-root svg,
-  .MuiBox-root svg *,
-  .MuiGrid-root svg,
-  .MuiGrid-root svg *,
-  .MuiTabPanel-root:not([hidden]) svg,
-  .MuiTabPanel-root:not([hidden]) svg *,
-  .MuiSvgIcon-root,
-  .MuiIconButton-root svg,
-  aside svg,
-  nav svg,
-  header svg {
-    color: #cdd6f4 !important;
-    fill: #cdd6f4 !important;
-    stroke: #cdd6f4 !important;
-  }
-
-  /* keep brand/logo greens from total wipe if they use img */
-  img, picture, video, canvas {
-    background-color: transparent !important;
-    -webkit-text-fill-color: initial !important;
-    color: initial !important;
-  }
-
-  a,
-  .MuiLink-root {
-    color: #cba6f7 !important;
-    -webkit-text-fill-color: #cba6f7 !important;
-  }
-
-  a:hover,
-  .MuiLink-root:hover {
-    color: #b4befe !important;
-    -webkit-text-fill-color: #b4befe !important;
-  }
-
-  /* Editors must be obvious panels */
+  /* Editors */
   textarea,
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
   select,
@@ -217,25 +157,11 @@
   .ql-container,
   .ql-toolbar,
   .MuiInputBase-root,
-  .MuiOutlinedInput-root,
-  .MuiPaper-root,
-  .MuiCard-root {
+  .MuiOutlinedInput-root {
     background-color: #181825 !important;
     color: #cdd6f4 !important;
-    -webkit-text-fill-color: #cdd6f4 !important;
     border-color: #45475a !important;
     caret-color: #fab387 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  [contenteditable="true"],
-  [contenteditable=""],
-  .ql-editor,
-  textarea,
-  .MuiInputBase-inputMultiline,
-  .MuiInputBase-multiline {
-    min-height: 8rem !important;
   }
 
   .ql-toolbar {
@@ -243,10 +169,9 @@
   }
 
   .MuiOutlinedInput-notchedOutline,
-  fieldset,
-  hr,
-  .MuiDivider-root {
+  fieldset {
     border-color: #45475a !important;
+    background: transparent !important;
   }
 
   .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
@@ -254,14 +179,54 @@
     border-color: #fab387 !important;
   }
 
+  /* Text — light, but no fill hacks on every node */
+  body,
+  .MuiTypography-root,
+  .MuiFormLabel-root,
+  .MuiInputLabel-root,
+  .MuiInputBase-input,
+  .MuiListItemText-primary,
+  .MuiListItemText-secondary,
+  .MuiButton-text,
+  .MuiButton-outlined,
+  .MuiIconButton-root,
+  .MuiTab-root,
+  .MuiChip-label,
+  p, h1, h2, h3, h4, h5, h6, li, label, span,
+  [contenteditable="true"],
+  textarea {
+    color: #cdd6f4 !important;
+  }
+
   [contenteditable="true"]:empty:before,
   ::placeholder {
     color: #6c7086 !important;
-    -webkit-text-fill-color: #6c7086 !important;
     opacity: 1 !important;
   }
 
-  /* Primary actions */
+  a,
+  .MuiLink-root {
+    color: #cba6f7 !important;
+  }
+
+  a:hover,
+  .MuiLink-root:hover {
+    color: #b4befe !important;
+  }
+
+  /* Icons in chrome — light, not brand-kill on every svg in page */
+  aside svg,
+  nav svg,
+  header svg,
+  .MuiAppBar-root svg,
+  .MuiDrawer-docked svg,
+  .MuiIconButton-root svg,
+  .MuiSvgIcon-root {
+    color: #cdd6f4 !important;
+    fill: #cdd6f4 !important;
+  }
+
+  /* Buttons */
   .MuiButton-contained,
   .MuiButton-containedPrimary,
   .MuiLoadingButton-root.MuiButton-contained,
@@ -271,7 +236,6 @@
     background-color: #fab387 !important;
     background: #fab387 !important;
     color: #11111b !important;
-    -webkit-text-fill-color: #11111b !important;
     border-color: #fab387 !important;
   }
 
@@ -280,22 +244,18 @@
   .go-premium-btn:hover {
     background-color: #f9c99e !important;
     color: #11111b !important;
-    -webkit-text-fill-color: #11111b !important;
   }
 
-  .MuiButton-contained .MuiSvgIcon-root,
   .MuiButton-contained svg,
-  .MuiButton-contained svg * {
+  .MuiButton-contained .MuiSvgIcon-root {
     color: #11111b !important;
     fill: #11111b !important;
-    stroke: #11111b !important;
   }
 
   .MuiButton-outlined,
-  .MuiButton-text,
-  .MuiIconButton-root {
+  .MuiButton-text {
+    background-color: transparent !important;
     color: #cdd6f4 !important;
-    -webkit-text-fill-color: #cdd6f4 !important;
     border-color: #45475a !important;
   }
 
@@ -306,97 +266,14 @@
     background-color: rgba(203, 166, 247, 0.12) !important;
   }
 
-  /* Brand greens → peach */
-  [style*="background-color: rgb(42, 134, 39)"],
-  [style*="background-color:#2a8627"],
-  [style*="background:#2a8627"],
-  [style*="background-color: #2a8627"],
-  [style*="background-color: rgb(69, 199, 64)"],
-  [style*="background-color:#45c740"],
-  [style*="background:#45c740"],
-  [style*="background-color: #45c740"],
-  [style*="background-color: rgb(73, 149, 87)"],
-  [style*="background-color:#499557"],
-  [style*="background:#499557"],
-  [style*="background-color: #499557"],
-  [style*="background-color: rgb(30, 95, 28)"],
-  [style*="background-color:#1e5f1c"],
-  [style*="background:#1e5f1c"] {
-    background-color: #fab387 !important;
-    color: #11111b !important;
-    -webkit-text-fill-color: #11111b !important;
+  .MuiIconButton-root {
+    background-color: transparent !important;
   }
 
-  [style*="color: rgb(42, 134, 39)"],
-  [style*="color:#2a8627"],
-  [style*="color: #2a8627"],
-  [style*="color: rgb(69, 199, 64)"],
-  [style*="color:#45c740"],
-  [style*="color: #45c740"],
-  [style*="color: rgb(73, 149, 87)"],
-  [style*="color:#499557"] {
-    color: #fab387 !important;
-    -webkit-text-fill-color: #fab387 !important;
-  }
-
-  /* Baked dark body text → mocha text */
-  [style*="color: rgb(22, 31, 25)"],
-  [style*="color:#161f19"],
-  [style*="color: #161f19"],
-  [style*="color: rgb(35, 47, 39)"],
-  [style*="color:#232f27"],
-  [style*="color: #232f27"],
-  [style*="color: rgb(91, 111, 97)"],
-  [style*="color:#5b6f61"],
-  [style*="color: #5b6f61"],
-  [style*="color: rgb(49, 63, 54)"],
-  [style*="color:#313f36"],
-  [style*="color: #313f36"],
-  [style*="color: rgb(0, 0, 0)"],
-  [style*="color:#000"],
-  [style*="color: #000"],
-  [style*="color:#000000"],
-  [style*="color: #000000"] {
-    color: #cdd6f4 !important;
-    -webkit-text-fill-color: #cdd6f4 !important;
-  }
-
-  [style*="background-color: rgb(229, 240, 233)"],
-  [style*="background-color:#e5f0e9"],
-  [style*="background:#e5f0e9"],
-  [style*="background-color: #e5f0e9"],
-  [style*="background-color: rgb(241, 248, 244)"],
-  [style*="background-color:#f1f8f4"],
-  [style*="background:#f1f8f4"],
-  [style*="background-color: rgb(209, 225, 215)"],
-  [style*="background-color:#d1e1d7"],
-  [style*="background-color: rgb(255, 255, 255)"],
-  [style*="background-color:#ffffff"],
-  [style*="background:#ffffff"],
-  [style*="background-color: #ffffff"],
-  [style*="background-color:#fff"],
-  [style*="background:#fff"] {
-    background-color: #181825 !important;
-  }
-
-  .MuiTab-root {
-    color: #a6adc8 !important;
-    -webkit-text-fill-color: #a6adc8 !important;
-  }
-
-  .MuiTab-root.Mui-selected {
-    color: #fab387 !important;
-    -webkit-text-fill-color: #fab387 !important;
-  }
-
-  .MuiTabs-indicator {
-    background-color: #fab387 !important;
-  }
-
+  /* Chips / tabs */
   .MuiChip-root {
     background-color: #313244 !important;
     color: #cdd6f4 !important;
-    -webkit-text-fill-color: #cdd6f4 !important;
     border-color: #45475a !important;
   }
 
@@ -404,7 +281,25 @@
   .MuiChip-filledPrimary {
     background-color: #fab387 !important;
     color: #11111b !important;
-    -webkit-text-fill-color: #11111b !important;
+  }
+
+  .MuiTab-root {
+    background-color: transparent !important;
+    color: #a6adc8 !important;
+  }
+
+  .MuiTab-root.Mui-selected {
+    color: #fab387 !important;
+  }
+
+  .MuiTabs-indicator {
+    background-color: #fab387 !important;
+  }
+
+  .MuiDivider-root,
+  hr {
+    border-color: #313244 !important;
+    background-color: #313244 !important;
   }
 
   .MuiSkeleton-root {
@@ -417,31 +312,46 @@
     stroke: #fab387 !important;
   }
 
+  /* Brand greens (inline) → peach */
+  [style*="background-color: rgb(42, 134, 39)"],
+  [style*="background-color:#2a8627"],
+  [style*="background:#2a8627"],
+  [style*="background-color: #2a8627"],
+  [style*="background-color: rgb(69, 199, 64)"],
+  [style*="background-color:#45c740"],
+  [style*="background:#45c740"],
+  [style*="background-color: #45c740"],
+  [style*="background-color: rgb(73, 149, 87)"],
+  [style*="background-color:#499557"],
+  [style*="background:#499557"],
+  [style*="background-color: #499557"] {
+    background-color: #fab387 !important;
+    color: #11111b !important;
+  }
+
+  [style*="color: rgb(22, 31, 25)"],
+  [style*="color:#161f19"],
+  [style*="color: #161f19"],
+  [style*="color: rgb(35, 47, 39)"],
+  [style*="color:#232f27"],
+  [style*="color: #232f27"],
+  [style*="color: rgb(91, 111, 97)"],
+  [style*="color:#5b6f61"],
+  [style*="color: #5b6f61"],
+  [style*="color: rgb(49, 63, 54)"],
+  [style*="color:#313f36"] {
+    color: #cdd6f4 !important;
+  }
+
   /* Popups */
   .MuiBackdrop-root {
     background-color: rgba(17, 17, 27, 0.72) !important;
   }
 
   .MuiDialog-paper,
-  .MuiDrawer-paper:not(.MuiDrawer-paperAnchorDockedLeft):not(.MuiDrawer-paperAnchorDockedRight),
-  .MuiPopover-paper,
   .MuiMenu-paper,
-  .MuiDialogContent-root,
-  .MuiDialogTitle-root,
-  .MuiDialogActions-root {
-    background-color: #181825 !important;
-    color: #cdd6f4 !important;
-    -webkit-text-fill-color: #cdd6f4 !important;
-    border-color: #313244 !important;
+  .MuiPopover-paper {
     box-shadow: 0 8px 32px rgba(17, 17, 27, 0.55) !important;
-  }
-
-  .MuiDialogContent-root *,
-  .MuiDialogTitle-root,
-  .MuiDialogActions-root,
-  .MuiMenuItem-root {
-    color: #cdd6f4 !important;
-    -webkit-text-fill-color: #cdd6f4 !important;
   }
 
   .MuiTooltip-tooltip {
@@ -473,17 +383,20 @@
   #accept-recommended-btn-handler {
     background-color: #fab387 !important;
     color: #11111b !important;
-    -webkit-text-fill-color: #11111b !important;
   }
 
   #onetrust-pc-btn-handler {
     color: #cba6f7 !important;
   }
 
+  img, picture, video, canvas {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
   ::selection {
     background: #cba6f733;
     color: #cdd6f4;
-    -webkit-text-fill-color: #cdd6f4;
   }
 
   :focus-visible {
