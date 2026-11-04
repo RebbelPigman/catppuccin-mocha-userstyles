@@ -1,0 +1,515 @@
+/* ==UserStyle==
+@name         QuillBot Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for quillbot.com (app, marketing, editors) and in-page popups/modals/menus/drawers/cookie banners. Base #1e1e2e, peach primary, mauve links, sky accents. No upstream Catppuccin userstyle exists yet.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css
+==/UserStyle== */
+
+/*
+  Upstream check (catppuccin/userstyles): no QuillBot port.
+  Site is MUI + StyleQ tokens (background.default/elevated/paper,
+  text.default/bold/subtle, border.default) compiled to emotion hashed
+  classes, plus brand greens (#45c740 / #2a8627 / #499557).
+  Strategy: force Mocha on root + MUI structural classes, recolor brand
+  greens to peach, and paint portals (modal/dialog/menu/drawer/popover).
+*/
+
+@-moz-document domain("quillbot.com") {
+  :root,
+  html,
+  body,
+  #__next,
+  #root,
+  #app,
+  [data-theme],
+  [data-mui-color-scheme],
+  .light,
+  .dark {
+    color-scheme: dark !important;
+    scrollbar-color: #585b70 #181825;
+
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-overlay0: #6c7086;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext0: #a6adc8;
+    --ctp-subtext1: #bac2de;
+    --ctp-peach: #fab387;
+    --ctp-mauve: #cba6f7;
+    --ctp-sky: #89dceb;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-yellow: #f9e2af;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+
+    /* QuillBot legacy :root brand vars (css-common) */
+    --new: #fab387 !important;
+    --new-hover: #f9c99e !important;
+    --new-secondary: #cba6f7 !important;
+    --new-banner: #fab387 !important;
+    --new-banner-hover: #f9c99e !important;
+    --traditional: #a6e3a1 !important;
+    --traditional-hover: #94e2d5 !important;
+    --traditional-secondary: #89dceb !important;
+    --traditional-banner: #a6e3a1 !important;
+    --traditional-banner-hover: #94e2d5 !important;
+    --primary: #fab387 !important;
+    --primary-hover: #f9c99e !important;
+    --secondary: #cba6f7 !important;
+    --banner: #fab387 !important;
+    --banner-hover: #f9c99e !important;
+
+    /* MUI / CssVars common */
+    --mui-palette-background-default: #1e1e2e !important;
+    --mui-palette-background-paper: #181825 !important;
+    --mui-palette-text-primary: #cdd6f4 !important;
+    --mui-palette-text-secondary: #a6adc8 !important;
+    --mui-palette-text-disabled: #6c7086 !important;
+    --mui-palette-primary-main: #fab387 !important;
+    --mui-palette-primary-light: #f9c99e !important;
+    --mui-palette-primary-dark: #f5a97f !important;
+    --mui-palette-primary-contrastText: #11111b !important;
+    --mui-palette-secondary-main: #cba6f7 !important;
+    --mui-palette-secondary-contrastText: #11111b !important;
+    --mui-palette-error-main: #f38ba8 !important;
+    --mui-palette-warning-main: #f9e2af !important;
+    --mui-palette-info-main: #89b4fa !important;
+    --mui-palette-success-main: #a6e3a1 !important;
+    --mui-palette-divider: #313244 !important;
+    --mui-palette-action-active: #cdd6f4 !important;
+    --mui-palette-action-hover: rgba(203, 166, 247, 0.08) !important;
+    --mui-palette-action-selected: rgba(250, 179, 135, 0.16) !important;
+    --mui-palette-common-white: #cdd6f4 !important;
+    --mui-palette-common-black: #11111b !important;
+    --mui-palette-grey-50: #313244 !important;
+    --mui-palette-grey-100: #313244 !important;
+    --mui-palette-grey-200: #45475a !important;
+    --mui-palette-grey-300: #585b70 !important;
+    --mui-palette-grey-400: #6c7086 !important;
+    --mui-palette-grey-500: #7f849c !important;
+    --mui-palette-grey-600: #a6adc8 !important;
+    --mui-palette-grey-700: #bac2de !important;
+    --mui-palette-grey-800: #181825 !important;
+    --mui-palette-grey-900: #11111b !important;
+
+    background: #1e1e2e !important;
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
+  html,
+  body,
+  #__next,
+  #root,
+  #app,
+  main,
+  header,
+  footer,
+  nav,
+  aside,
+  section,
+  .MuiContainer-root,
+  .MuiBox-root,
+  .MuiGrid-root,
+  [class*="App-"],
+  [class*="Layout"],
+  [class*="layout"],
+  [class*="Page"],
+  [class*="page"],
+  [class*="Dashboard"],
+  [class*="dashboard"] {
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  /* ---------- Surfaces / cards / editors ---------- */
+  .MuiPaper-root,
+  .MuiCard-root,
+  .MuiAppBar-root,
+  .MuiToolbar-root,
+  .MuiAccordion-root,
+  .MuiAccordionSummary-root,
+  .MuiAccordionDetails-root,
+  .MuiTable-root,
+  .MuiTableHead-root,
+  .MuiTableBody-root,
+  .MuiTableRow-root,
+  .MuiTableCell-root,
+  .MuiList-root,
+  .MuiListItem-root,
+  .MuiListItemButton-root,
+  textarea,
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  [contenteditable="true"],
+  [contenteditable=""],
+  .ql-editor,
+  .ql-container,
+  .ql-toolbar,
+  [class*="editor"],
+  [class*="Editor"],
+  [class*="canvas"],
+  [class*="Canvas"],
+  [class*="sidebar"],
+  [class*="Sidebar"],
+  [class*="panel"],
+  [class*="Panel"],
+  [class*="toolbar"],
+  [class*="Toolbar"] {
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  .MuiPaper-elevation1,
+  .MuiPaper-elevation2,
+  .MuiPaper-elevation3,
+  .MuiPaper-elevation4,
+  .MuiPaper-elevation6,
+  .MuiPaper-elevation8,
+  [class*="elevated"],
+  [class*="Elevated"] {
+    background-color: #313244 !important;
+  }
+
+  /* Marketing mint greens → mocha surfaces */
+  [style*="background-color: rgb(229, 240, 233)"],
+  [style*="background-color:#e5f0e9"],
+  [style*="background:#e5f0e9"],
+  [style*="background-color: #e5f0e9"],
+  [style*="background-color: rgb(241, 248, 244)"],
+  [style*="background-color:#f1f8f4"],
+  [style*="background:#f1f8f4"] {
+    background-color: #181825 !important;
+  }
+
+  /* ---------- Text ---------- */
+  h1, h2, h3, h4, h5, h6,
+  p, li, label, span, div,
+  .MuiTypography-root,
+  .MuiFormLabel-root,
+  .MuiInputBase-input,
+  .MuiInputLabel-root {
+    color: #cdd6f4;
+  }
+
+  .MuiTypography-colorTextSecondary,
+  .MuiFormHelperText-root,
+  [class*="subtle"],
+  [class*="muted"],
+  [class*="secondary"],
+  placeholder,
+  ::placeholder {
+    color: #a6adc8 !important;
+  }
+
+  /* Brand dark greens used as body text on light UI */
+  [style*="color: rgb(22, 31, 25)"],
+  [style*="color:#161f19"],
+  [style*="color: #161f19"],
+  [style*="color: rgb(35, 47, 39)"],
+  [style*="color:#232f27"],
+  [style*="color: #232f27"],
+  [style*="color: rgb(91, 111, 97)"],
+  [style*="color:#5b6f61"],
+  [style*="color: #5b6f61"] {
+    color: #cdd6f4 !important;
+  }
+
+  a,
+  .MuiLink-root,
+  .MuiButton-textPrimary,
+  [class*="Link"] {
+    color: #cba6f7 !important;
+  }
+
+  a:hover,
+  .MuiLink-root:hover {
+    color: #b4befe !important;
+  }
+
+  /* Sky for names / chips / selected labels */
+  .MuiChip-label,
+  .MuiTab-root.Mui-selected,
+  [class*="username"],
+  [class*="displayName"] {
+    color: #89dceb !important;
+  }
+
+  /* ---------- Buttons / primary actions (peach) ---------- */
+  .MuiButton-contained,
+  .MuiButton-containedPrimary,
+  .MuiButton-containedSecondary,
+  .MuiLoadingButton-root.MuiButton-contained,
+  button[class*="primary"],
+  [class*="go-premium"],
+  .go-premium-btn {
+    background-color: #fab387 !important;
+    background: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  .MuiButton-contained:hover,
+  .MuiButton-containedPrimary:hover,
+  .MuiLoadingButton-root.MuiButton-contained:hover,
+  button[class*="primary"]:hover,
+  .go-premium-btn:hover {
+    background-color: #f9c99e !important;
+    background: #f9c99e !important;
+    color: #11111b !important;
+  }
+
+  .MuiButton-outlined,
+  .MuiButton-outlinedPrimary,
+  .MuiButton-text,
+  .MuiIconButton-root {
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  .MuiButton-outlined:hover,
+  .MuiIconButton-root:hover,
+  .MuiListItemButton-root:hover,
+  .MuiMenuItem-root:hover {
+    background-color: rgba(203, 166, 247, 0.12) !important;
+  }
+
+  .MuiButton-root .MuiButton-startIcon svg,
+  .MuiButton-root .MuiButton-endIcon svg,
+  .MuiSvgIcon-root,
+  svg {
+    color: inherit;
+  }
+
+  .MuiButton-contained .MuiSvgIcon-root,
+  .MuiButton-contained svg {
+    color: #11111b !important;
+    fill: #11111b !important;
+  }
+
+  /* Brand green fills → peach */
+  [style*="background-color: rgb(42, 134, 39)"],
+  [style*="background-color:#2a8627"],
+  [style*="background:#2a8627"],
+  [style*="background-color: #2a8627"],
+  [style*="background-color: rgb(69, 199, 64)"],
+  [style*="background-color:#45c740"],
+  [style*="background:#45c740"],
+  [style*="background-color: #45c740"],
+  [style*="background-color: rgb(73, 149, 87)"],
+  [style*="background-color:#499557"],
+  [style*="background:#499557"],
+  [style*="background-color: #499557"],
+  [style*="background-color: rgb(30, 95, 28)"],
+  [style*="background-color:#1e5f1c"],
+  [style*="background:#1e5f1c"] {
+    background-color: #fab387 !important;
+    color: #11111b !important;
+  }
+
+  [style*="color: rgb(42, 134, 39)"],
+  [style*="color:#2a8627"],
+  [style*="color: #2a8627"],
+  [style*="color: rgb(69, 199, 64)"],
+  [style*="color:#45c740"],
+  [style*="color: #45c740"],
+  [style*="color: rgb(73, 149, 87)"],
+  [style*="color:#499557"] {
+    color: #fab387 !important;
+  }
+
+  /* ---------- Inputs ---------- */
+  .MuiOutlinedInput-notchedOutline,
+  .MuiInputBase-root,
+  .MuiOutlinedInput-root,
+  fieldset {
+    border-color: #45475a !important;
+  }
+
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #fab387 !important;
+  }
+
+  .MuiInputBase-input,
+  textarea,
+  [contenteditable="true"] {
+    caret-color: #fab387;
+  }
+
+  [contenteditable="true"]:empty:before,
+  [placeholder] {
+    color: #6c7086 !important;
+  }
+
+  /* ---------- Tabs / chips / dividers ---------- */
+  .MuiTab-root {
+    color: #a6adc8 !important;
+  }
+
+  .MuiTab-root.Mui-selected {
+    color: #fab387 !important;
+  }
+
+  .MuiTabs-indicator {
+    background-color: #fab387 !important;
+  }
+
+  .MuiChip-root {
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  .MuiChip-colorPrimary,
+  .MuiChip-filledPrimary {
+    background-color: #fab387 !important;
+    color: #11111b !important;
+  }
+
+  .MuiDivider-root,
+  hr {
+    border-color: #313244 !important;
+    background-color: #313244 !important;
+  }
+
+  .MuiSkeleton-root {
+    background-color: #313244 !important;
+  }
+
+  .MuiCircularProgress-circle,
+  .MuiCircularProgress-colorPrimary {
+    color: #fab387 !important;
+    stroke: #fab387 !important;
+  }
+
+  /* ---------- Popups: modal / dialog / menu / drawer / popover ---------- */
+  .MuiModal-root,
+  .MuiDialog-root,
+  .MuiDrawer-root,
+  .MuiPopover-root,
+  .MuiMenu-root,
+  .MuiPopper-root,
+  [role="dialog"],
+  [role="alertdialog"],
+  [role="menu"],
+  [role="listbox"],
+  [aria-modal="true"] {
+    color: #cdd6f4 !important;
+  }
+
+  .MuiBackdrop-root,
+  .MuiModal-backdrop,
+  .MuiDialog-container > .MuiBackdrop-root {
+    background-color: rgba(17, 17, 27, 0.72) !important;
+  }
+
+  .MuiDialog-paper,
+  .MuiDrawer-paper,
+  .MuiPopover-paper,
+  .MuiMenu-paper,
+  .MuiDialogContent-root,
+  .MuiDialogTitle-root,
+  .MuiDialogActions-root,
+  .MuiMenu-list,
+  [role="dialog"],
+  [role="alertdialog"],
+  [aria-modal="true"] {
+    background-color: #181825 !important;
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+    box-shadow: 0 8px 32px rgba(17, 17, 27, 0.55) !important;
+  }
+
+  .MuiDialogTitle-root,
+  .MuiDialogContent-root,
+  .MuiDialogActions-root,
+  .MuiMenuItem-root,
+  .MuiListItemText-primary,
+  .MuiListItemText-secondary {
+    color: #cdd6f4 !important;
+  }
+
+  .MuiTooltip-tooltip {
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Snackbars / toasts / alerts */
+  .MuiSnackbar-root .MuiPaper-root,
+  .MuiAlert-root,
+  .MuiAlert-standardSuccess,
+  .MuiAlert-standardInfo,
+  .MuiAlert-standardWarning,
+  .MuiAlert-standardError {
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .MuiAlert-standardSuccess { border-left: 3px solid #a6e3a1 !important; }
+  .MuiAlert-standardInfo { border-left: 3px solid #89b4fa !important; }
+  .MuiAlert-standardWarning { border-left: 3px solid #f9e2af !important; }
+  .MuiAlert-standardError { border-left: 3px solid #f38ba8 !important; }
+
+  /* ---------- Cookie / consent / third-party in-page banners ---------- */
+  #onetrust-banner-sdk,
+  #onetrust-pc-sdk,
+  #ot-sdk-btn,
+  .onetrust-pc-dark-filter,
+  #onetrust-consent-sdk,
+  .ot-sdk-container,
+  #onetrust-policy,
+  .ot-sdk-row {
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  #onetrust-accept-btn-handler,
+  #onetrust-reject-all-handler,
+  .onetrust-close-btn-handler,
+  #accept-recommended-btn-handler {
+    background-color: #fab387 !important;
+    color: #11111b !important;
+    border-color: #fab387 !important;
+  }
+
+  #onetrust-pc-btn-handler,
+  .ot-sdk-button {
+    color: #cba6f7 !important;
+  }
+
+  /* ---------- Selection / focus ---------- */
+  ::selection {
+    background: #cba6f733;
+    color: #cdd6f4;
+  }
+
+  :focus-visible {
+    outline-color: #fab387 !important;
+  }
+
+  /* White marketing blocks that slip through */
+  [style*="background-color: rgb(255, 255, 255)"],
+  [style*="background-color:#ffffff"],
+  [style*="background:#ffffff"],
+  [style*="background-color: #ffffff"],
+  [style*="background-color:#fff"],
+  [style*="background:#fff"],
+  [style*="background-color: #fff"] {
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+}
