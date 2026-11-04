@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "all-catppuccin-mocha.user.css"
-VERSION = "1.1.2"
+VERSION = "1.1.3"
 
 FILES = [
     "kick-catppuccin-mocha.user.css",
