@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "all-catppuccin-mocha.user.css"
-VERSION = "1.1.4"
+VERSION = "1.2.0"
 
 FILES = [
     "kick-catppuccin-mocha.user.css",
@@ -22,6 +22,7 @@ FILES = [
     "discord-catppuccin-mocha.user.css",
     "spotify-catppuccin-mocha.user.css",
     "quillbot-catppuccin-mocha.user.css",
+    "claude-catppuccin-mocha.user.css",
 ]
 
 META_RE = re.compile(r"/\*\s*==UserStyle==.*?==/UserStyle==\s*\*/", re.S)
@@ -30,7 +31,7 @@ HEADER = f"""/* ==UserStyle==
 @name         Catppuccin Mocha — Everything
 @namespace    github.com/RebbelPigman
 @version      {VERSION}
-@description  One-click install of every Catppuccin Mocha userstyle in this repo (Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot). Use this OR the per-site styles — not both. Mocha base #1e1e2e, peach primary, mauve links, sky names.
+@description  One-click install of every Catppuccin Mocha userstyle in this repo (Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot, Claude). Use this OR the per-site styles — not both. Mocha base #1e1e2e, peach primary, mauve links, sky names.
 @author       Rebbel
 @license      MIT
 

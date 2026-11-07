@@ -1,6 +1,6 @@
 # Catppuccin Mocha userstyles
 
-Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, and QuillBot. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
+Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot, and Claude. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
 
 Install with [Stylus](https://add0n.com/stylus.html). Leave **Check for updates** ticked. Stylus updates when `@version` in the raw file is higher than the installed copy.
 
@@ -8,7 +8,7 @@ Install with [Stylus](https://add0n.com/stylus.html). Leave **Check for updates*
 
 One Stylus install pulls every site style in this repo. Use **either** this pack **or** the per-site styles — not both (they would double-apply).
 
-[![Install everything](https://img.shields.io/badge/Install-Everything_1.1.4-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
+[![Install everything](https://img.shields.io/badge/Install-Everything_1.2.0-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
 Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
@@ -26,10 +26,11 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 [![Install Discord](https://img.shields.io/badge/Install-Discord_1.1.1-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/discord-catppuccin-mocha.user.css)
 [![Install Spotify](https://img.shields.io/badge/Install-Spotify_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css)
 [![Install QuillBot](https://img.shields.io/badge/Install-QuillBot_1.0.4-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css)
+[![Install Claude](https://img.shields.io/badge/Install-Claude_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/claude-catppuccin-mocha.user.css)
 
 | Style | Version | File |
 | --- | --- | --- |
-| **Everything** | **1.1.4** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
+| **Everything** | **1.2.0** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
 | Kick Catppuccin Mocha | 1.0.3 | [kick-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/kick-catppuccin-mocha.user.css) |
 | Rumble Catppuccin Mocha | 1.0.1 | [rumble-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css) |
 | YouTube Catppuccin Mocha | 1.1.3 | [youtube-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-catppuccin-mocha.user.css) |
@@ -42,6 +43,7 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 | Discord Catppuccin Mocha | 1.1.1 | [discord-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/discord-catppuccin-mocha.user.css) |
 | Spotify Catppuccin Mocha | 1.0.0 | [spotify-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css) |
 | QuillBot Catppuccin Mocha | 1.0.4 | [quillbot-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css) |
+| Claude Catppuccin Mocha | 1.0.0 | [claude-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/claude-catppuccin-mocha.user.css) |
 
 ## Notes per style
 
@@ -62,6 +64,8 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 **Spotify** matches `open.spotify.com`. Forces Mocha backgrounds on main surfaces, sidebar, and player bar (with `!important` to override Spotify's defaults). Peach primary/accent, mauve links, sky artist names. Works best with Spotify set to Dark.
 
 **QuillBot** matches `quillbot.com` (and subdomains). Mocha shell (top bar + sidenav), peach primary (replaces brand green), mauve links. Main tools/editors forced to readable Mocha text (v1.0.2 paints main content grid (was pure white) with forced readable text; no upstream QuillBot userstyle found). Popups: MUI dialog/drawer(menu)/popover/tooltip/snackbar and OneTrust. No upstream Catppuccin userstyle yet. Enable Stylus CSP patching if sheets stay light.
+
+**Claude** matches `claude.ai`. Forced Mocha dark (works even if Claude is set to light). Peach accent default. Token map from catppuccin/userstyles Claude 2026.11.01 (CDS surfaces, epitaxy, dframe, chat tokens). Older upstream-only installs often no-op because they require `data-mode` + an outdated lib import. Set Claude appearance to Dark if anything still flashes light. Popups/dialogs covered via `--cds-*` / portal tokens.
 
 **Kick / Rumble** match `kick.com` / `rumble.com`. Peach / mauve / sky accents on Mocha base.
 
