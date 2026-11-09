@@ -1,6 +1,8 @@
 # Catppuccin Mocha userstyles
 
-Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot, and Claude. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
+Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot, Claude, and DuckDuckGo. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
+
+**Upstream base:** site themes are checked against and often adapted from [catppuccin/userstyles](https://github.com/catppuccin/userstyles) (Mocha + peach/mauve/sky pack conventions on top).
 
 Install with [Stylus](https://add0n.com/stylus.html). Leave **Check for updates** ticked. Stylus updates when `@version` in the raw file is higher than the installed copy.
 
@@ -8,7 +10,7 @@ Install with [Stylus](https://add0n.com/stylus.html). Leave **Check for updates*
 
 One Stylus install pulls every site style in this repo. Use **either** this pack **or** the per-site styles — not both (they would double-apply).
 
-[![Install everything](https://img.shields.io/badge/Install-Everything_1.2.0-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
+[![Install everything](https://img.shields.io/badge/Install-Everything_1.3.0-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
 Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
@@ -27,10 +29,11 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 [![Install Spotify](https://img.shields.io/badge/Install-Spotify_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css)
 [![Install QuillBot](https://img.shields.io/badge/Install-QuillBot_1.0.4-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css)
 [![Install Claude](https://img.shields.io/badge/Install-Claude_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/claude-catppuccin-mocha.user.css)
+[![Install DuckDuckGo](https://img.shields.io/badge/Install-DuckDuckGo_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/duckduckgo-catppuccin-mocha.user.css)
 
 | Style | Version | File |
 | --- | --- | --- |
-| **Everything** | **1.2.0** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
+| **Everything** | **1.3.0** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
 | Kick Catppuccin Mocha | 1.0.3 | [kick-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/kick-catppuccin-mocha.user.css) |
 | Rumble Catppuccin Mocha | 1.0.1 | [rumble-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css) |
 | YouTube Catppuccin Mocha | 1.1.3 | [youtube-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-catppuccin-mocha.user.css) |
@@ -44,6 +47,7 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 | Spotify Catppuccin Mocha | 1.0.0 | [spotify-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css) |
 | QuillBot Catppuccin Mocha | 1.0.4 | [quillbot-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css) |
 | Claude Catppuccin Mocha | 1.0.0 | [claude-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/claude-catppuccin-mocha.user.css) |
+| DuckDuckGo Catppuccin Mocha | 1.0.0 | [duckduckgo-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/duckduckgo-catppuccin-mocha.user.css) |
 
 ## Notes per style
 
@@ -67,9 +71,13 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 
 **Claude** matches `claude.ai`. Forced Mocha dark (works even if Claude is set to light). Peach accent default. Token map from catppuccin/userstyles Claude 2026.11.01 (CDS surfaces, epitaxy, dframe, chat tokens). Older upstream-only installs often no-op because they require `data-mode` + an outdated lib import. Set Claude appearance to Dark if anything still flashes light. Popups/dialogs covered via `--cds-*` / portal tokens.
 
+**DuckDuckGo** matches `duckduckgo.com` and `duck.ai`. Forced Mocha dark. Peach accent default. Token map from [catppuccin/userstyles](https://github.com/catppuccin/userstyles) DuckDuckGo 2026.09.18 (SDS + theme-col vars). Prefer DDG appearance Dark if anything flashes light.
+
 **Kick / Rumble** match `kick.com` / `rumble.com`. Peach / mauve / sky accents on Mocha base.
 
 ## Rebuild the Everything pack
+
+Before adding or heavily rewriting a site style, check [catppuccin/userstyles](https://github.com/catppuccin/userstyles) for an existing port.
 
 After editing any per-site `*.user.css`, regenerate the bundle (bump `VERSION` in the script when you want Stylus to auto-update the pack):
 
