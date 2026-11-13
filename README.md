@@ -1,6 +1,6 @@
 # Catppuccin Mocha userstyles
 
-Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot, Claude, DuckDuckGo, Stylus, and Proton. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
+Stylus userstyles for Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot, Claude, DuckDuckGo, Stylus, Proton, and OpenRouter. Mocha base `#1e1e2e`, peach primary, mauve links/chips, sky channel names.
 
 **Upstream base:** site themes are checked against and often adapted from [catppuccin/userstyles](https://github.com/catppuccin/userstyles) (Mocha + peach/mauve/sky pack conventions on top).
 
@@ -10,7 +10,7 @@ Install with [Stylus](https://add0n.com/stylus.html). Leave **Check for updates*
 
 One Stylus install pulls every site style in this repo. Use **either** this pack **or** the per-site styles — not both (they would double-apply).
 
-[![Install everything](https://img.shields.io/badge/Install-Everything_1.5.0-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
+[![Install everything](https://img.shields.io/badge/Install-Everything_1.6.0-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
 Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
@@ -32,10 +32,11 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 [![Install DuckDuckGo](https://img.shields.io/badge/Install-DuckDuckGo_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/duckduckgo-catppuccin-mocha.user.css)
 [![Install Stylus](https://img.shields.io/badge/Install-Stylus_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/stylus-catppuccin-mocha.user.css)
 [![Install Proton](https://img.shields.io/badge/Install-Proton_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/proton-catppuccin-mocha.user.css)
+[![Install OpenRouter](https://img.shields.io/badge/Install-OpenRouter_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/openrouter-catppuccin-mocha.user.css)
 
 | Style | Version | File |
 | --- | --- | --- |
-| **Everything** | **1.5.0** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
+| **Everything** | **1.6.0** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
 | Kick Catppuccin Mocha | 1.0.3 | [kick-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/kick-catppuccin-mocha.user.css) |
 | Rumble Catppuccin Mocha | 1.0.1 | [rumble-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css) |
 | YouTube Catppuccin Mocha | 1.1.3 | [youtube-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-catppuccin-mocha.user.css) |
@@ -52,6 +53,7 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 | DuckDuckGo Catppuccin Mocha | 1.0.0 | [duckduckgo-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/duckduckgo-catppuccin-mocha.user.css) |
 | Stylus Catppuccin Mocha | 1.0.0 | [stylus-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/stylus-catppuccin-mocha.user.css) |
 | Proton Catppuccin Mocha | 1.0.0 | [proton-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/proton-catppuccin-mocha.user.css) |
+| OpenRouter Catppuccin Mocha | 1.0.0 | [openrouter-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/openrouter-catppuccin-mocha.user.css) |
 
 ## Notes per style
 
@@ -80,6 +82,8 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 **Stylus** themes the Stylus extension UI (manage, popup, editor) via `moz-extension://` / `chrome-extension://` URL prefixes (same approach as [catppuccin/userstyles](https://github.com/catppuccin/userstyles) Stylus 2026.08.16). Forced Mocha, peach accent. Set Stylus **UI theme** to Dark under Stylus settings if anything stays light. Note: extension URL prefixes can match other extensions that share similar CSS vars — disable if that conflicts.
 
 **Proton** one style for Proton web apps: `mail`, `calendar`, `drive`, `account`, `pass`, `vpn`, `docs`, `photos`, `wallet`, `meet`, `lumo` on `*.proton.me`. Forced Mocha, peach accent. Token map from [catppuccin/userstyles](https://github.com/catppuccin/userstyles) Proton 2026.08.16 (`--background-*`, `--interaction-*`, mail/calendar optionals, logo recolor). Prefer Proton theme **Dark** if anything flashes light.
+
+**OpenRouter** matches `openrouter.ai`. Forced Mocha over OpenRouter's Tailwind design tokens (`--background`, `--foreground`, `--primary`, `--border`, ...); brand purple kept as `--primary`, accent peach. No upstream Catppuccin userstyle found.
 
 **Kick / Rumble** match `kick.com` / `rumble.com`. Peach / mauve / sky accents on Mocha base.
 

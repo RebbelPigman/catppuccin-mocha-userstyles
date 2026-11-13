@@ -1,0 +1,87 @@
+/* ==UserStyle==
+@name         OpenRouter Catppuccin Mocha
+@namespace    github.com/RebbelPigman
+@version      1.0.0
+@description  Catppuccin Mocha for openrouter.ai (chat + settings). Forced dark over OpenRouter's Tailwind design tokens. Peach accent keeps OpenRouter's purple brand as --primary.
+@author       Rebbel
+@license      MIT
+@updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/openrouter-catppuccin-mocha.user.css
+@downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/openrouter-catppuccin-mocha.user.css
+==/UserStyle== */
+
+/*
+  OpenRouter has no catppuccin/userstyles port. It is Tailwind v4 with
+  design tokens (--background, --foreground, --primary purple #7624f4,
+  --accent, --border, --muted, ...). Force Mocha on those tokens so every
+  surface, text, border and button flips dark. OpenRouter brand purple is
+  kept as --primary; accent is peach per pack convention.
+*/
+
+@-moz-document domain("openrouter.ai") {
+  :root,
+  html,
+  html.dark,
+  .dark,
+  body {
+    color-scheme: dark !important;
+    --background: hsl(240 54% 15%) !important;
+    --foreground: hsl(254 16% 88%) !important;
+    --card: hsl(240 12% 9%) !important;
+    --popover: hsl(240 17% 12%) !important;
+    --primary: hsl(264 90% 55%) !important;
+    --primary-foreground: hsl(240 12% 9%) !important;
+    --secondary: hsl(246 3% 31%) !important;
+    --secondary-foreground: hsl(254 16% 88%) !important;
+    --muted: hsl(243 4% 23%) !important;
+    --muted-foreground: hsl(252 6% 72%) !important;
+    --accent: hsl(23 89% 75%) !important;
+    --accent-foreground: hsl(240 12% 9%) !important;
+    --destructive: hsl(343 82% 75%) !important;
+    --destructive-foreground: hsl(240 12% 9%) !important;
+    --border: hsl(246 3% 31%) !important;
+    --input: hsl(246 3% 31%) !important;
+    --ring: hsl(267 84% 81%) !important;
+    --success: hsl(145 54% 76%) !important;
+    --warning: hsl(41 85% 83%) !important;
+    --info: hsl(217 92% 76%) !important;
+    --negative: hsl(343 82% 75%) !important;
+    --positive: hsl(145 54% 76%) !important;
+    --text-body: hsl(254 16% 88%) !important;
+  }
+
+  /* Keep brand/logo readable on mocha */
+  svg.logo, svg[class*="logo"], [class*="Logo"], [aria-label*="OpenRouter"] {
+    filter: none !important;
+  }
+
+  /* Ensure focus/ring uses peach */
+  :focus-visible {
+    outline-color: hsl(23 89% 75%) !important;
+    outline-width: 2px !important;
+  }
+
+  /* Any literal light slabs that escape tokens */
+  [style*="background: rgb(252, 252, 254)"],
+  [style*="background-color: rgb(252, 252, 254)"],
+  [style*="background:#fcfcfe"],
+  [style*="background-color:#fcfcfe"],
+  [style*="background-color: rgb(255, 255, 255)"],
+  [style*="background:#ffffff"],
+  [style*="background-color: #ffffff"],
+  [style*="background-color:#fff"],
+  [style*="background:#fff"] {
+    background-color: hsl(240 54% 15%) !important;
+    color: hsl(254 16% 88%) !important;
+  }
+
+  [style*="color: rgb(3, 8, 10)"],
+  [style*="color:#03080a"],
+  [style*="color: #03080a"],
+  [style*="color: rgb(0, 0, 0)"],
+  [style*="color:#000"],
+  [style*="color: #000"],
+  [style*="color:#000000"],
+  [style*="color: #000000"] {
+    color: hsl(254 16% 88%) !important;
+  }
+}
