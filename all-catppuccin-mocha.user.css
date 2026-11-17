@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Catppuccin Mocha — Everything
 @namespace    github.com/RebbelPigman
-@version      1.7.1
+@version      1.7.2
 @description  One-click install of every Catppuccin Mocha userstyle in this repo (Kick, Rumble, YouTube, YouTube Music, Google, Teams, OneDrive, GitHub, Grok, Discord, Spotify, QuillBot, Claude, DuckDuckGo, Stylus, Proton). Use this OR the per-site styles — not both. Mocha base #1e1e2e, peach primary, mauve links, sky names.
 @author       Rebbel
 @license      MIT
@@ -4191,6 +4191,8 @@
     --sidebar-border: #313244 !important;
     --sidebar-accent: #313244 !important;
     --ring: #cba6f7 !important;
+    --overlay: #11111bcc !important;
+    --foreground: #cdd6f4 !important;
 
     --button-primary: #313244 !important;
     --button-primary-hover: #45475a !important;
@@ -4372,14 +4374,103 @@
     background: #cba6f733;
   }
 
-  /* Dialogs / menus / portals */
+  [data-settings-shell],
+  [data-settings-stack],
+  [data-settings-subpage],
+  [data-settings-page-row],
+  [data-menu-panel],
+  [data-pane-drawer],
+  [data-theme-portal],
   [role="dialog"],
   [role="menu"],
   [role="listbox"],
+  [role="alertdialog"],
   [data-radix-popper-content-wrapper],
+  [data-radix-popper-content-wrapper] > *,
   [data-state="open"][role="dialog"],
   .bg-popover,
-  [class*="popover"] {
+  [class*="popover-content"],
+  [class*="PopoverContent"],
+  [class*="DropdownMenuContent"],
+  [class*="ContextMenuContent"],
+  [class*="DialogContent"],
+  [class*="SheetContent"],
+  [cmdk-root],
+  [cmdk-dialog],
+  [cmdk-list],
+  [cmdk-group],
+  [cmdk-input],
+  [cmdk-item] {
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  /* Settings rows / separators inside the popout */
+  [data-settings-row],
+  [data-settings-row-label],
+  [data-settings-row-text],
+  [data-settings-group-label],
+  [data-settings-subpage-crumbs],
+  [data-settings-subpage-actions],
+  [data-settings-nav-lock],
+  [data-menu-item-description] {
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
+  }
+
+  [data-settings-separator],
+  [data-settings-break] {
+    background-color: #313244 !important;
+    border-color: #313244 !important;
+  }
+
+  /* Dimmer / backdrop behind settings & menus — site uses pure black lab(0% 0 0/.7) */
+  .bg-overlay,
+  [class*="bg-overlay"],
+  [data-grok-overlay],
+  [cmdk-overlay],
+  [data-state="open"][class*="overlay"],
+  [data-state="open"].fixed.inset-0,
+  .fixed.inset-0[data-state="open"],
+  [class*="DialogOverlay"],
+  [class*="SheetOverlay"],
+  ::backdrop,
+  .backdrop\:bg-overlay::backdrop {
+    background-color: #11111bcc !important;
+  }
+
+  /* Nested elevated chips inside settings / menus (not every ghost icon button) */
+  [data-settings-shell] .bg-surface-l1,
+  [data-settings-shell] .bg-surface-l2,
+  [data-settings-shell] .bg-surface-elevated,
+  [data-settings-shell] .bg-surface-inset,
+  [data-settings-shell] .bg-surface-base,
+  [data-menu-panel] .bg-surface-l1,
+  [data-menu-panel] .bg-surface-l2,
+  [data-menu-panel] .bg-surface-elevated,
+  [data-settings-shell] .bg-black,
+  [data-menu-panel] .bg-black {
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  [data-settings-shell] input,
+  [data-settings-shell] textarea,
+  [data-settings-shell] select,
+  [data-menu-panel] input,
+  [cmdk-input],
+  [role="dialog"] input,
+  [role="dialog"] textarea {
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+    border-color: #45475a !important;
+  }
+
+  /* Projects / home tiles */
+  main [class*="card"],
+  [class*="bg-card"] {
     background-color: #181825 !important;
     color: #cdd6f4 !important;
     border-color: #313244 !important;

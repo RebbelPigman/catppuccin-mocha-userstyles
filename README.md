@@ -10,7 +10,7 @@ Install with [Stylus](https://add0n.com/stylus.html). Leave **Check for updates*
 
 One Stylus install pulls every site style in this repo. Use **either** this pack **or** the per-site styles — not both (they would double-apply).
 
-[![Install everything](https://img.shields.io/badge/Install-Everything_1.7.1-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
+[![Install everything](https://img.shields.io/badge/Install-Everything_1.7.2-cba6f7?style=for-the-badge)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
 Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css)
 
@@ -24,7 +24,7 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 [![Install Teams](https://img.shields.io/badge/Install-Teams_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css)
 [![Install OneDrive](https://img.shields.io/badge/Install-OneDrive_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css)
 [![Install GitHub](https://img.shields.io/badge/Install-GitHub_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/github-catppuccin-mocha.user.css)
-[![Install Grok](https://img.shields.io/badge/Install-Grok_1.0.3-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css)
+[![Install Grok](https://img.shields.io/badge/Install-Grok_1.0.4-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css)
 [![Install Discord](https://img.shields.io/badge/Install-Discord_1.1.1-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/discord-catppuccin-mocha.user.css)
 [![Install Spotify](https://img.shields.io/badge/Install-Spotify_1.0.0-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css)
 [![Install QuillBot](https://img.shields.io/badge/Install-QuillBot_1.0.4-116b59)](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css)
@@ -35,7 +35,7 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 
 | Style | Version | File |
 | --- | --- | --- |
-| **Everything** | **1.7.1** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
+| **Everything** | **1.7.2** | [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/all-catppuccin-mocha.user.css) |
 | Kick Catppuccin Mocha | 1.0.3 | [kick-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/kick-catppuccin-mocha.user.css) |
 | Rumble Catppuccin Mocha | 1.0.1 | [rumble-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/rumble-catppuccin-mocha.user.css) |
 | YouTube Catppuccin Mocha | 1.1.3 | [youtube-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/youtube-catppuccin-mocha.user.css) |
@@ -44,7 +44,7 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 | Teams Catppuccin Mocha | 1.0.0 | [teams-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/teams-catppuccin-mocha.user.css) |
 | OneDrive Catppuccin Mocha | 1.0.0 | [onedrive-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/onedrive-catppuccin-mocha.user.css) |
 | GitHub Catppuccin Mocha | 1.0.0 | [github-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/github-catppuccin-mocha.user.css) |
-| Grok Catppuccin Mocha | 1.0.3 | [grok-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css) |
+| Grok Catppuccin Mocha | 1.0.4 | [grok-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css) |
 | Discord Catppuccin Mocha | 1.1.1 | [discord-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/discord-catppuccin-mocha.user.css) |
 | Spotify Catppuccin Mocha | 1.0.0 | [spotify-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/spotify-catppuccin-mocha.user.css) |
 | QuillBot Catppuccin Mocha | 1.0.4 | [quillbot-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/quillbot-catppuccin-mocha.user.css) |
@@ -65,7 +65,7 @@ Raw: [all-catppuccin-mocha.user.css](https://raw.githubusercontent.com/RebbelPig
 
 **GitHub** matches `github.com` and `gist.github.com`. Peach primary buttons, mauve links, sky mentions/names.
 
-**Grok** matches `grok.com`. Forced Mocha over Grok's 2026 dark near-black surfaces (`--surface-base` `#131211` / `--neutral-1000` / `.bg-black` / `--grok-chrome`). Peach primary, mauve links, sky accents. Prefer Grok appearance **Dark**. No upstream Catppuccin userstyle.
+**Grok** matches `grok.com`. Forced Mocha over 2026 near-black surfaces + **settings/dashboard popouts** (`data-settings-shell`, `data-menu-panel`, overlays, cmdk). Peach primary, mauve links, sky accents. Prefer Grok **Dark**. No upstream Catppuccin userstyle.
 
 **Discord** matches `discord.com`. Imports the official Catppuccin Discord theme CSS (see the file header). Works best with Discord set to Dark.
 
