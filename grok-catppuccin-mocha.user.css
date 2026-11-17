@@ -1,118 +1,285 @@
 /* ==UserStyle==
 @name         Grok Catppuccin Mocha
 @namespace    github.com/RebbelPigman
-@version      1.0.2
-@description  Catppuccin Mocha for grok.com. Base #1e1e2e, peach primary, mauve links, sky accents.
+@version      1.0.3
+@description  Catppuccin Mocha for grok.com. Forces Mocha over Grok's 2026 dark near-black surfaces (#131211 / neutral-1000 / bg-black). Peach primary, mauve links, sky accents.
 @author       Rebbel
 @license      MIT
 @updateURL    https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css
 @downloadURL  https://raw.githubusercontent.com/RebbelPigman/catppuccin-mocha-userstyles/main/grok-catppuccin-mocha.user.css
 ==/UserStyle== */
 
+/*
+  No catppuccin/userstyles Grok port. Grok 2026 dark theme paints pure/near-black:
+  .dark → --surface-base: hsl(var(--neutral-1000)) with --neutral-1000: 0 0% 2%
+  :root.dark body → --surface-base: #131211, --surface-l2: #201f1d, --popover: #23211f
+  utilities: .bg-black → #000, .bg-neutral-950
+  plus --grok-chrome / --grok-pane / --grok-base near-black literals.
+  Fix: remap palette HSL components + force surface / grok tokens on every dark root.
+*/
+
 @-moz-document domain("grok.com") {
   :root,
   html,
   body,
-  html.light,
+  html.dark,
+  :root.dark,
+  .dark,
+  :root.dark body,
+  html.dark body,
+  html.scheme-light,
   .scheme-light,
-  .light {
+  .light,
+  .scheme-dark {
     color-scheme: dark !important;
     scrollbar-color: #585b70 #181825;
 
+    /* Mocha primitives */
     --ctp-peach: #fab387;
     --ctp-mauve: #cba6f7;
     --ctp-sky: #89dceb;
+    --ctp-lavender: #b4befe;
     --ctp-green: #a6e3a1;
     --ctp-red: #f38ba8;
+    --ctp-yellow: #f9e2af;
+    --ctp-blue: #89b4fa;
     --ctp-text: #cdd6f4;
     --ctp-subtext: #a6adc8;
+    --ctp-overlay: #6c7086;
     --ctp-surface0: #313244;
     --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
     --ctp-base: #1e1e2e;
     --ctp-mantle: #181825;
     --ctp-crust: #11111b;
 
+    /*
+      Remap Grok's neutral / gray / black HSL components so any leftover
+      hsl(var(--neutral-1000)) cascade lands on Mocha instead of pure black.
+      Values are "H S% L%" components (no hsl() wrapper).
+    */
+    --black: 240 21% 15% !important;           /* was 0 0% 2% */
+    --white: 226 64% 88% !important;           /* mocha text-ish for invert fills */
+    --warm-black: 240 21% 15% !important;
+    --warm-white: 240 21% 12% !important;      /* dark uses this for inset/l1 */
+    --gray-950: 240 21% 15% !important;
+    --gray-900: 240 21% 12% !important;
+    --neutral-1000: 240 21% 15% !important;    /* was 0 0% 2% — the black culprit */
+    --neutral-950: 240 21% 12% !important;     /* was 0 0% 8% */
+    --neutral-900: 237 16% 23% !important;     /* surface0 */
+    --neutral-800: 240 13% 27% !important;
+    --neutral-700: 240 13% 31% !important;     /* surface1 */
+    --neutral-600: 240 12% 39% !important;     /* surface2 */
+    --neutral-500: 228 11% 48% !important;
+    --neutral-400: 231 11% 58% !important;
+    --neutral-300: 227 14% 71% !important;     /* subtext0-ish */
+    --neutral-200: 226 18% 78% !important;
+    --neutral-150: 226 24% 82% !important;
+    --neutral-100: 226 32% 85% !important;
+    --neutral-50: 226 40% 88% !important;
+
+    /* Semantic surfaces — force hex so dark-body literals lose */
     --surface-base: #1e1e2e !important;
-    --color-surface-base: #1e1e2e !important;
-    --surface-l1: #181825 !important;
-    --surface-l2: #313244 !important;
-    --surface-l3: #45475a !important;
-    --surface-elevated: #181825 !important;
     --surface-inset: #11111b !important;
+    --surface-l1: #181825 !important;
+    --surface-l1-hover: #313244 !important;
+    --surface-l2: #313244 !important;
+    --surface-l2-active: #45475a !important;
+    --surface-l3: #45475a !important;
+    --surface-l4: #45475a !important;
+    --surface-l4-hover: #585b70 !important;
+    --surface-elevated: #181825 !important;
+    --surface-invert: #cdd6f4 !important;
+    --surface-composer: #181825 !important;
+    --surface-user-bubble: #313244 !important;
+    --surface-banner: #181825 !important;
+    --color-surface-base: #1e1e2e !important;
+    --color-surface-composer: #181825 !important;
+
+    --background: #1e1e2e !important;
+    --background-color: #1e1e2e !important;
+    --popover: #181825 !important;
+    --card: #181825 !important;
+    --input: #313244 !important;
+    --input-hover: #45475a !important;
+    --input-background: #313244 !important;
+    --input-button-background: #313244 !important;
+    --input-button-background-hover: #45475a !important;
+    --input-border: #45475a !important;
+
     --fg-primary: #cdd6f4 !important;
     --color-fg-primary: #cdd6f4 !important;
     --fg-secondary: #a6adc8 !important;
     --color-fg-secondary: #a6adc8 !important;
     --fg-tertiary: #7f849c !important;
+    --fg-quaternary: #6c7086 !important;
+    --fg-invert: #11111b !important;
     --fg-link: #cba6f7 !important;
     --fg-link-hover: #b4befe !important;
-    --button-primary: #313244 !important;
-    --button-primary-hover: #45475a !important;
-    --primary-foreground: #fab387 !important;
-    --accent: #fab387 !important;
-    --accent-foreground: #11111b !important;
-    --border: 240 6% 25% !important;
-    --border-l1: 240 6% 25% !important;
-    --border-l2: 240 6% 30% !important;
+    --fg-accent: #fab387 !important;
+    --fg-accent-hover: #f9e2af !important;
+    --fg-danger: #f38ba8 !important;
+    --fg-success: #a6e3a1 !important;
+    --fg-warning: #f9e2af !important;
+    --color-fg-accent: #fab387 !important;
+    --color-primary: #cdd6f4 !important;
+
+    --border: 240 13% 31% !important;
+    --border-l1: #313244 !important;
+    --border-l2: #45475a !important;
+    --border-l3: #585b70 !important;
+    --border-composer: #313244 !important;
     --color-border: #313244 !important;
     --color-border-l1: #313244 !important;
     --sidebar-border: #313244 !important;
     --sidebar-accent: #313244 !important;
-    --input-border: #45475a !important;
+    --ring: #cba6f7 !important;
+
+    --button-primary: #313244 !important;
+    --button-primary-hover: #45475a !important;
+    --button-filled: #cdd6f4 !important;
+    --button-filled-hover: #bac2de !important;
+    --button-filled-active: #a6adc8 !important;
+    --button-secondary: #313244 !important;
+    --button-secondary-hover: #45475a !important;
+    --button-secondary-fill: #313244 !important;
+    --button-secondary-fill-hover: #45475a !important;
+    --button-secondary-fill-active: #585b70 !important;
+    --button-ghost-hover: #313244 !important;
+    --button-ghost-active: #45475a !important;
+    --button-ghost-surface-hover: #313244 !important;
+    --primary-foreground: #fab387 !important;
+    --accent: #fab387 !important;
+    --accent-foreground: #11111b !important;
+
+    /* Newer Grok design-system tokens (dark literals were #1e1d1d / #282726 / #2c2c2b) */
+    --grok-base: #1e1e2e !important;
+    --grok-chrome: #181825 !important;
+    --grok-elevated: #181825 !important;
+    --grok-pane: #1e1e2e !important;
+    --grok-bg-chat: #1e1e2e !important;
+    --grok-bg-chrome: #181825 !important;
+    --grok-bg-sidebar: #181825 !important;
+    --grok-bg-pane: #1e1e2e !important;
+    --grok-bg-elevated: #181825 !important;
+    --grok-bg-primary: #313244 !important;
+    --grok-bg-primary-hover: #45475a !important;
+    --grok-bg-primary-active: #585b70 !important;
+    --grok-bg-scrim: #11111bcc !important;
+    --grok-text-primary: #cdd6f4 !important;
+    --grok-text-secondary: #a6adc8 !important;
+    --grok-text-tertiary: #7f849c !important;
+    --grok-text-quaternary: #6c7086 !important;
+    --grok-text-chrome: #a6adc8 !important;
+    --grok-text-accent-primary: #fab387 !important;
+    --grok-border-primary: #45475a !important;
+    --grok-border-secondary: #313244 !important;
+    --grok-border-tertiary: #313244 !important;
+    --grok-border-focus-primary: #cba6f7 !important;
+    --grok-accent: #fab387 !important;
+    --grok-on-primary: #11111b !important;
+
+    /* legacy x-* aliases still referenced in places */
     --x-bg-primary: #1e1e2e !important;
     --x-bg-secondary: #181825 !important;
     --x-fg-primary: #cdd6f4 !important;
     --x-fg-secondary: #a6adc8 !important;
     --x-btn-primary: #313244 !important;
     --x-btn-primary-hover: #45475a !important;
-    --surface-composer: #181825 !important;
-    --color-surface-composer: #181825 !important;
-    --input: #313244 !important;
-    --input-hover: #45475a !important;
 
-    background: #1e1e2e !important;
-    color: #cdd6f4 !important;
-  }
-
-  html, body,
-  .bg-surface-base,
-  [class*="bg-surface"],
-  main, #__next, [class*="app"],
-  .group\/sidebar-wrapper,
-  [class*="mainview"] {
     background: #1e1e2e !important;
     background-color: #1e1e2e !important;
     color: #cdd6f4 !important;
   }
 
-  .bg-surface-elevated,
+  /* Layout shell — kill leftover pure-black slabs */
+  html,
+  body,
+  #__next,
+  main,
+  [class*="app"],
+  [class*="mainview"],
+  .group\/sidebar-wrapper,
+  .bg-surface,
+  .bg-surface-base,
+  [class*="bg-surface"],
+  [data-sidebar="sidebar"],
+  div:has(> [data-sidebar="sidebar"]) {
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+
   .bg-surface-l1,
-  aside, nav, header,
+  .bg-surface-elevated,
+  .bg-surface-inset,
+  .bg-surface-composer,
+  .bg-surface-user-bubble,
+  aside,
+  nav,
+  header,
   [class*="sidebar"],
-  [class*="chat"],
-  .ring-border-l1 {
-    background: #181825 !important;
+  [class*="composer"],
+  .query-bar,
+  [class*="surface-composer"] {
     background-color: #181825 !important;
     border-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  .bg-surface-l2,
+  .bg-surface-l3,
+  .bg-surface-l4 {
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+  }
+
+  /* Hard-coded pure black / near-black utilities from the 2026 CSS */
+  .bg-black,
+  .hover\:bg-black:hover,
+  [class*="bg-black"],
+  .bg-neutral-950,
+  [class*="bg-neutral-950"],
+  .bg-zinc-950,
+  [class*="bg-zinc-950"],
+  [class*="bg-gray-950"],
+  [style*="background-color: rgb(0, 0, 0)"],
+  [style*="background-color:#000"],
+  [style*="background-color: #000"],
+  [style*="background:#000"],
+  [style*="background: #000"],
+  [style*="background-color:#131211"],
+  [style*="background-color: #131211"],
+  [style*="background:#131211"],
+  [style*="background-color:#1e1d1d"],
+  [style*="background-color: #1e1d1d"],
+  [style*="background-color:#050505"],
+  [style*="background-color: #050505"] {
+    background-color: #1e1e2e !important;
+    color: #cdd6f4 !important;
   }
 
   .text-fg-primary,
-  .text-fg-secondary,
+  .text-primary,
   h1, h2, h3, h4, p, span, li, label {
     color: #cdd6f4;
   }
 
   .text-fg-secondary,
   [class*="text-secondary"],
-  .text-muted {
+  .text-muted,
+  .text-fg-tertiary {
     color: #a6adc8 !important;
   }
 
-  a, [class*="link"], .text-link {
+  a,
+  [class*="link"],
+  .text-link,
+  .text-fg-link {
     color: #cba6f7 !important;
   }
 
-  a:hover {
+  a:hover,
+  .text-fg-link:hover {
     color: #b4befe !important;
   }
 
@@ -120,9 +287,7 @@
   .bg-button-primary,
   [class*="btn-primary"],
   button.bg-primary,
-  [class*="bg-black"],
   [class*="bg-primary"] {
-    background: #313244 !important;
     background-color: #313244 !important;
     color: #fab387 !important;
     border-color: #45475a !important;
@@ -130,30 +295,19 @@
 
   button[class*="primary"]:hover,
   .bg-button-primary:hover {
-    background: #45475a !important;
     background-color: #45475a !important;
-  }
-
-  .query-bar,
-  .bg-surface-composer,
-  [class*="surface-composer"],
-  [class*="composer"] {
-    background: #181825 !important;
-    background-color: #181825 !important;
-    color: #cdd6f4 !important;
-    border-color: #313244 !important;
   }
 
   .query-bar .tiptap,
   .query-bar [contenteditable],
-  .query-bar-editor {
+  .query-bar-editor,
+  [contenteditable="true"] {
     background: transparent !important;
     color: #cdd6f4 !important;
   }
 
   [class*="mention"],
-  [class*="username"],
-  .font-semibold {
+  [class*="username"] {
     color: #89dceb;
   }
 
@@ -161,9 +315,16 @@
     background: #cba6f733;
   }
 
-  /* Force dark scheme classes */
-  html.scheme-light,
-  .light {
-    color-scheme: dark !important;
+  /* Dialogs / menus / portals */
+  [role="dialog"],
+  [role="menu"],
+  [role="listbox"],
+  [data-radix-popper-content-wrapper],
+  [data-state="open"][role="dialog"],
+  .bg-popover,
+  [class*="popover"] {
+    background-color: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: #313244 !important;
   }
 }
